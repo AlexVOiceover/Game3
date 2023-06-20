@@ -19,7 +19,6 @@ document.getElementById("toggleBackgroundMusic").addEventListener("click", () =>
   }
 });
  
-
 window.addEventListener("deviceorientation", handleOrientation, true);
 
 function handleOrientation(event) {
