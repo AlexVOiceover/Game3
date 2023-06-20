@@ -12,7 +12,7 @@ document.getElementById("spyButton").addEventListener("click", () =>  window.loc
 document.getElementById("decoderButton").addEventListener("click", () =>  window.location.href = "./decoder.html");
 */
 
-
+/*
 window.addEventListener("devicemotion", handleMotion, true);
 
 function handleMotion(event) {
@@ -23,5 +23,16 @@ function handleMotion(event) {
   const motionData = document.getElementById("motion-data");
   if (motionData){
     motionData.innerHTML = `Acceleration X: ${accelerationX?.toFixed(2) || 'N/A'}, Acceleration Y: ${accelerationY?.toFixed(2) || 'N/A'}, Acceleration Z: ${accelerationZ?.toFixed(2) || 'N/A'}`;
+  }
+} */
+
+window.addEventListener("deviceorientation", handleOrientation, true);
+
+function handleOrientation(event) {
+  const roll = event.gamma; // Roll angle in degrees
+  const motionData = document.getElementById("motion-data");
+
+  if (motionData) {
+    motionData.innerHTML = `Roll: ${roll?.toFixed(2) || 'N/A'}`;
   }
 }
