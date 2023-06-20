@@ -6,9 +6,11 @@
 };
 */
 
+/*
 // Buttons for the landing page
 document.getElementById("spyButton").addEventListener("click", () =>  window.location.href = "./spy.html");
 document.getElementById("decoderButton").addEventListener("click", () =>  window.location.href = "./decoder.html");
+*/
 
 
 window.addEventListener("devicemotion", handleMotion, true);
@@ -19,5 +21,7 @@ function handleMotion(event) {
   const accelerationZ = event.acceleration.z;
 
   const motionData = document.getElementById("motion-data");
+  if (motionData){
   motionData.innerHTML = `Acceleration X: ${accelerationX.toFixed(2)}, Acceleration Y: ${accelerationY.toFixed(2)}, Acceleration Z: ${accelerationZ.toFixed(2)}`;
+  }
 }
