@@ -25,6 +25,17 @@ function handleMotion(event) {
     motionData.innerHTML = `Acceleration X: ${accelerationX?.toFixed(2) || 'N/A'}, Acceleration Y: ${accelerationY?.toFixed(2) || 'N/A'}, Acceleration Z: ${accelerationZ?.toFixed(2) || 'N/A'}`;
   }
 } */
+const playAudio = (src, callback) => {
+  const audio = new Audio(src);
+  audio.play();
+  audio.addEventListener("ended", callback);
+};
+
+const backgroundMusic = document.getElementById("backgroundMusic");
+backgroundMusic.volume = 0.5; // Adjust the volume as needed
+
+document.getElementById("toggleBackgroundMusic").addEventListener("click", () => {backgroundMusic.play();})
+ 
 
 window.addEventListener("deviceorientation", handleOrientation, true);
 
