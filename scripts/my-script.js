@@ -34,7 +34,13 @@ const playAudio = (src, callback) => {
 const backgroundMusic = document.getElementById("backgroundMusic");
 backgroundMusic.volume = 0.5; // Adjust the volume as needed
 
-document.getElementById("toggleBackgroundMusic").addEventListener("click", () => {backgroundMusic.play();})
+document.getElementById("toggleBackgroundMusic").addEventListener("click", () => {
+  if (backgroundMusic.paused) {
+    backgroundMusic.play();
+  } else {
+    backgroundMusic.pause();
+  }
+});
  
 
 window.addEventListener("deviceorientation", handleOrientation, true);
