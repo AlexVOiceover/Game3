@@ -22,6 +22,6 @@ function handleMotion(event) {
 
   const motionData = document.getElementById("motion-data");
   if (motionData){
-  motionData.innerHTML = `Acceleration X: ${accelerationX.toFixed(2)}, Acceleration Y: ${accelerationY.toFixed(2)}, Acceleration Z: ${accelerationZ.toFixed(2)}`;
+    motionData.innerHTML = `Acceleration X: ${accelerationX?.toFixed(2) || 'N/A'}, Acceleration Y: ${accelerationY?.toFixed(2) || 'N/A'}, Acceleration Z: ${accelerationZ?.toFixed(2) || 'N/A'}`;
   }
 }
