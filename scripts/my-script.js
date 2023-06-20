@@ -6,7 +6,7 @@ const playAudio = (src, callback) => {
 };
 
 
-document.getElementById("audio1").addEventListener("click", () => checkAnswer("Eagle"));
-document.getElementById("audio2").addEventListener("click", () => checkAnswer("Cat"));
+document.getElementById("spyButton").addEventListener("click", () =>  window.location.href = "./spy.html");
+document.getElementById("decoderButton").addEventListener("click", () =>  window.location.href = "./decoder.html");
 
 
