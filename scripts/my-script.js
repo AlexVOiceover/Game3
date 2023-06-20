@@ -1,10 +1,9 @@
 // Buttons for the landing page
-document.getElementById("spyButton").addEventListener("click", () =>  window.location.href = "./spy.html");
-document.getElementById("decoderButton").addEventListener("click", () =>  window.location.href = "./decoder.html");
+
 
 const playAudio = (src, callback) => {
   const audio = new Audio(src);
-  audio.play();
+  // audio.play();
   audio.addEventListener("ended", callback);
 };
 
