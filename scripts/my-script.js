@@ -10,13 +10,13 @@ document.getElementById("spyButton").addEventListener("click", () =>  window.loc
 document.getElementById("decoderButton").addEventListener("click", () =>  window.location.href = "./decoder.html");
 
 
-window.addEventListener("deviceorientation", handleOrientation, true);
+window.addEventListener("devicemotion", handleMotion, true);
 
-function handleOrientation(event) {
-  const alpha = event.alpha;
-  const beta = event.beta;
-  const gamma = event.gamma;
+function handleMotion(event) {
+  const accelerationX = event.accelerationIncludingGravity.x;
+  const accelerationY = event.accelerationIncludingGravity.y;
+  const accelerationZ = event.accelerationIncludingGravity.z;
 
-  const orientationData = document.getElementById("orientation-data");
-  orientationData.innerHTML = `Alpha: ${alpha.toFixed(2)}, Beta: ${beta.toFixed(2)}, Gamma: ${gamma.toFixed(2)}`;
+  const motionData = document.getElementById("motion-data");
+  motionData.innerHTML = `Acceleration X: ${accelerationX.toFixed(2)}, Acceleration Y: ${accelerationY.toFixed(2)}, Acceleration Z: ${accelerationZ.toFixed(2)}`;
 }
