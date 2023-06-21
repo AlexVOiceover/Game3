@@ -25,7 +25,7 @@ window.addEventListener("deviceorientation", (event) => {
   else if (roll >= 25){
     horTextboxValue = 1}
   else {
-    horTextboxValue =  (1 / 25) * Math.abs(roll)}
+    horTextboxValue =  (1 / 25) * (roll)}
   
   // Round the textbox value to two decimal places
   horTextboxValue = parseFloat(horTextboxValue.toFixed(5));
