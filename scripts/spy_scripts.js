@@ -37,7 +37,7 @@ function playTone(frequency, duration) {
   const oscillator = audioContext.createOscillator();
   const gainNode = audioContext.createGain();
 
-  oscillator.type = 'sine';
+  oscillator.type = "sine";
   oscillator.frequency.value = frequency;
   gainNode.gain.setValueAtTime(0, audioContext.currentTime);
   gainNode.gain.linearRampToValueAtTime(1, audioContext.currentTime + 0.01);
@@ -47,6 +47,12 @@ function playTone(frequency, duration) {
   gainNode.connect(audioContext.destination);
   oscillator.start(audioContext.currentTime);
   oscillator.stop(audioContext.currentTime + duration);
+
+  // Add this line to release resources after the tone has played
+  oscillator.onended = () => {
+    gainNode.disconnect(audioContext.destination);
+    oscillator.disconnect(gainNode);
+  };
 }
 
 function playMorseCode(char) {
