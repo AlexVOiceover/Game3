@@ -42,12 +42,12 @@ window.addEventListener("deviceorientation", (event) => {
 
   let verTextboxValue = 0;
 
-  if (pitch <= -25){
+  if (pitch <= -90){
     verTextboxValue = -1}
-  else if (pitch >= 25){
+  else if (pitch >= 90){
     verTextboxValue = 1}
   else {
-    verTextboxValue =  (1 / 25) * Math.abs(pitch)}
+    verTextboxValue =  (1 / 90) * pitch}
   
   // Round the textbox value to two decimal places
   verTextboxValue = parseFloat(verTextboxValue.toFixed(5));
@@ -56,8 +56,6 @@ window.addEventListener("deviceorientation", (event) => {
   document.getElementById("verticalTextbox").value = verTextboxValue;
 
 });
-
-
 
 
 //Function to play a tone given a frequency and duration
@@ -124,10 +122,3 @@ document.getElementById("playMorseCode").addEventListener("click", () => {
       playMorseCode(inputChar);
   }
 });
- /*
-document.getElementById("musicSpeedSlider").addEventListener("input", () => {
-  const sliderValue = document.getElementById("musicSpeedSlider").value;
-  backgroundMusic.playbackRate = sliderValue;
-  //document.getElementById("sliderValueTextbox").value = sliderValue; // Update the textbox value
-});
-*/
