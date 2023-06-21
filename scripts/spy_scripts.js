@@ -14,7 +14,7 @@ document.getElementById("toggleBackgroundMusic").addEventListener("click", () =>
     backgroundMusic.pause();
   }
 });
- 
+
 window.addEventListener("deviceorientation", handleOrientation, true);
 
 function handleOrientation(event) {
@@ -27,8 +27,13 @@ function handleOrientation(event) {
 }
 
 //Function to play a tone given a frequency and duration
+let audioContext;
+
 function playTone(frequency, duration) {
-  const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+  if (!audioContext) {
+    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+  }
+
   const oscillator = audioContext.createOscillator();
   const gainNode = audioContext.createGain();
 
