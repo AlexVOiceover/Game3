@@ -33,6 +33,13 @@ window.addEventListener("deviceorientation", (event) => {
   // Update the textbox value
   document.getElementById("horizontalTextbox").value = horTextboxValue;
 
+
+  // Calculate the x coordinate for the dot
+  const x = ((horTextboxValue + 1) / 2) * canvas.width;
+
+  // Update the dot position
+  drawDot(x, parseFloat(document.getElementById("verticalTextbox").value));
+
   // Update the playback rate of the background music
   backgroundMusic.playbackRate = horTextboxValue;
 });
@@ -54,6 +61,13 @@ window.addEventListener("deviceorientation", (event) => {
 
   // Update the textbox value
   document.getElementById("verticalTextbox").value = verTextboxValue;
+  
+
+   // Calculate the y coordinate for the dot
+   const y = ((verTextboxValue + 1) / 2) * canvas.height;
+
+   // Update the dot position
+   drawDot(parseFloat(document.getElementById("horizontalTextbox").value), y);
 
 });
 
@@ -122,3 +136,15 @@ document.getElementById("playMorseCode").addEventListener("click", () => {
       playMorseCode(inputChar);
   }
 });
+
+
+const canvas = document.getElementById("dotCanvas");
+const ctx = canvas.getContext("2d");
+
+function drawDot(x, y) {
+  ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+  ctx.beginPath();
+  ctx.arc(x, y, 5, 0, 2 * Math.PI); // Draw a dot with a radius of 5
+  ctx.fillStyle = "black";
+  ctx.fill();
+}
