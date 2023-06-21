@@ -25,9 +25,9 @@ window.addEventListener("deviceorientation", (event) => {
   else if (roll >= 25){
     horTextboxValue = 1}
   else {
-    horTextboxValue =  (1 / 25) * (roll)}
+    horTextboxValue =  roll/25 }
   
-  // Round the textbox value to two decimal places
+  // Round the textbox value to 5 decimal places
   horTextboxValue = parseFloat(horTextboxValue.toFixed(5));
 
   // Update the textbox value
@@ -49,14 +49,14 @@ window.addEventListener("deviceorientation", (event) => {
 
   let verTextboxValue = 0;
 
-  if (pitch <= -90){
+  if (pitch <= -25){
     verTextboxValue = -1}
-  else if (pitch >= 90){
+  else if (pitch >= 25){
     verTextboxValue = 1}
   else {
-    verTextboxValue =  (1 / 90) * pitch}
+    verTextboxValue =  (1 / 30) * pitch}
   
-  // Round the textbox value to two decimal places
+  // Round the textbox value to 5 decimal places
   verTextboxValue = parseFloat(verTextboxValue.toFixed(5));
 
   // Update the textbox value
