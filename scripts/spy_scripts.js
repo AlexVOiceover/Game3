@@ -7,7 +7,7 @@ const playAudio = (src, callback) => {
 const backgroundMusic = document.getElementById("backgroundMusic");
 backgroundMusic.volume = 0.5; // Adjust the volume as needed
 
-document.getElementById("toggleBackgroundMusic").addEventListener("click", () => {
+document.getElementById("startTransmissionButton").addEventListener("click", () => {
   if (backgroundMusic.paused) {
     backgroundMusic.play();
   } else {
@@ -89,4 +89,9 @@ document.getElementById("playMorseCode").addEventListener("click", () => {
   if (inputChar.length === 1) {
       playMorseCode(inputChar);
   }
+});
+
+document.getElementById("musicSpeedSlider").addEventListener("input", () => {
+  const sliderValue = document.getElementById("musicSpeedSlider").value;
+  backgroundMusic.playbackRate = sliderValue;
 });
