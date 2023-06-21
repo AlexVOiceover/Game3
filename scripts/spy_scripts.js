@@ -15,6 +15,7 @@ document.getElementById("startTransmissionButton").addEventListener("click", () 
   }
 });
 
+/*
 window.addEventListener("deviceorientation", handleOrientation, true);
 
 function handleOrientation(event) {
@@ -24,7 +25,27 @@ function handleOrientation(event) {
   if (motionData) {
     motionData.innerHTML = `Roll: ${roll?.toFixed(2) || 'N/A'}`;
   }
-}
+} */
+
+window.addEventListener("deviceorientation", (event) => {
+  const roll = event.gamma; // Roll value in degrees
+  const minRoll = -20; // Minimum roll value
+  const maxRoll = 20; // Maximum roll value
+  const minValue = 0.5; // Minimum value of the slider
+  const maxValue = 2; // Maximum value of the slider
+
+  // Calculate the value based on the roll value
+  const sliderValue = ((roll - minRoll) / (maxRoll - minRoll)) * (maxValue - minValue) + minValue;
+
+  // Update the slider value
+  document.getElementById("musicSpeedSlider").value = sliderValue;
+
+  // Update the textbox value
+  document.getElementById("sliderValueTextbox").value = sliderValue;
+
+  // Update the playback rate of the background music
+  backgroundMusic.playbackRate = sliderValue;
+});
 
 //Function to play a tone given a frequency and duration
 let audioContext;
@@ -70,7 +91,7 @@ function playMorseCode(char) {
   const dotDuration = 0.1 * multiplier; // 100ms
   const dashDuration = 0.3 * multiplier; // 300ms
   const gapDuration = 0.3 * multiplier; // 100ms
-  const frequency = 1000; // 1000Hz
+  const frequency = 2000; // 1000Hz
 
   const code = morseCode[char.toUpperCase()];
   let currentTime = 0;
@@ -96,5 +117,4 @@ document.getElementById("musicSpeedSlider").addEventListener("input", () => {
   backgroundMusic.playbackRate = sliderValue;
   document.getElementById("sliderValueTextbox").value = sliderValue; // Update the textbox value
 });
-
 
