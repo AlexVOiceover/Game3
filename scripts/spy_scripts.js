@@ -111,11 +111,9 @@ document.getElementById("playMorseCode").addEventListener("click", () => {
       playMorseCode(inputChar);
   }
 });
- /*
+ 
 document.getElementById("musicSpeedSlider").addEventListener("input", () => {
   const sliderValue = document.getElementById("musicSpeedSlider").value;
   backgroundMusic.playbackRate = sliderValue;
   document.getElementById("sliderValueTextbox").value = sliderValue; // Update the textbox value
 });
-
-*/
