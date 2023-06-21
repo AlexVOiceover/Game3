@@ -29,22 +29,22 @@ function handleOrientation(event) {
 
 window.addEventListener("deviceorientation", (event) => {
   const roll = event.gamma; // Roll value in degrees
-  const minRoll = -20; // Minimum roll value
-  const maxRoll = 20; // Maximum roll value
-  const minValue = 0.5; // Minimum value of the slider
-  const maxValue = 2; // Maximum value of the slider
 
-  // Calculate the value based on the roll value
-  const sliderValue = ((roll - minRoll) / (maxRoll - minRoll)) * (maxValue - minValue) + minValue;
+  let textboxValue;
 
-  // Update the slider value
-  document.getElementById("musicSpeedSlider").value = sliderValue;
+  if (roll >= -25 && roll <= 25) {
+    textboxValue = 0;
+  } else if (roll > 25) {
+    textboxValue = 0.5;
+  } else if (roll < -25) {
+    textboxValue = 2;
+  }
 
   // Update the textbox value
-  document.getElementById("sliderValueTextbox").value = sliderValue;
+  document.getElementById("sliderValueTextbox").value = textboxValue;
 
   // Update the playback rate of the background music
-  backgroundMusic.playbackRate = sliderValue;
+  backgroundMusic.playbackRate = textboxValue;
 });
 
 //Function to play a tone given a frequency and duration
