@@ -32,12 +32,16 @@ window.addEventListener("deviceorientation", (event) => {
 
   let textboxValue = 0;
 
-  if (roll > 25) {
+  let textboxVale = roll;
+
+/*  if (roll > 25) {
     textboxValue = 2;
   } else if (roll < -25) {
     textboxValue = 0.5;
   }
   else {textboxValue = 0.5 + Math.min((roll - 25) / 50, 0.5);}
+  */
+
 
   // Round the textbox value to two decimal places
   textboxValue = parseFloat(textboxValue.toFixed(2));
