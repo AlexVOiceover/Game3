@@ -91,9 +91,10 @@ document.getElementById("playMorseCode").addEventListener("click", () => {
   }
 });
 
-document.getElementById("musicSpeedSlider").addEventListener("input", () => {
+document.getElementById("musicSpeedSlider").addEventListener("change", () => {
   const sliderValue = document.getElementById("musicSpeedSlider").value;
   backgroundMusic.playbackRate = sliderValue;
   document.getElementById("sliderValueTextbox").value = sliderValue; // Update the textbox value
 });
+
 
