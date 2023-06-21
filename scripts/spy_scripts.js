@@ -32,7 +32,14 @@ window.addEventListener("deviceorientation", (event) => {
 
   let textboxValue = 0;
 
-  let textboxVale = roll;
+  if (roll <= -25){
+    textboxValue = 0.5}
+  else if (roll >= 25){
+    textboxValue = 2}
+  else if (-25 < roll && roll < 0){
+    textboxValue = 1 - (0.5 / 25) * Math.abs(roll)}
+  else  // ( 0 <= roll < 25)
+    {textboxValue = 1 + (1 / 25) * roll}
 
 /*  if (roll > 25) {
     textboxValue = 2;
