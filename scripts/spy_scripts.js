@@ -27,7 +27,6 @@ window.addEventListener("deviceorientation", (event) => {
   else {
     horTextboxValue =  (1 / 25) * Math.abs(roll)}
   
-
   // Round the textbox value to two decimal places
   horTextboxValue = parseFloat(horTextboxValue.toFixed(5));
 
@@ -37,6 +36,29 @@ window.addEventListener("deviceorientation", (event) => {
   // Update the playback rate of the background music
   backgroundMusic.playbackRate = horTextboxValue;
 });
+
+window.addEventListener("deviceorientation", (event) => {
+  const pitch = event.beta; // Pitch value in degrees
+
+  let verTextboxValue = 0;
+
+  if (pitch <= -25){
+    verTextboxValue = -1}
+  else if (pitch >= 25){
+    verTextboxValue = 1}
+  else {
+    verTextboxValue =  (1 / 25) * Math.abs(pitch)}
+  
+  // Round the textbox value to two decimal places
+  verTextboxValue = parseFloat(verTextboxValue.toFixed(5));
+
+  // Update the textbox value
+  document.getElementById("verticalTextbox").value = verTextboxValue;
+
+});
+
+
+
 
 //Function to play a tone given a frequency and duration
 let audioContext;
