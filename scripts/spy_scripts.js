@@ -35,7 +35,7 @@ window.addEventListener("deviceorientation", (event) => {
 
 
   // Calculate the x coordinate for the dot
-  const x = ((horTextboxValue + 1) / 2) * canvas.width;
+  const x = (((horTextboxValue + 1) / 2) * (canvas.width - 10)) + 5;
 
   // Update the dot position
   drawDot(x, parseFloat(document.getElementById("verticalTextbox").value));
