@@ -15,49 +15,27 @@ document.getElementById("startTransmissionButton").addEventListener("click", () 
   }
 });
 
-/*
-window.addEventListener("deviceorientation", handleOrientation, true);
-
-function handleOrientation(event) {
-  const roll = event.gamma; // Roll angle in degrees
-  const motionData = document.getElementById("motion-data");
-
-  if (motionData) {
-    motionData.innerHTML = `Roll: ${roll?.toFixed(2) || 'N/A'}`;
-  }
-} */
-
 window.addEventListener("deviceorientation", (event) => {
   const roll = event.gamma; // Roll value in degrees
 
-  let textboxValue = 0;
+  let horTextboxValue = 0;
 
   if (roll <= -25){
-    textboxValue = 0.5}
+    horTextboxValue = -1}
   else if (roll >= 25){
-    textboxValue = 2}
-  else if (-25 < roll && roll < 0){
-    textboxValue = 1 - (0.5 / 25) * Math.abs(roll)}
-  else  // ( 0 <= roll < 25)
-    {textboxValue = 1 + (1 / 25) * roll}
-
-/*  if (roll > 25) {
-    textboxValue = 2;
-  } else if (roll < -25) {
-    textboxValue = 0.5;
-  }
-  else {textboxValue = 0.5 + Math.min((roll - 25) / 50, 0.5);}
-  */
-
+    horTextboxValue = 1}
+  else {
+    horTextboxValue =  (1 / 25) * Math.abs(roll)}
+  
 
   // Round the textbox value to two decimal places
-  textboxValue = parseFloat(textboxValue.toFixed(2));
+  horTextboxValue = parseFloat(horTextboxValue.toFixed(5));
 
   // Update the textbox value
-  document.getElementById("sliderValueTextbox").value = textboxValue;
+  document.getElementById("horizontalTextbox").value = horTextboxValue;
 
   // Update the playback rate of the background music
-  backgroundMusic.playbackRate = textboxValue;
+  backgroundMusic.playbackRate = horTextboxValue;
 });
 
 //Function to play a tone given a frequency and duration
