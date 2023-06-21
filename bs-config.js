@@ -6,6 +6,6 @@ module.exports = {
     baseDir: './',
   },
   port: 3000,
-  host: '192.168.0.47',
+  host: '10.10.10.162',
   open: false,
 };
