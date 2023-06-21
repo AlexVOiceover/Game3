@@ -30,15 +30,16 @@ function handleOrientation(event) {
 window.addEventListener("deviceorientation", (event) => {
   const roll = event.gamma; // Roll value in degrees
 
-  let textboxValue;
+  let textboxValue = 0;
 
-  if (roll >= -25 && roll <= 25) {
-    textboxValue = 0;
-  } else if (roll > 25) {
-    textboxValue = 0.5;
+  if (roll > 25) {
+    textboxValue = 0.5 + Math.min((roll - 25) / 50, 0.5);
   } else if (roll < -25) {
-    textboxValue = 2;
+    textboxValue = 2 - Math.min((-roll - 25) / 50, 0.5);
   }
+
+  // Round the textbox value to two decimal places
+  textboxValue = parseFloat(textboxValue.toFixed(2));
 
   // Update the textbox value
   document.getElementById("sliderValueTextbox").value = textboxValue;
