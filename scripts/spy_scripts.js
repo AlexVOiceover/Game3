@@ -14,6 +14,7 @@ backgroundMusic.volume = 0.5; // Adjust the volume as needed
 document.getElementById("resetPosition").addEventListener("click", () => {
   xdeviation = x;
   ydeviation = y;
+  updateDotPosition();
 });
 
 
