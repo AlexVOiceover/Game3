@@ -1,4 +1,5 @@
 const maxDegrees = 2;
+
 let xdeviation = 0;
 let ydeviation = 0;
 
@@ -83,6 +84,11 @@ window.addEventListener("deviceorientation", (event) => {
 
 const canvas = document.getElementById("dotCanvas");
 const ctx = canvas.getContext("2d");
+
+// Added to monitorise Canvas size
+document.getElementById("canvasWidth").value = canvas.width;
+document.getElementById("canvasHeight").value = canvas.height;
+
 
 function drawDot(x, y) {
   ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
