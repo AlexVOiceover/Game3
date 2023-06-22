@@ -49,16 +49,17 @@ window.addEventListener("deviceorientation", (event) => {
     return;
   }
 
-  roll = event.gamma.toFixed(4) - rolldeviation; 
+  roll = event.gamma.toFixed(4); 
+  const adjustedRoll = roll - rolldeviation;
 
   let horTextboxValue = 0;
 
-  if (roll <= (-1*maxDegrees)){
+  if (adjustedRoll <= (-1*maxDegrees)){
     horTextboxValue = -1}
-  else if (roll >= maxDegrees){
+  else if (adjustedRoll >= maxDegrees){
     horTextboxValue = 1}
   else {
-    horTextboxValue =  roll/maxDegrees }
+    horTextboxValue =  adjustedRoll/maxDegrees }
   
   // Round the textbox value to 5 decimal places
   horTextboxValue = parseFloat(horTextboxValue.toFixed(4));
@@ -85,15 +86,17 @@ window.addEventListener("deviceorientation", (event) => {
     return;
   }
 
-  pitch = event.beta.toFixed(4) - pitchdeviation; // Pitch value in degrees
+  pitch = event.beta.toFixed(4); // Pitch value in degrees
+  const adjustedPitch = pitch - pitchdeviation;
+
   let verTextboxValue = 0;
 
-  if (pitch <= (-1*maxDegrees)){
+  if (adjustedPitch <= (-1*maxDegrees)){
     verTextboxValue = -1}
-  else if (pitch >= maxDegrees){
+  else if (adjustedPitch >= maxDegrees){
     verTextboxValue = 1}
   else {
-    verTextboxValue =  pitch/maxDegrees}
+    verTextboxValue =  adjustedPitch/maxDegrees}
   
   // Round the textbox value to 5 decimal places
   verTextboxValue = parseFloat(verTextboxValue.toFixed(4));
@@ -111,9 +114,6 @@ window.addEventListener("deviceorientation", (event) => {
 
 const canvas = document.getElementById("dotCanvas");
 const ctx = canvas.getContext("2d");
-
-
-
 
 function drawDot(x, y) {
   ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
