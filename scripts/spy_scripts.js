@@ -15,6 +15,9 @@ document.getElementById("startTransmissionButton").addEventListener("click", () 
   }
 });
 
+let x =0;
+let y = 0;
+
 window.addEventListener("deviceorientation", (event) => {
   const roll = event.gamma; // Roll value in degrees
 
@@ -35,7 +38,7 @@ window.addEventListener("deviceorientation", (event) => {
 
   // Calculate the x coordinate for the dot
   const dotRadius = 5; // Dot radius
-  const x = (((horTextboxValue + 1) / 2) * (canvas.width - 2 * dotRadius)) + dotRadius;
+  x = (((horTextboxValue + 1) / 2) * (canvas.width - 2 * dotRadius)) + dotRadius;
 
   // Update the dot position
   drawDot(x, parseFloat(document.getElementById("verticalTextbox").value));
@@ -64,7 +67,7 @@ window.addEventListener("deviceorientation", (event) => {
 
 
    // Calculate the y coordinate for the dot
-   const y = ((verTextboxValue + 1) / 2) * canvas.height;
+   y = ((verTextboxValue + 1) / 2) * canvas.height;
 
    // Update the dot position
    drawDot(parseFloat(document.getElementById("horizontalTextbox").value), y);
