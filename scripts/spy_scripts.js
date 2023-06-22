@@ -120,36 +120,36 @@ function drawDot(x, y) {
   // Draw radar circles
    ctx.beginPath();
   ctx.arc(canvas.width / 2, canvas.height / 2, 90, 0, 2 * Math.PI);
-  ctx.strokeStyle = "lightgreen";
+  ctx.strokeStyle = "rgb(0, 255, 0)";
   ctx.stroke();
 
   ctx.beginPath();
   ctx.arc(canvas.width / 2, canvas.height / 2, 50, 0, 2 * Math.PI);
-  ctx.strokeStyle = "lightgreen";
+  ctx.strokeStyle = "rgb(0, 255, 0)";
   ctx.stroke();
 
   ctx.beginPath();
   ctx.arc(canvas.width / 2, canvas.height / 2, 25, 0, 2 * Math.PI);
-  ctx.strokeStyle = "red";
+  ctx.strokeStyle = "rgb(255, 85, 85)";
   ctx.stroke();
 
   ctx.beginPath();
   ctx.arc(canvas.width / 2, canvas.height / 2, 5, 0, 2 * Math.PI);
-  ctx.strokeStyle = "lightgreen";
+  ctx.strokeStyle = "rgb(0, 255, 0)";
   ctx.stroke();
 
    // Draw horizontal white line
    ctx.beginPath();
    ctx.moveTo(0, canvas.height / 2);
    ctx.lineTo(canvas.width, canvas.height / 2);
-   ctx.strokeStyle = "lightgreen";
+   ctx.strokeStyle = "rgb(0, 255, 0)";
    ctx.stroke();
  
    // Draw vertical white line
    ctx.beginPath();
    ctx.moveTo(canvas.width / 2, 0);
    ctx.lineTo(canvas.width / 2, canvas.height);
-   ctx.strokeStyle = "lightgreen";
+   ctx.strokeStyle = "rgb(0, 255, 0)";
    ctx.stroke();
  
 
