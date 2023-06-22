@@ -9,6 +9,9 @@ let rolldeviation = 0;
 let pitchdeviation = 0;
 const smoothFactor = 0.8;
 
+
+
+
 const playAudio = (src, callback) => {
   const audio = new Audio(src);
   audio.play();
@@ -114,11 +117,14 @@ let smoothY = 0;
 const canvas = document.getElementById("dotCanvas");
 const ctx = canvas.getContext("2d");
 
+let submarinePosX = Math.random * canvas.width;
+let submarinePosY = Math.random * canvas.height;
+
 function drawDot(x, y) {
   ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
   
   // Draw radar circles
-   ctx.beginPath();
+  ctx.beginPath();
   ctx.arc(canvas.width / 2, canvas.height / 2, 90, 0, 2 * Math.PI);
   ctx.strokeStyle = "rgb(0, 255, 0)";
   ctx.stroke();
@@ -130,7 +136,7 @@ function drawDot(x, y) {
 
   ctx.beginPath();
   ctx.arc(canvas.width / 2, canvas.height / 2, 25, 0, 2 * Math.PI);
-  ctx.strokeStyle = "rgb(255, 85, 85)";
+  ctx.strokeStyle = "rgb(0, 255, 0)";
   ctx.stroke();
 
   ctx.beginPath();
@@ -155,9 +161,15 @@ function drawDot(x, y) {
 
   // Moving circle
   ctx.beginPath();
-  ctx.arc(x, y, 30, 0, 2 * Math.PI); // Draw a dot with a radius of 5
+  ctx.arc(x, y, 8, 0, 2 * Math.PI); // Draw a dot with a radius of 5
   ctx.strokeStyle = "blue";
   ctx.stroke();
+
+   // submarine
+   ctx.beginPath();
+   ctx.arc(submarinePosX, submarinePosY, 5, 0, 2 * Math.PI); // Draw a dot with a radius of 5
+   ctx.fillStyle  = "rgb(255, 85, 85)";
+   ctx.fill();
  
 }
 
