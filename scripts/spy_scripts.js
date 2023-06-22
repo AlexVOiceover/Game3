@@ -63,7 +63,7 @@ window.addEventListener("deviceorientation", (event) => {
 
   // Calculate the x coordinate for the dot
   x = ((horTextboxValue + 1) / 2) * canvas.width;
-  document.getElementById("xValue").value = x;
+  // document.getElementById("xValue").value = x;
 
   updateDotPosition(smoothFactor);
 });
