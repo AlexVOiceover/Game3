@@ -119,12 +119,12 @@ function drawDot(x, y) {
   
   // Draw the Reference circle:
   ctx.beginPath();
-  ctx.arc(canvas.width / 2, canvas.height / 2, 7, 0, 2 * Math.PI);
+  ctx.arc(canvas.width / 2, canvas.height / 2, 30, 0, 2 * Math.PI);
   ctx.strokeStyle = "blue";
   ctx.stroke();
 
   ctx.beginPath();
-  ctx.arc(x, y, 5, 0, 2 * Math.PI); // Draw a dot with a radius of 5
+  ctx.arc(x, y, 25, 0, 2 * Math.PI); // Draw a dot with a radius of 5
   ctx.fillStyle = "white";
   ctx.fill();
 }
