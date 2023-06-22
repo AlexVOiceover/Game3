@@ -118,13 +118,8 @@ function drawDot(x, y) {
   ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
   
   // Draw radar circles
-  ctx.beginPath();
-  ctx.arc(canvas.width / 2, canvas.height / 2, 200, 0, 2 * Math.PI);
-  ctx.strokeStyle = "white";
-  ctx.stroke();
-
-  ctx.beginPath();
-  ctx.arc(canvas.width / 2, canvas.height / 2, 100, 0, 2 * Math.PI);
+   ctx.beginPath();
+  ctx.arc(canvas.width / 2, canvas.height / 2, 90, 0, 2 * Math.PI);
   ctx.strokeStyle = "white";
   ctx.stroke();
 
@@ -135,7 +130,7 @@ function drawDot(x, y) {
 
   ctx.beginPath();
   ctx.arc(canvas.width / 2, canvas.height / 2, 25, 0, 2 * Math.PI);
-  ctx.strokeStyle = "white";
+  ctx.strokeStyle = "red";
   ctx.stroke();
 
   ctx.beginPath();
