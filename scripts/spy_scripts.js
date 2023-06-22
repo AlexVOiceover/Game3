@@ -1,3 +1,4 @@
+const precision = 5;
 
 const playAudio = (src, callback) => {
   const audio = new Audio(src);
@@ -25,12 +26,12 @@ window.addEventListener("deviceorientation", (event) => {
 
   let horTextboxValue = 0;
 
-  if (roll <= -10){
+  if (roll <= (precision*-1)){
     horTextboxValue = -1}
-  else if (roll >= 10){
+  else if (roll >= precision){
     horTextboxValue = 1}
   else {
-    horTextboxValue =  roll/10 }
+    horTextboxValue =  roll/precision }
   
   // Round the textbox value to 5 decimal places
   horTextboxValue = parseFloat(horTextboxValue.toFixed(5));
@@ -52,12 +53,12 @@ window.addEventListener("deviceorientation", (event) => {
 
   let verTextboxValue = 0;
 
-  if (pitch <= -10){
+  if (pitch <= (precision*-1)){
     verTextboxValue = -1}
-  else if (pitch >= 10){
+  else if (pitch >= precision){
     verTextboxValue = 1}
   else {
-    verTextboxValue =  pitch/10}
+    verTextboxValue =  pitch/precision}
   
   // Round the textbox value to 5 decimal places
   verTextboxValue = parseFloat(verTextboxValue.toFixed(5));
@@ -153,15 +154,3 @@ function drawDot(x, y) {
 function updateDotPosition() {
   drawDot(x, y);
 }
- /*
-// Set the canvas size based on the device's screen size
-function setCanvasSize() {
-  const devicePixelRatio = window.devicePixelRatio || 1;
-  canvas.width = window.innerWidth * devicePixelRatio;
-  canvas.height = window.innerHeight * devicePixelRatio;
-}
-
-// Call the setCanvasSize() function when the page loads and when the window is resized
-window.addEventListener("load", setCanvasSize);
-window.addEventListener("resize", setCanvasSize);
-*/
