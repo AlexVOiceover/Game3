@@ -57,7 +57,7 @@ window.addEventListener("deviceorientation", (event) => {
   document.getElementById("horizontalTextbox").value = horTextboxValue;
 
   // Calculate the x coordinate for the dot
-  x = ((horTextboxValue + 1) / 2) * canvas.width - canvas.width / 2;
+  x = ((horTextboxValue + 1) / 2) * canvas.width;
   document.getElementById("xValue").value = x;
 
   updateDotPosition();
@@ -92,7 +92,7 @@ window.addEventListener("deviceorientation", (event) => {
   document.getElementById("verticalTextbox").value = verTextboxValue;
 
    // Calculate the y coordinate for the dot
-   y = ((verTextboxValue + 1) / 2) * canvas.height - canvas.height / 2;
+   y = ((verTextboxValue + 1) / 2) * canvas.height;
    document.getElementById("yValue").value = y;
 
    updateDotPosition();
