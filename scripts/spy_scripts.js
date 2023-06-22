@@ -102,7 +102,7 @@ window.addEventListener("deviceorientation", (event) => {
 const canvas = document.getElementById("dotCanvas");
 const ctx = canvas.getContext("2d");
 
-
+/*
 // Get the canvas dimensions from the computed style
 const canvasStyle = getComputedStyle(canvas);
 const canvasWidth = parseInt(canvasStyle.width, 10);
@@ -114,6 +114,7 @@ canvas.height = canvasHeight;
 // Update the input values
 document.getElementById("canvasWidth").value = canvasWidth;
 document.getElementById("canvasHeight").value = canvasHeight;
+*/
 
 
 function drawDot(x, y) {
