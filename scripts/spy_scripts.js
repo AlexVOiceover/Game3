@@ -32,7 +32,12 @@ let x = 0;
 let y = 0;
 
 window.addEventListener("deviceorientation", (event) => {
-  const roll = event.gamma.toFixed(4); // Roll value in degrees
+  if (event.gamma === null) {
+    console.log("Device orientation not supported or permission denied");
+    return;
+  }
+
+  const roll = event.gamma.toFixed(4); 
 
   let horTextboxValue = 0;
 
@@ -60,6 +65,11 @@ window.addEventListener("deviceorientation", (event) => {
 });
 
 window.addEventListener("deviceorientation", (event) => {
+  
+  if (event.beta === null) {
+    console.log("Device orientation not supported or permission denied");
+    return;
+  }
   const pitch = event.beta.toFixed(4); // Pitch value in degrees
   let verTextboxValue = 0;
 
