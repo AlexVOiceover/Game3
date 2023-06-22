@@ -2,6 +2,9 @@
     width: 100%;
     /* padding-bottom: 100%; /* This creates a 1:1 aspect ratio */
     position: relative;
+
+    width: 300px;
+    height: 300px;
   }
 
 #dotCanvas {
