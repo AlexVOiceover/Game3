@@ -98,7 +98,7 @@ window.addEventListener("deviceorientation", (event) => {
 
    // Calculate the y coordinate for the dot
    y = ((verTextboxValue + 1) / 2) * canvas.height;
-   document.getElementById("yValue").value = y;
+   // document.getElementById("yValue").value = y;
 
    updateDotPosition(smoothFactor);
 
