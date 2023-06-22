@@ -143,8 +143,7 @@ const canvas = document.getElementById("dotCanvas");
 const ctx = canvas.getContext("2d");
 
 function drawDot(x, y) {
-  // ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
-
+  ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
   ctx.beginPath();
   ctx.arc(x, y, 5, 0, 2 * Math.PI); // Draw a dot with a radius of 5
   ctx.fillStyle = "white";
@@ -154,8 +153,7 @@ function drawDot(x, y) {
 function updateDotPosition() {
   drawDot(x, y);
 }
-
-
+ /*
 // Set the canvas size based on the device's screen size
 function setCanvasSize() {
   const devicePixelRatio = window.devicePixelRatio || 1;
@@ -166,3 +164,4 @@ function setCanvasSize() {
 // Call the setCanvasSize() function when the page loads and when the window is resized
 window.addEventListener("load", setCanvasSize);
 window.addEventListener("resize", setCanvasSize);
+*/
