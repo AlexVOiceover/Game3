@@ -21,8 +21,8 @@ backgroundMusic.volume = 0.5;
 document.getElementById("resetPosition").addEventListener("click", () => {
   rolldeviation = roll;
   pitchdeviation = pitch;
-  document.getElementById("xOffset").value = rolldeviation;
-  document.getElementById("yOffset").value = pitchdeviation;
+ // document.getElementById("xOffset").value = rolldeviation;
+ // document.getElementById("yOffset").value = pitchdeviation;
   drawDot(canvas.width/2, canvas.height/2);
 });
 
@@ -37,8 +37,8 @@ document.getElementById("startTransmissionButton").addEventListener("click", () 
 window.addEventListener("deviceorientation", (event) => {
   if (event.gamma === null) {
     console.log("Device orientation not supported or permission denied");
-    document.getElementById("horizontalTextbox").value = canvas.width/2;
-    document.getElementById("xValue").value = canvas.width/2;
+    //document.getElementById("horizontalTextbox").value = canvas.width/2;
+   // document.getElementById("xValue").value = canvas.width/2;
     updateDotPosition();
     return;
   }
@@ -59,7 +59,7 @@ window.addEventListener("deviceorientation", (event) => {
   horTextboxValue = parseFloat(horTextboxValue.toFixed(4));
 
   // Update the textbox value
-  document.getElementById("horizontalTextbox").value = horTextboxValue;
+  //document.getElementById("horizontalTextbox").value = horTextboxValue;
 
   // Calculate the x coordinate for the dot
   x = ((horTextboxValue + 1) / 2) * canvas.width;
@@ -71,9 +71,9 @@ window.addEventListener("deviceorientation", (event) => {
 window.addEventListener("deviceorientation", (event) => {
 
   if (event.beta === null) {
-    console.log("Device orientation not supported or permission denied");
-    document.getElementById("horizontalTextbox").value = canvas.height/2;
-    document.getElementById("xValue").value = canvas.height/2;
+   // console.log("Device orientation not supported or permission denied");
+   // document.getElementById("horizontalTextbox").value = canvas.height/2;
+   // document.getElementById("xValue").value = canvas.height/2;
     updateDotPosition();
     return;
   }
@@ -94,7 +94,7 @@ window.addEventListener("deviceorientation", (event) => {
   verTextboxValue = parseFloat(verTextboxValue.toFixed(4));
 
   // Update the textbox value
-  document.getElementById("verticalTextbox").value = verTextboxValue;
+ // document.getElementById("verticalTextbox").value = verTextboxValue;
 
    // Calculate the y coordinate for the dot
    y = ((verTextboxValue + 1) / 2) * canvas.height;
