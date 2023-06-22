@@ -3,12 +3,12 @@ const maxDegrees = 2;
 //Declare the coordinates of the dot
 let x = 0;
 let y = 0;
-let xdeviation = 0;
-let ydeviation = 0;
-let rolldeviation = 0;
-let pitchdeviation = 0;
+//let xdeviation = 0;
+//let ydeviation = 0;
 let roll = 0;
 let pitch = 0;
+let rolldeviation = 0;
+let pitchdeviation = 0;
 
 const playAudio = (src, callback) => {
   const audio = new Audio(src);
@@ -20,14 +20,13 @@ const backgroundMusic = document.getElementById("backgroundMusic");
 backgroundMusic.volume = 0.5; // Adjust the volume as needed
 
 document.getElementById("resetPosition").addEventListener("click", () => {
-  xdeviation = x-canvas.width/2;
-  ydeviation = y-canvas.height/2;
-  document.getElementById("xOffset").value = xdeviation;
-  document.getElementById("yOffset").value = ydeviation;
+  //xdeviation = x-canvas.width/2;
+  //ydeviation = y-canvas.height/2;
+ // document.getElementById("xOffset").value = xdeviation;
+  // document.getElementById("yOffset").value = ydeviation;
   rolldeviation = roll;
   pitchdeviation = pitch;
-
-  updateDotPosition();
+  drawDot(canvas.width/2, canvas.height/2);
 
 });
 
