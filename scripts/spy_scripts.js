@@ -15,7 +15,10 @@ backgroundMusic.volume = 0.5; // Adjust the volume as needed
 document.getElementById("resetPosition").addEventListener("click", () => {
   xdeviation = x;
   ydeviation = y;
+  document.getElementById("xOffset").value = xdeviation;
+  document.getElementById("yOffset").value = ydeviation;
   updateDotPosition();
+
 });
 
 document.getElementById("startTransmissionButton").addEventListener("click", () => {
