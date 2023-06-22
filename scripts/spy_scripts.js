@@ -31,7 +31,7 @@ let x = 0;
 let y = 0;
 
 window.addEventListener("deviceorientation", (event) => {
-  const roll = event.gamma; // Roll value in degrees
+  const roll = event.gamma.toFixed(4); // Roll value in degrees
 
   let horTextboxValue = 0;
 
@@ -58,7 +58,7 @@ window.addEventListener("deviceorientation", (event) => {
 });
 
 window.addEventListener("deviceorientation", (event) => {
-  const pitch = event.beta; // Pitch value in degrees
+  const pitch = event.beta.toFixed(4); // Pitch value in degrees
   let verTextboxValue = 0;
 
   if (pitch <= (-1*maxDegrees)){
