@@ -1,4 +1,4 @@
-const maxDegrees = 26;
+const maxDegrees = 7;
 
 //Declare the coordinates of the dot
 let x = 0;
