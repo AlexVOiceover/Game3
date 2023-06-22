@@ -56,7 +56,7 @@ window.addEventListener("deviceorientation", (event) => {
 
   // Calculate the x coordinate for the dot
   x = ((horTextboxValue + 1) / 2) * canvas.width - canvas.width / 2;
-  document.getElementById("canvasWidth").value = x;
+  document.getElementById("xValue").value = x;
 
   updateDotPosition();
 
@@ -65,7 +65,7 @@ window.addEventListener("deviceorientation", (event) => {
 });
 
 window.addEventListener("deviceorientation", (event) => {
-  
+
   if (event.beta === null) {
     console.log("Device orientation not supported or permission denied");
     return;
@@ -88,7 +88,7 @@ window.addEventListener("deviceorientation", (event) => {
 
    // Calculate the y coordinate for the dot
    y = ((verTextboxValue + 1) / 2) * canvas.height - canvas.height / 2;
-   document.getElementById("canvasHeight").value = y;
+   document.getElementById("yValue").value = y;
 
    updateDotPosition();
 
