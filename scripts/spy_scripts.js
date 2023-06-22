@@ -1,5 +1,8 @@
 const maxDegrees = 2;
 
+//Declare the coordinates of the dot
+let x = 0;
+let y = 0;
 let xdeviation = 0;
 let ydeviation = 0;
 
@@ -29,9 +32,7 @@ document.getElementById("startTransmissionButton").addEventListener("click", () 
   }
 });
 
-//Declare the coordinates of the dot
-let x = 0;
-let y = 0;
+
 
 window.addEventListener("deviceorientation", (event) => {
   if (event.gamma === null) {
