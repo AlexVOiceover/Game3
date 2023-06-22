@@ -26,7 +26,7 @@ window.addEventListener("deviceorientation", (event) => {
 
   let horTextboxValue = 0;
 
-  if (roll <= (maxDegrees*-1)){
+  if (roll <= (-1*maxDegrees)){
     horTextboxValue = -1}
   else if (roll >= maxDegrees){
     horTextboxValue = 1}
@@ -40,7 +40,7 @@ window.addEventListener("deviceorientation", (event) => {
   document.getElementById("horizontalTextbox").value = horTextboxValue;
 
   // Calculate the x coordinate for the dot
-  x = ((horTextboxValue + 1) / 2) * canvas.width;
+  x = ((horTextboxValue + 1) / 2) * canvas.width - canvas.width / 2;
 
   updateDotPosition();
 
@@ -50,10 +50,9 @@ window.addEventListener("deviceorientation", (event) => {
 
 window.addEventListener("deviceorientation", (event) => {
   const pitch = event.beta; // Pitch value in degrees
-
   let verTextboxValue = 0;
 
-  if (pitch <= (maxDegrees*-1)){
+  if (pitch <= (-1*maxDegrees)){
     verTextboxValue = -1}
   else if (pitch >= maxDegrees){
     verTextboxValue = 1}
@@ -66,13 +65,28 @@ window.addEventListener("deviceorientation", (event) => {
   // Update the textbox value
   document.getElementById("verticalTextbox").value = verTextboxValue;
 
-
    // Calculate the y coordinate for the dot
-   y = ((verTextboxValue + 1) / 2) * canvas.height;
+   y = ((verTextboxValue + 1) / 2) * canvas.height - canvas.height / 2;
 
    updateDotPosition();
 
 });
+
+const canvas = document.getElementById("dotCanvas");
+const ctx = canvas.getContext("2d");
+
+function drawDot(x, y) {
+  ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+  ctx.beginPath();
+  ctx.arc(x, y, 5, 0, 2 * Math.PI); // Draw a dot with a radius of 5
+  ctx.fillStyle = "white";
+  ctx.fill();
+}
+
+function updateDotPosition() {
+  drawDot(x, y);
+}
+
 
 
 //Function to play a tone given a frequency and duration
@@ -141,17 +155,3 @@ document.getElementById("playMorseCode").addEventListener("click", () => {
 });
 
 
-const canvas = document.getElementById("dotCanvas");
-const ctx = canvas.getContext("2d");
-
-function drawDot(x, y) {
-  ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
-  ctx.beginPath();
-  ctx.arc(x, y, 5, 0, 2 * Math.PI); // Draw a dot with a radius of 5
-  ctx.fillStyle = "white";
-  ctx.fill();
-}
-
-function updateDotPosition() {
-  drawDot(x, y);
-}
