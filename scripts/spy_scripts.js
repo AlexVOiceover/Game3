@@ -64,7 +64,7 @@ window.addEventListener("deviceorientation", (event) => {
   x = ((horTextboxValue + 1) / 2) * canvas.width;
   document.getElementById("xValue").value = x;
 
-  updateDotPosition();
+  updateDotPosition(0.1);
 });
 
 window.addEventListener("deviceorientation", (event) => {
@@ -99,9 +99,16 @@ window.addEventListener("deviceorientation", (event) => {
    y = ((verTextboxValue + 1) / 2) * canvas.height;
    document.getElementById("yValue").value = y;
 
-   updateDotPosition();
+   updateDotPosition(0.1);
 
 });
+
+//Function to calculate the lerp between two values. Its a trick to make it smooth.
+function lerp(a, b, t) {
+  return a + (b - a) * t;
+}
+let smoothX = 0;
+let smoothY = 0;
 
 const canvas = document.getElementById("dotCanvas");
 const ctx = canvas.getContext("2d");
@@ -121,8 +128,10 @@ function drawDot(x, y) {
   ctx.fill();
 }
 
-function updateDotPosition() {
-  drawDot(x, y);
+function updateDotPosition(smoothFactor = 0.1) {
+  smoothX = lerp(smoothX, x, smoothFactor);
+  smoothY = lerp(smoothY, y, smoothFactor);
+  drawDot(smoothX, smoothY);
 }
 
 //Function to play a tone given a frequency and duration
