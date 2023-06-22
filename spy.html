@@ -20,18 +20,14 @@
             <button id="startTransmissionButton">Start transmission</button>
 
            <!-- <input type="range" id="musicSpeedSlider" min="0.5" max="2" step="0.01" value="1" style="display: block; width: 50%; margin: 10px auto;">  --> 
-           <h3>Horizontal</h3>
-           <input type="text" id="horizontalTextbox" value="1" readonly style="display: block; width: 50%; margin: 10px auto; text-align: center;">
-
-            <h3>Vertical</h3>
-           <input type="text" id="verticalTextbox" value="1" readonly style="display: block; width: 50%; margin: 10px auto; text-align: center;">
+          
+           <input type="text" id="horizontalTextbox" value="1" readonly style="display: block; width: 5em; margin: 10px auto; text-align: center;">
+           <input type="text" id="verticalTextbox" value="1" readonly style="display: block; width: 5em; margin: 10px auto; text-align: center;">
 
             <audio id="backgroundMusic" src="audios/spy_background.ogg" autoplay loop preload="auto"></audio>
            
         </div>
 
-        <input type="text" id="inputChar" maxlength="1" placeholder="Enter a character">
-        <button id="playMorseCode">Play Morse Code</button>
     
         
         <div>
@@ -40,6 +36,11 @@
         <div id="canvasContainer">
             <canvas id="dotCanvas" style="background-color: rgb(20, 110, 20);"></canvas>
 
+        </div>
+
+        <div> 
+            <input type="text" id="inputChar" maxlength="1" placeholder="Enter a character">
+            <button id="playMorseCode">Play Morse Code</button>
         </div>
        
         <script src="scripts/spy_scripts.js"></script>
