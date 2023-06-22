@@ -117,11 +117,22 @@ const ctx = canvas.getContext("2d");
 function drawDot(x, y) {
   ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
   
-  // Draw the Reference circle
+  // Draw radar circles
+  ctx.beginPath();
+  ctx.arc(canvas.width / 2, canvas.height / 2, 50, 0, 2 * Math.PI);
+  ctx.strokeStyle = "white";
+  ctx.stroke();
+
   ctx.beginPath();
   ctx.arc(canvas.width / 2, canvas.height / 2, 25, 0, 2 * Math.PI);
-  ctx.fillStyle = "white";
-  ctx.fill();
+  ctx.strokeStyle = "white";
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.arc(canvas.width / 2, canvas.height / 2, 5, 0, 2 * Math.PI);
+  ctx.strokeStyle = "white";
+  ctx.stroke();
+
 
   // Moving circle
   ctx.beginPath();
