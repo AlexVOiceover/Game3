@@ -74,7 +74,7 @@ window.addEventListener("deviceorientation", (event) => {
     updateDotPosition();
     return;
   }
-  
+
   const pitch = event.beta.toFixed(4); // Pitch value in degrees
   let verTextboxValue = 0;
 
@@ -101,6 +101,20 @@ window.addEventListener("deviceorientation", (event) => {
 
 const canvas = document.getElementById("dotCanvas");
 const ctx = canvas.getContext("2d");
+
+
+// Get the canvas dimensions from the computed style
+const canvasStyle = getComputedStyle(canvas);
+const canvasWidth = parseInt(canvasStyle.width, 10);
+
+// Set the canvas height equal to its width
+const canvasHeight = canvasWidth;
+canvas.height = canvasHeight;
+
+// Update the input values
+document.getElementById("canvasWidth").value = canvasWidth;
+document.getElementById("canvasHeight").value = canvasHeight;
+
 
 function drawDot(x, y) {
   ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
