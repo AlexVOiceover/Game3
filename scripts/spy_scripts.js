@@ -20,8 +20,7 @@ document.getElementById("resetPosition").addEventListener("click", () => {
   ydeviation = y-canvas.height/2;
   document.getElementById("xOffset").value = xdeviation;
   document.getElementById("yOffset").value = ydeviation;
-  console.log("xOffset:", document.getElementById("xOffset").value);
-  console.log("yOffset:", document.getElementById("yOffset").value);
+
   updateDotPosition();
 
 });
@@ -63,7 +62,7 @@ window.addEventListener("deviceorientation", (event) => {
   document.getElementById("horizontalTextbox").value = horTextboxValue;
 
   // Calculate the x coordinate for the dot
-  x = ((horTextboxValue + 1) / 2) * canvas.width;
+  x = (((horTextboxValue + 1) / 2) * canvas.width) - xdeviation;
   document.getElementById("xValue").value = x;
 
   updateDotPosition();
@@ -98,7 +97,7 @@ window.addEventListener("deviceorientation", (event) => {
   document.getElementById("verticalTextbox").value = verTextboxValue;
 
    // Calculate the y coordinate for the dot
-   y = ((verTextboxValue + 1) / 2) * canvas.height;
+   y = (((verTextboxValue + 1) / 2) * canvas.height) - ydeviation;
    document.getElementById("yValue").value = y;
 
    updateDotPosition();
