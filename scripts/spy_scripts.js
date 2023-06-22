@@ -129,9 +129,9 @@ function drawDot(x, y) {
   ctx.fill();
 }
 
-function updateDotPosition(smoothFactor) {
-  smoothX = lerp(smoothX, x, smoothFactor);
-  smoothY = lerp(smoothY, y, smoothFactor);
+function updateDotPosition(smooth) {
+  smoothX = lerp(smoothX, x, smooth);
+  smoothY = lerp(smoothY, y, smooth);
   drawDot(smoothX, smoothY);
 }
 
