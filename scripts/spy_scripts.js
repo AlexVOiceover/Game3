@@ -51,6 +51,7 @@ window.addEventListener("deviceorientation", (event) => {
 
   // Calculate the x coordinate for the dot
   x = ((horTextboxValue + 1) / 2) * canvas.width - canvas.width / 2;
+  document.getElementById("canvasWidth").value = x;
 
   updateDotPosition();
 
@@ -78,6 +79,8 @@ window.addEventListener("deviceorientation", (event) => {
    // Calculate the y coordinate for the dot
    y = ((verTextboxValue + 1) / 2) * canvas.height - canvas.height / 2;
 
+    document.getElementById("canvasHeight").value = y;
+
    updateDotPosition();
 
 });
@@ -87,9 +90,6 @@ const ctx = canvas.getContext("2d");
 
 
 
-// Added to monitorise Canvas size
-document.getElementById("canvasWidth").value = canvas.width;
-document.getElementById("canvasHeight").value = canvas.height;
 
 
 function drawDot(x, y) {
