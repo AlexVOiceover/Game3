@@ -147,7 +147,7 @@ function drawDot(x, y) {
 
   ctx.beginPath();
   ctx.arc(x, y, 5, 0, 2 * Math.PI); // Draw a dot with a radius of 5
-  ctx.fillStyle = "black";
+  ctx.fillStyle = "white";
   ctx.fill();
 }
 
