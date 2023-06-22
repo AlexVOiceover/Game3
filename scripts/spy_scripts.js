@@ -119,7 +119,7 @@ function drawDot(x, y) {
   
   // Draw the Reference circle:
   ctx.beginPath();
-  ctx.arc(canvas.width / 2, canvas.height / 2, 5, 0, 2 * Math.PI);
+  ctx.arc(canvas.width / 2, canvas.height / 2, 7, 0, 2 * Math.PI);
   ctx.strokeStyle = "blue";
   ctx.stroke();
 
