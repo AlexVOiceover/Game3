@@ -1,4 +1,4 @@
-const precision = 2.000001;
+const maxDegrees = 2;
 
 const playAudio = (src, callback) => {
   const audio = new Audio(src);
@@ -26,15 +26,15 @@ window.addEventListener("deviceorientation", (event) => {
 
   let horTextboxValue = 0;
 
-  if (roll <= (precision*-1)){
+  if (roll <= (maxDegrees*-1)){
     horTextboxValue = -1}
-  else if (roll >= precision){
+  else if (roll >= maxDegrees){
     horTextboxValue = 1}
   else {
-    horTextboxValue =  roll/precision }
+    horTextboxValue =  roll/maxDegrees }
   
   // Round the textbox value to 5 decimal places
-  horTextboxValue = parseFloat(horTextboxValue.toFixed(5));
+  horTextboxValue = parseFloat((horTextboxValue * 100000).toFixed(5));
 
   // Update the textbox value
   document.getElementById("horizontalTextbox").value = horTextboxValue;
@@ -53,15 +53,15 @@ window.addEventListener("deviceorientation", (event) => {
 
   let verTextboxValue = 0;
 
-  if (pitch <= (precision*-1)){
+  if (pitch <= (maxDegrees*-1)){
     verTextboxValue = -1}
-  else if (pitch >= precision){
+  else if (pitch >= maxDegrees){
     verTextboxValue = 1}
   else {
-    verTextboxValue =  pitch/precision}
+    verTextboxValue =  pitch/maxDegrees}
   
   // Round the textbox value to 5 decimal places
-  verTextboxValue = parseFloat(verTextboxValue.toFixed(5));
+  verTextboxValue = parseFloat((verTextboxValue * 100000).toFixed(5));
 
   // Update the textbox value
   document.getElementById("verticalTextbox").value = verTextboxValue;
