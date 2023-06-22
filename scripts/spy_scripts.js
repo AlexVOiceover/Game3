@@ -18,8 +18,8 @@ document.getElementById("startTransmissionButton").addEventListener("click", () 
 });
 
 //Declare the coordinates of the dot
-let x = 0.00001;
-let y = 0.00001;
+let x = 0;
+let y = 0;
 
 window.addEventListener("deviceorientation", (event) => {
   const roll = event.gamma; // Roll value in degrees
@@ -115,6 +115,7 @@ function playMorseCode(char) {
   };
 
   const multiplier = 1;
+  
   const dotDuration = 0.1 * multiplier; // 100ms
   const dashDuration = 0.3 * multiplier; // 300ms
   const gapDuration = 0.3 * multiplier; // 100ms
