@@ -85,9 +85,7 @@ window.addEventListener("deviceorientation", (event) => {
 const canvas = document.getElementById("dotCanvas");
 const ctx = canvas.getContext("2d");
 
-// Set the canvas dimensions
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+
 
 // Added to monitorise Canvas size
 document.getElementById("canvasWidth").value = canvas.width;
