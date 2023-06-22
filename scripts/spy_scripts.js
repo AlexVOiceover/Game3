@@ -15,6 +15,7 @@ document.getElementById("startTransmissionButton").addEventListener("click", () 
   }
 });
 
+//Declare the coordinates of the dot
 let x =0;
 let y = 0;
 
@@ -40,8 +41,7 @@ window.addEventListener("deviceorientation", (event) => {
   const dotRadius = 5; // Dot radius
   x = (((horTextboxValue + 1) / 2) * (canvas.width - 2 * dotRadius)) + dotRadius;
 
-  // Update the dot position
-  drawDot(x, parseFloat(document.getElementById("verticalTextbox").value));
+  updateDotPosition();
 
   // Update the playback rate of the background music
   backgroundMusic.playbackRate = horTextboxValue;
@@ -69,15 +69,13 @@ window.addEventListener("deviceorientation", (event) => {
    // Calculate the y coordinate for the dot
    y = ((verTextboxValue + 1) / 2) * canvas.height;
 
-   // Update the dot position
-   drawDot(parseFloat(document.getElementById("horizontalTextbox").value), y);
+   updateDotPosition();
 
 });
 
 
 //Function to play a tone given a frequency and duration
 let audioContext;
-
 function playTone(frequency, duration) {
   if (!audioContext) {
     audioContext = new (window.AudioContext || window.webkitAudioContext)();
@@ -151,4 +149,8 @@ function drawDot(x, y) {
   ctx.arc(x, y, 5, 0, 2 * Math.PI); // Draw a dot with a radius of 5
   ctx.fillStyle = "black";
   ctx.fill();
+}
+
+function updateDotPosition() {
+  drawDot(x, y);
 }
