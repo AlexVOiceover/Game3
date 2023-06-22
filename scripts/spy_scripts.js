@@ -117,8 +117,8 @@ let smoothY = 0;
 const canvas = document.getElementById("dotCanvas");
 const ctx = canvas.getContext("2d");
 
-let submarinePosX = Math.random * canvas.width;
-let submarinePosY = Math.random * canvas.height;
+let submarinePosX = Math.random() * canvas.width;
+let submarinePosY = Math.random() * canvas.height;
 
 function drawDot(x, y) {
   ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
