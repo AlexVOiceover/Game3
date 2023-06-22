@@ -168,6 +168,7 @@ function drawDot(x, y) {
    // submarine
    ctx.beginPath();
    ctx.arc(submarinePosX, submarinePosY, 5, 0, 2 * Math.PI); // Draw a dot with a radius of 5
+   console.log(submarinePosX);
    ctx.fillStyle  = "rgb(255, 85, 85)";
    ctx.fill();
  
