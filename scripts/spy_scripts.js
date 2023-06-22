@@ -33,6 +33,9 @@ let y = 0;
 window.addEventListener("deviceorientation", (event) => {
   if (event.gamma === null) {
     console.log("Device orientation not supported or permission denied");
+    document.getElementById("horizontalTextbox").value = canvas.width/2;
+    document.getElementById("xValue").value = canvas.width/2;
+    updateDotPosition();
     return;
   }
 
@@ -66,8 +69,12 @@ window.addEventListener("deviceorientation", (event) => {
 
   if (event.beta === null) {
     console.log("Device orientation not supported or permission denied");
+    document.getElementById("horizontalTextbox").value = canvas.height/2;
+    document.getElementById("xValue").value = canvas.height/2;
+    updateDotPosition();
     return;
   }
+  
   const pitch = event.beta.toFixed(4); // Pitch value in degrees
   let verTextboxValue = 0;
 
