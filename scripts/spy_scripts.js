@@ -1,4 +1,4 @@
-const maxDegrees = 2;
+const maxDegrees = 1;
 
 //Declare the coordinates of the dot
 let x = 0;
@@ -7,6 +7,7 @@ let roll = 0;
 let pitch = 0;
 let rolldeviation = 0;
 let pitchdeviation = 0;
+const smoothFactor = 0.8;
 
 const playAudio = (src, callback) => {
   const audio = new Audio(src);
@@ -64,7 +65,7 @@ window.addEventListener("deviceorientation", (event) => {
   x = ((horTextboxValue + 1) / 2) * canvas.width;
   document.getElementById("xValue").value = x;
 
-  updateDotPosition(0.1);
+  updateDotPosition(smoothFactor);
 });
 
 window.addEventListener("deviceorientation", (event) => {
@@ -99,7 +100,7 @@ window.addEventListener("deviceorientation", (event) => {
    y = ((verTextboxValue + 1) / 2) * canvas.height;
    document.getElementById("yValue").value = y;
 
-   updateDotPosition(0.1);
+   updateDotPosition(smoothFactor);
 
 });
 
@@ -128,7 +129,7 @@ function drawDot(x, y) {
   ctx.fill();
 }
 
-function updateDotPosition(smoothFactor = 0.1) {
+function updateDotPosition(smoothFactor) {
   smoothX = lerp(smoothX, x, smoothFactor);
   smoothY = lerp(smoothY, y, smoothFactor);
   drawDot(smoothX, smoothY);
