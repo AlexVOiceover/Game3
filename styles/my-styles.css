@@ -1,7 +1,7 @@
 #canvasContainer {
     width: 100%;
     position: relative;
-    background-image: radial-gradient(circle at center, darkgreen, rgb(16, 43, 16)); 
+    background-image: radial-gradient(circle at center, darkgreen, rgb(8, 22, 8)); 
   }
 
 #dotCanvas {
