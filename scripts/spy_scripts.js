@@ -5,6 +5,10 @@ let x = 0;
 let y = 0;
 let xdeviation = 0;
 let ydeviation = 0;
+let rolldeviation = 0;
+let pitchdeviation = 0;
+let roll = 0;
+let pitch = 0;
 
 const playAudio = (src, callback) => {
   const audio = new Audio(src);
@@ -20,6 +24,8 @@ document.getElementById("resetPosition").addEventListener("click", () => {
   ydeviation = y-canvas.height/2;
   document.getElementById("xOffset").value = xdeviation;
   document.getElementById("yOffset").value = ydeviation;
+  rolldeviation = roll;
+  pitchdeviation = pitch;
 
   updateDotPosition();
 
@@ -44,7 +50,7 @@ window.addEventListener("deviceorientation", (event) => {
     return;
   }
 
-  const roll = event.gamma.toFixed(4); 
+  roll = event.gamma.toFixed(4) - rolldeviation; 
 
   let horTextboxValue = 0;
 
@@ -62,7 +68,7 @@ window.addEventListener("deviceorientation", (event) => {
   document.getElementById("horizontalTextbox").value = horTextboxValue;
 
   // Calculate the x coordinate for the dot
-  x = (((horTextboxValue + 1) / 2) * canvas.width) - xdeviation;
+  x = ((horTextboxValue + 1) / 2) * canvas.width;
   document.getElementById("xValue").value = x;
 
   updateDotPosition();
@@ -80,7 +86,7 @@ window.addEventListener("deviceorientation", (event) => {
     return;
   }
 
-  const pitch = event.beta.toFixed(4); // Pitch value in degrees
+  pitch = event.beta.toFixed(4) - pitchdeviation; // Pitch value in degrees
   let verTextboxValue = 0;
 
   if (pitch <= (-1*maxDegrees)){
@@ -97,7 +103,7 @@ window.addEventListener("deviceorientation", (event) => {
   document.getElementById("verticalTextbox").value = verTextboxValue;
 
    // Calculate the y coordinate for the dot
-   y = (((verTextboxValue + 1) / 2) * canvas.height) - ydeviation;
+   y = ((verTextboxValue + 1) / 2) * canvas.height;
    document.getElementById("yValue").value = y;
 
    updateDotPosition();
@@ -113,7 +119,7 @@ const ctx = canvas.getContext("2d");
 function drawDot(x, y) {
   ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
   ctx.beginPath();
-  ctx.arc(x-xdeviation, y-ydeviation, 5, 0, 2 * Math.PI); // Draw a dot with a radius of 5
+  ctx.arc(x, y, 5, 0, 2 * Math.PI); // Draw a dot with a radius of 5
   ctx.fillStyle = "white";
   ctx.fill();
 }
