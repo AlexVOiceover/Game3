@@ -25,12 +25,12 @@ window.addEventListener("deviceorientation", (event) => {
 
   let horTextboxValue = 0;
 
-  if (roll <= -25){
+  if (roll <= -10){
     horTextboxValue = -1}
-  else if (roll >= 25){
+  else if (roll >= 10){
     horTextboxValue = 1}
   else {
-    horTextboxValue =  roll/25 }
+    horTextboxValue =  roll/10 }
   
   // Round the textbox value to 5 decimal places
   horTextboxValue = parseFloat(horTextboxValue.toFixed(5));
@@ -52,12 +52,12 @@ window.addEventListener("deviceorientation", (event) => {
 
   let verTextboxValue = 0;
 
-  if (pitch <= -25){
+  if (pitch <= -10){
     verTextboxValue = -1}
-  else if (pitch >= 25){
+  else if (pitch >= 10){
     verTextboxValue = 1}
   else {
-    verTextboxValue =  (1 / 30) * pitch}
+    verTextboxValue =  pitch/10}
   
   // Round the textbox value to 5 decimal places
   verTextboxValue = parseFloat(verTextboxValue.toFixed(5));
