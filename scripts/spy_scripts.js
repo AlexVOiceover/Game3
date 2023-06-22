@@ -18,8 +18,8 @@ document.getElementById("startTransmissionButton").addEventListener("click", () 
 });
 
 //Declare the coordinates of the dot
-let x =0;
-let y = 0;
+let x = 0.00001;
+let y = 0.00001;
 
 window.addEventListener("deviceorientation", (event) => {
   const roll = event.gamma; // Roll value in degrees
