@@ -3,14 +3,13 @@
     /* padding-bottom: 100%; /* This creates a 1:1 aspect ratio */
     position: relative;
 
-    width: 300px;
-    height: 300px;
+ 
   }
 
 #dotCanvas {
     /* position: absolute; */
     width: 100%;
-    height: 100%;
+    height: auto;
     display: block;
 }
 
