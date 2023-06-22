@@ -20,12 +20,12 @@ const backgroundMusic = document.getElementById("backgroundMusic");
 backgroundMusic.volume = 0.5; // Adjust the volume as needed
 
 document.getElementById("resetPosition").addEventListener("click", () => {
-  //xdeviation = x-canvas.width/2;
-  //ydeviation = y-canvas.height/2;
- // document.getElementById("xOffset").value = xdeviation;
-  // document.getElementById("yOffset").value = ydeviation;
+ 
+
   rolldeviation = roll;
   pitchdeviation = pitch;
+  document.getElementById("xOffset").value = rolldeviation;
+  document.getElementById("yOffset").value = pitchdeviation;
   drawDot(canvas.width/2, canvas.height/2);
 
 });
