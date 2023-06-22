@@ -34,7 +34,7 @@ window.addEventListener("deviceorientation", (event) => {
     horTextboxValue =  roll/maxDegrees }
   
   // Round the textbox value to 5 decimal places
-  horTextboxValue = parseFloat((horTextboxValue * 100000).toFixed(5));
+  horTextboxValue = parseFloat(horTextboxValue.toFixed(5));
 
   // Update the textbox value
   document.getElementById("horizontalTextbox").value = horTextboxValue;
@@ -61,7 +61,7 @@ window.addEventListener("deviceorientation", (event) => {
     verTextboxValue =  pitch/maxDegrees}
   
   // Round the textbox value to 5 decimal places
-  verTextboxValue = parseFloat((verTextboxValue * 100000).toFixed(5));
+  verTextboxValue = parseFloat(verTextboxValue.toFixed(5));
 
   // Update the textbox value
   document.getElementById("verticalTextbox").value = verTextboxValue;
@@ -115,7 +115,7 @@ function playMorseCode(char) {
   };
 
   const multiplier = 1;
-  
+
   const dotDuration = 0.1 * multiplier; // 100ms
   const dashDuration = 0.3 * multiplier; // 300ms
   const gapDuration = 0.3 * multiplier; // 100ms
@@ -147,7 +147,7 @@ const ctx = canvas.getContext("2d");
 function drawDot(x, y) {
   ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
   ctx.beginPath();
-  ctx.arc(x/100000, y/100000, 5, 0, 2 * Math.PI); // Draw a dot with a radius of 5
+  ctx.arc(x, y, 5, 0, 2 * Math.PI); // Draw a dot with a radius of 5
   ctx.fillStyle = "white";
   ctx.fill();
 }
