@@ -55,9 +55,11 @@
             <button onclick="location.href='index.html'">Back</button>
         </div>
        
+         <!-- Using the next script I ad a timestamp, this way it will reload the JS when I reload the page, otherwise it was keeping the old JS after an update -->
         <script>
+           
             document.write('<script src="scripts/spy_scripts.js?cache_bust=' + new Date().getTime() + '"><\/script>');
           </script>
-       <!-- <script src="scripts/spy_scripts.js"></script> --> 
+       
     </body>
 </html>
