@@ -1,4 +1,4 @@
-const precision = 2.00000;
+const precision = 2.000001;
 
 const playAudio = (src, callback) => {
   const audio = new Audio(src);
