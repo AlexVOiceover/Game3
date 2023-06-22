@@ -20,6 +20,8 @@ document.getElementById("resetPosition").addEventListener("click", () => {
   ydeviation = y;
   document.getElementById("xOffset").value = xdeviation;
   document.getElementById("yOffset").value = ydeviation;
+  console.log("xOffset:", document.getElementById("xOffset").value);
+  console.log("yOffset:", document.getElementById("yOffset").value);
   updateDotPosition();
 
 });
