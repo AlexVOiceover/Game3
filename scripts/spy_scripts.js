@@ -61,7 +61,7 @@ window.addEventListener("deviceorientation", (event) => {
   updateDotPosition();
 
   // Update the playback rate of the background music
-  backgroundMusic.playbackRate = horTextboxValue;
+  // backgroundMusic.playbackRate = horTextboxValue;
 });
 
 window.addEventListener("deviceorientation", (event) => {
