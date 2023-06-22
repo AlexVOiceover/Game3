@@ -158,19 +158,18 @@ function drawDot(x, y) {
    ctx.strokeStyle = "rgb(0, 255, 0)";
    ctx.stroke();
  
+   // submarine
+   ctx.beginPath();
+   ctx.arc(submarinePosX, submarinePosY, 5, 0, 2 * Math.PI); // Draw a dot with a radius of 5
+   ctx.fillStyle  = "rgb(255, 85, 85)";
+   ctx.fill();
 
   // Moving circle
   ctx.beginPath();
   ctx.arc(x, y, 8, 0, 2 * Math.PI); // Draw a dot with a radius of 5
-  ctx.strokeStyle = "blue";
+  ctx.strokeStyle = "rgb(0, 255, 255)";
+  ctx.lineWidth = 3;
   ctx.stroke();
-
-   // submarine
-   ctx.beginPath();
-   ctx.arc(submarinePosX, submarinePosY, 5, 0, 2 * Math.PI); // Draw a dot with a radius of 5
-   console.log(submarinePosX);
-   ctx.fillStyle  = "rgb(255, 85, 85)";
-   ctx.fill();
  
 }
 
