@@ -114,7 +114,7 @@ const ctx = canvas.getContext("2d");
 function drawDot(x, y) {
   ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
   ctx.beginPath();
-  ctx.arc(x-xdeviation, y-ydeviation, 5, 0, 2 * Math.PI); // Draw a dot with a radius of 5
+  ctx.arc(x-(xdeviation/2), y-(ydeviation/2), 5, 0, 2 * Math.PI); // Draw a dot with a radius of 5
   ctx.fillStyle = "white";
   ctx.fill();
 }
