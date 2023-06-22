@@ -34,7 +34,7 @@ window.addEventListener("deviceorientation", (event) => {
     horTextboxValue =  roll/maxDegrees }
   
   // Round the textbox value to 5 decimal places
-  horTextboxValue = parseFloat(horTextboxValue.toFixed(5));
+  horTextboxValue = parseFloat(horTextboxValue.toFixed(4));
 
   // Update the textbox value
   document.getElementById("horizontalTextbox").value = horTextboxValue;
@@ -60,7 +60,7 @@ window.addEventListener("deviceorientation", (event) => {
     verTextboxValue =  pitch/maxDegrees}
   
   // Round the textbox value to 5 decimal places
-  verTextboxValue = parseFloat(verTextboxValue.toFixed(5));
+  verTextboxValue = parseFloat(verTextboxValue.toFixed(4));
 
   // Update the textbox value
   document.getElementById("verticalTextbox").value = verTextboxValue;
