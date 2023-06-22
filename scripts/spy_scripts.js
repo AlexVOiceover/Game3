@@ -1,10 +1,8 @@
-const maxDegrees = 7;
+const maxDegrees = 2;
 
 //Declare the coordinates of the dot
 let x = 0;
 let y = 0;
-//let xdeviation = 0;
-//let ydeviation = 0;
 let roll = 0;
 let pitch = 0;
 let rolldeviation = 0;
@@ -17,16 +15,14 @@ const playAudio = (src, callback) => {
 };
 
 const backgroundMusic = document.getElementById("backgroundMusic");
-backgroundMusic.volume = 0.5; // Adjust the volume as needed
+backgroundMusic.volume = 0.5;
 
 document.getElementById("resetPosition").addEventListener("click", () => {
- 
   rolldeviation = roll;
   pitchdeviation = pitch;
   document.getElementById("xOffset").value = rolldeviation;
   document.getElementById("yOffset").value = pitchdeviation;
   drawDot(canvas.width/2, canvas.height/2);
-
 });
 
 document.getElementById("startTransmissionButton").addEventListener("click", () => {
@@ -36,8 +32,6 @@ document.getElementById("startTransmissionButton").addEventListener("click", () 
     backgroundMusic.pause();
   }
 });
-
-
 
 window.addEventListener("deviceorientation", (event) => {
   if (event.gamma === null) {
@@ -60,7 +54,7 @@ window.addEventListener("deviceorientation", (event) => {
   else {
     horTextboxValue =  adjustedRoll/maxDegrees }
   
-  // Round the textbox value to 5 decimal places
+  // Round the textbox value to 4 decimal places
   horTextboxValue = parseFloat(horTextboxValue.toFixed(4));
 
   // Update the textbox value
@@ -71,8 +65,6 @@ window.addEventListener("deviceorientation", (event) => {
   document.getElementById("xValue").value = x;
 
   updateDotPosition();
-
-
 });
 
 window.addEventListener("deviceorientation", (event) => {
@@ -97,7 +89,7 @@ window.addEventListener("deviceorientation", (event) => {
   else {
     verTextboxValue =  adjustedPitch/maxDegrees}
   
-  // Round the textbox value to 5 decimal places
+  // Round the textbox value to 4 decimal places
   verTextboxValue = parseFloat(verTextboxValue.toFixed(4));
 
   // Update the textbox value
@@ -197,5 +189,3 @@ document.getElementById("playMorseCode").addEventListener("click", () => {
       playMorseCode(inputChar);
   }
 });
-
-
