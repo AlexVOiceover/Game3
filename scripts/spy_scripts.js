@@ -18,7 +18,6 @@ document.getElementById("resetPosition").addEventListener("click", () => {
   updateDotPosition();
 });
 
-
 document.getElementById("startTransmissionButton").addEventListener("click", () => {
   if (backgroundMusic.paused) {
     backgroundMusic.play();
@@ -97,10 +96,6 @@ window.addEventListener("deviceorientation", (event) => {
 const canvas = document.getElementById("dotCanvas");
 const ctx = canvas.getContext("2d");
 
-
-
-
-
 function drawDot(x, y) {
   ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
   ctx.beginPath();
@@ -112,8 +107,6 @@ function drawDot(x, y) {
 function updateDotPosition() {
   drawDot(x, y);
 }
-
-
 
 //Function to play a tone given a frequency and duration
 let audioContext;
