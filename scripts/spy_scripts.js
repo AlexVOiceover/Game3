@@ -10,6 +10,7 @@ let pitchdeviation = 0;
 const smoothFactor = 0.8;
 let timer = 0;
 let activated = false;
+let arrayMorse = [];
 
 
 const playAudio = (src, callback) => {
@@ -31,9 +32,11 @@ document.getElementById("startTransmissionButton").addEventListener("click", () 
   if (backgroundMusic.paused) {
     backgroundMusic.play();
     activated = true
+    document.getElementById("startTransmissionButton").innerText  = "Stop Interceptor";
   } else {
     backgroundMusic.pause();
     activated =false;
+    document.getElementById("startTransmissionButton").innerText  = "Start Interceptor";
   }
 
 });
@@ -177,8 +180,10 @@ function drawDot(x, y) {
       // Generate a random character and call playMorseCode with that character
       document.getElementById("messages").innerText  = "Decoded!";
       const randomChar = generateRandomCharacter();
+      arrayMorseCode.push(randomChar);;
       playMorseCode(randomChar);
       document.getElementById("inputChar").value = randomChar;
+      document.getElementById("arrayMorseTextbox").value = arrayMorseCode.split(" ");
       // Generate new coordinates for the red dot
       submarinePosX = Math.random() * canvas.width;
       submarinePosY = Math.random() * canvas.height;
