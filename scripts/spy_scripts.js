@@ -8,8 +8,7 @@ let pitch = 0;
 let rolldeviation = 0;
 let pitchdeviation = 0;
 const smoothFactor = 0.8;
-
-
+let timer = 0;
 
 
 const playAudio = (src, callback) => {
@@ -176,12 +175,32 @@ function drawDot(x, y) {
   ctx.strokeStyle = "white";
   ctx.lineWidth = 3;
   ctx.stroke();
+
+  // Check if the red dot is inside the blue circle
+  const isInside = isRedDotInsideBlueCircle(submarinePosX, submarinePosY, x, y, 9);
+
+  if (isInside) {
+    // Start or continue counting the timer
+    timer += 0.1;
+  } else {
+    // Reset the timer if the red dot is outside the blue circle
+    timer = 0;
+  }
+  // Display the timer value in the "counter" textbox
+  document.getElementById("counter").value = timer.toFixed(1);
+
 }
 
 function updateDotPosition(smooth) {
   smoothX = lerp(smoothX, x, smooth);
   smoothY = lerp(smoothY, y, smooth);
   drawDot(smoothX, smoothY);
+}
+
+// Check if the red dot is inside the white circle
+function isRedDotInsideBlueCircle(redX, redY, whiteX, whiteY, radius) {
+  const distance = Math.sqrt(Math.pow(redX - whiteX, 2) + Math.pow(redY - whiteY, 2));
+  return distance <= radius;
 }
 
 //Function to play a tone given a frequency and duration
