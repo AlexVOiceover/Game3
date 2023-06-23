@@ -2,6 +2,8 @@
     width: 100%;
     position: relative;
     background-image: radial-gradient(circle at center, darkgreen, rgb(8, 22, 8)); 
+    margin-top: 2em;
+    margin-bottom: 2em;
   }
 
 #dotCanvas {
