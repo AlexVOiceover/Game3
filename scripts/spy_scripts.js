@@ -108,6 +108,20 @@ const ctx = canvas.getContext("2d");
 let submarinePosX = Math.random() * canvas.width;
 let submarinePosY = Math.random() * canvas.height;
 
+//line that spins to indicate decoding time
+function drawLine(angle) {
+  ctx.save();
+  ctx.translate(canvas.width / 2, canvas.height / 2);
+  ctx.rotate(angle);
+  ctx.beginPath();
+  ctx.moveTo(0, -canvas.height / 2);
+  ctx.lineTo(0, canvas.height / 2);
+  ctx.strokeStyle = "rgb(0, 255, 0)";
+  ctx.lineWidth = 1;
+  ctx.stroke();
+  ctx.restore();
+}
+
 function drawDot(x, y) {
   // Clear the canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height); 
@@ -174,6 +188,9 @@ function drawDot(x, y) {
   if (isInside) {
     timer += 0.1;
     document.getElementById("messages").innerText  = "Capturing";
+
+    const rotationAngle = (timer / decodSeconds) * 2 * Math.PI;
+    drawLine(rotationAngle);
 
     // Check if the timer reaches 10 seconds
     if (timer >= decodSeconds) {

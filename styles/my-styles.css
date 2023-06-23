@@ -1,6 +1,5 @@
 #canvasContainer {
     width: 100%;
-    height: auto;
     position: relative;
     background-image: radial-gradient(circle at center, darkgreen, rgb(8, 22, 8)); 
     margin-top: 1em;
