@@ -130,7 +130,7 @@ function drawDot(x, y) {
   ctx.stroke();
 
   ctx.beginPath();
-  ctx.arc(canvas.width / 2, canvas.height / 2, 50, 0, 2 * Math.PI);
+  ctx.arc(canvas.width / 2, canvas.height / 2, 75, 0, 2 * Math.PI);
   ctx.strokeStyle = "rgb(0, 255, 0)";
   ctx.lineWidth = 1;
   ctx.stroke();
@@ -180,15 +180,26 @@ function drawDot(x, y) {
   const isInside = isRedDotInsideBlueCircle(submarinePosX, submarinePosY, x, y, 9);
 
   if (isInside) {
-    // Start or continue counting the timer
     timer += 0.1;
+
+    // 2. Check if the timer reaches 10 seconds
+    if (timer >= 10) {
+      // 3. Generate a random character and call playMorseCode with that character
+      const randomChar = generateRandomCharacter();
+      playMorseCode(randomChar);
+
+      // Generate new coordinates for the red dot
+      submarinePosX = Math.random() * canvas.width;
+      submarinePosY = Math.random() * canvas.height;
+
+      // Reset the timer
+      timer = 0;
+    }
   } else {
-    // Reset the timer if the red dot is outside the blue circle
     timer = 0;
   }
-  // Display the timer value in the "counter" textbox
-  document.getElementById("counter").value = timer.toFixed(1);
 
+  document.getElementById("counter").value = timer.toFixed(1);
 }
 
 function updateDotPosition(smooth) {
@@ -267,3 +278,10 @@ document.getElementById("playMorseCode").addEventListener("click", () => {
       playMorseCode(inputChar);
   }
 });
+
+// Function to generate a random character
+function generateRandomCharacter() {
+  const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  const randomIndex = Math.floor(Math.random() * characters.length);
+  return characters[randomIndex];
+}
