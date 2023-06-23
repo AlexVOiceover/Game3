@@ -9,6 +9,7 @@ let rolldeviation = 0;
 let pitchdeviation = 0;
 const smoothFactor = 0.8;
 let timer = 0;
+let activated = false;
 
 
 const playAudio = (src, callback) => {
@@ -29,64 +30,68 @@ document.getElementById("resetPosition").addEventListener("click", () => {
 document.getElementById("startTransmissionButton").addEventListener("click", () => {
   if (backgroundMusic.paused) {
     backgroundMusic.play();
+    activated = true
   } else {
     backgroundMusic.pause();
+    activated =false;
+  }
+
+});
+
+window.addEventListener("deviceorientation", (event) => {
+  if (activated) {
+    if (event.gamma === null) {
+      console.log("Device orientation not supported or permission denied");
+      updateDotPosition();
+      return;
+    }
+
+    roll = event.gamma.toFixed(4); 
+    const adjustedRoll = roll - rolldeviation;
+
+    let horTextboxValue = 0;
+
+    if (adjustedRoll <= (-1*maxDegrees)){
+      horTextboxValue = -1}
+    else if (adjustedRoll >= maxDegrees){
+      horTextboxValue = 1}
+    else {
+      horTextboxValue =  adjustedRoll/maxDegrees }
+    
+    // Round the textbox value to 4 decimal places
+    horTextboxValue = parseFloat(horTextboxValue.toFixed(4));
+
+    // Calculate the x coordinate for the dot
+    x = ((horTextboxValue + 1) / 2) * canvas.width;
   }
 });
 
 window.addEventListener("deviceorientation", (event) => {
-  if (event.gamma === null) {
-    console.log("Device orientation not supported or permission denied");
-    updateDotPosition();
-    return;
+  if (activated) {
+    if (event.beta === null) {
+      console.log("Device orientation not supported or permission denied");
+      updateDotPosition();
+      return;
+    }
+
+    pitch = event.beta.toFixed(4); // Pitch value in degrees
+    const adjustedPitch = pitch - pitchdeviation;
+
+    let verTextboxValue = 0;
+
+    if (adjustedPitch <= (-1*maxDegrees)){
+      verTextboxValue = -1}
+    else if (adjustedPitch >= maxDegrees){
+      verTextboxValue = 1}
+    else {
+      verTextboxValue =  adjustedPitch/maxDegrees}
+    
+    // Round the textbox value to 4 decimal places
+    verTextboxValue = parseFloat(verTextboxValue.toFixed(4));
+
+    // Calculate the y coordinate for the dot
+    y = ((verTextboxValue + 1) / 2) * canvas.height;
   }
-
-  roll = event.gamma.toFixed(4); 
-  const adjustedRoll = roll - rolldeviation;
-
-  let horTextboxValue = 0;
-
-  if (adjustedRoll <= (-1*maxDegrees)){
-    horTextboxValue = -1}
-  else if (adjustedRoll >= maxDegrees){
-    horTextboxValue = 1}
-  else {
-    horTextboxValue =  adjustedRoll/maxDegrees }
-  
-  // Round the textbox value to 4 decimal places
-  horTextboxValue = parseFloat(horTextboxValue.toFixed(4));
-
-  // Calculate the x coordinate for the dot
-  x = ((horTextboxValue + 1) / 2) * canvas.width;
- 
-});
-
-window.addEventListener("deviceorientation", (event) => {
-
-  if (event.beta === null) {
-    console.log("Device orientation not supported or permission denied");
-    updateDotPosition();
-    return;
-  }
-
-  pitch = event.beta.toFixed(4); // Pitch value in degrees
-  const adjustedPitch = pitch - pitchdeviation;
-
-  let verTextboxValue = 0;
-
-  if (adjustedPitch <= (-1*maxDegrees)){
-    verTextboxValue = -1}
-  else if (adjustedPitch >= maxDegrees){
-    verTextboxValue = 1}
-  else {
-    verTextboxValue =  adjustedPitch/maxDegrees}
-  
-  // Round the textbox value to 4 decimal places
-  verTextboxValue = parseFloat(verTextboxValue.toFixed(4));
-
-   // Calculate the y coordinate for the dot
-   y = ((verTextboxValue + 1) / 2) * canvas.height;
-
 });
 
 //Function to calculate the lerp between two values. Its a trick to make it smooth.
