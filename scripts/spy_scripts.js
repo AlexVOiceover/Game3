@@ -95,12 +95,8 @@ window.addEventListener("deviceorientation", (event) => {
   // Round the textbox value to 4 decimal places
   verTextboxValue = parseFloat(verTextboxValue.toFixed(4));
 
-  // Update the textbox value
- // document.getElementById("verticalTextbox").value = verTextboxValue;
-
    // Calculate the y coordinate for the dot
    y = ((verTextboxValue + 1) / 2) * canvas.height;
-   // document.getElementById("yValue").value = y;
 
    updateDotPosition(smoothFactor);
 
@@ -120,11 +116,12 @@ let submarinePosX = Math.random() * canvas.width;
 let submarinePosY = Math.random() * canvas.height;
 
 function drawDot(x, y) {
-  ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+  // Clear the canvas
+  ctx.clearRect(0, 0, canvas.width, canvas.height); 
   
   // Draw radar circles
   ctx.beginPath();
-  ctx.arc(canvas.width / 2, canvas.height / 2, 90, 0, 2 * Math.PI);
+  ctx.arc(canvas.width / 2, canvas.height / 2,100, 0, 2 * Math.PI);
   ctx.strokeStyle = "rgb(0, 255, 0)";
   ctx.lineWidth = 1;
   ctx.stroke();
@@ -184,7 +181,7 @@ function drawDot(x, y) {
     document.getElementById("messages").innerText  = "Capturing";
 
     // Check if the timer reaches 10 seconds
-    if (timer >= 10) {
+    if (timer >= 5) {
       // Generate a random character and call playMorseCode with that character
       document.getElementById("messages").innerText  = "Decoded!";
       const randomChar = generateRandomCharacter();
