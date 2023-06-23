@@ -1,5 +1,6 @@
 #canvasContainer {
     width: 100%;
+    height: auto;
     position: relative;
     background-image: radial-gradient(circle at center, darkgreen, rgb(8, 22, 8)); 
     margin-top: 1em;
@@ -114,12 +115,6 @@ body {padding: 3em;
     border-radius: 50%;
     }
       
-
-
-
-      
-
-
 /* For mobile devices*/
 @media all and (pointer:none) , (pointer:coarse) {
 

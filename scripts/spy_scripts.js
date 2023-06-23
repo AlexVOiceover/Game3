@@ -28,28 +28,13 @@ document.getElementById("resetPosition").addEventListener("click", () => {
   drawDot(canvas.width/2, canvas.height/2);
 });
 
-/* document.getElementById("startTransmissionButton").addEventListener("click", () => {
-  if (backgroundMusic.paused) {
-    backgroundMusic.play();
-    activated = true
-    document.getElementById("startTransmissionButton").innerText  = "Stop Interceptor";
-  } else {
-    backgroundMusic.pause();
-    activated =false;
-    document.getElementById("startTransmissionButton").innerText  = "Activate Interceptor";
-  }
-
-}); */
-
 document.getElementById("startTransmissionButton").addEventListener("change", function () {
   if (this.checked) {
     backgroundMusic.play();
     activated = true;
-    // No need to update the innerText as the switch appearance is handled by CSS
-  } else {
+    } else {
     backgroundMusic.pause();
     activated = false;
-    // No need to update the innerText as the switch appearance is handled by CSS
   }
 });
 
