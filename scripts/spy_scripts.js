@@ -67,7 +67,7 @@ window.addEventListener("deviceorientation", (event) => {
   x = ((horTextboxValue + 1) / 2) * canvas.width;
   // document.getElementById("xValue").value = x;
 
-  updateDotPosition(smoothFactor);
+  // updateDotPosition(smoothFactor);
 });
 
 window.addEventListener("deviceorientation", (event) => {
@@ -98,7 +98,7 @@ window.addEventListener("deviceorientation", (event) => {
    // Calculate the y coordinate for the dot
    y = ((verTextboxValue + 1) / 2) * canvas.height;
 
-   updateDotPosition(smoothFactor);
+  // updateDotPosition(smoothFactor);
 
 });
 
@@ -208,6 +208,12 @@ function updateDotPosition(smooth) {
   drawDot(smoothX, smoothY);
 }
 
+//Added this function to constantly update position and timer
+function animationLoop() {
+  updateDotPosition(smoothFactor);
+  requestAnimationFrame(animationLoop);
+}
+
 // Check if the red dot is inside the white circle
 function isRedDotInsideBlueCircle(redX, redY, whiteX, whiteY, radius) {
   const distance = Math.sqrt(Math.pow(redX - whiteX, 2) + Math.pow(redY - whiteY, 2));
@@ -285,3 +291,5 @@ function generateRandomCharacter() {
   const randomIndex = Math.floor(Math.random() * characters.length);
   return characters[randomIndex];
 }
+
+animationLoop();
