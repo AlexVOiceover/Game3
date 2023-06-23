@@ -28,7 +28,7 @@ document.getElementById("resetPosition").addEventListener("click", () => {
   drawDot(canvas.width/2, canvas.height/2);
 });
 
-document.getElementById("startTransmissionButton").addEventListener("click", () => {
+/* document.getElementById("startTransmissionButton").addEventListener("click", () => {
   if (backgroundMusic.paused) {
     backgroundMusic.play();
     activated = true
@@ -36,10 +36,23 @@ document.getElementById("startTransmissionButton").addEventListener("click", () 
   } else {
     backgroundMusic.pause();
     activated =false;
-    document.getElementById("startTransmissionButton").innerText  = "Start Interceptor";
+    document.getElementById("startTransmissionButton").innerText  = "Activate Interceptor";
   }
 
+}); */
+
+document.getElementById("startTransmissionButton").addEventListener("change", function () {
+  if (this.checked) {
+    backgroundMusic.play();
+    activated = true;
+    // No need to update the innerText as the switch appearance is handled by CSS
+  } else {
+    backgroundMusic.pause();
+    activated = false;
+    // No need to update the innerText as the switch appearance is handled by CSS
+  }
 });
+
 
 window.addEventListener("deviceorientation", (event) => {
   if (activated) {
