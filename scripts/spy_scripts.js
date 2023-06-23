@@ -1,4 +1,5 @@
 const maxDegrees = 4;
+const decodSeconds = 7;
 
 let x = 0;
 let y = 0;
@@ -167,7 +168,7 @@ function drawDot(x, y) {
     document.getElementById("messages").innerText  = "Capturing";
 
     // Check if the timer reaches 10 seconds
-    if (timer >= 5) {
+    if (timer >= decodSeconds) {
       // Generate a random character and call playMorseCode with that character
       document.getElementById("messages").innerText  = "Decoded!";
       const randomChar = generateRandomCharacter();
@@ -181,7 +182,7 @@ function drawDot(x, y) {
       timer = 0;
     }
   } else {
-    if (timer > 0 && timer < 5) {
+    if (timer > 0 && timer < decodSeconds) {
       document.getElementById("messages").innerText = "Lost transmission";
     }
     timer = 0;
