@@ -161,14 +161,14 @@ function drawDot(x, y) {
     ctx.arc(submarinePosX, submarinePosY, 5, 0, 2 * Math.PI); // Draw a dot with a radius of 5
     ctx.fillStyle  = "rgb(255, 85, 85)";
     ctx.fill();
-   }
-
-  // Moving circle
-  ctx.beginPath();
-  ctx.arc(x, y, 9, 0, 2 * Math.PI); 
-  ctx.strokeStyle = "white";
-  ctx.lineWidth = 2;
-  ctx.stroke();
+ 
+    // Moving circle
+    ctx.beginPath();
+    ctx.arc(x, y, 9, 0, 2 * Math.PI); 
+    ctx.strokeStyle = "white";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+  }
 
   // Check if the red dot is inside the blue circle
   const isInside = isRedDotInsideBlueCircle(submarinePosX, submarinePosY, x, y, 9);
