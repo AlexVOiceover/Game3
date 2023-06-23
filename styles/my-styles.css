@@ -24,7 +24,7 @@
     cursor: pointer;
     width: 40px;
     height: 40px; 
-    margin-right: 1em;
+    margin-right: 0.5em;
 }
 
 
@@ -39,8 +39,7 @@ h2 {color: rgb(255, 255, 255);
     font-size: x-large;
     text-align: center;
     padding: 1em;}
-    
-section {margin-bottom: 7em;}
+
     
 p { font-family: 'Roboto', sans-serif;
     color: rgb(255, 255, 255);
@@ -61,39 +60,12 @@ body {padding: 3em;
 
 } 
 
-.grid-container {
-    border-radius: 10px;
-    display: grid;
-    grid-template-columns: 65% 35%;
-    grid-template-rows: 20% 80% ; 
-    background-color: #d8d8d8;
-    padding: 3em; 
-    column-gap: 2em;
-    row-gap: 1em;
-    filter: drop-shadow(12px 12px 10px #5C5C5C);
-    text-align: center;}
-
-.flex-container-secretWord {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-evenly;
-    border-radius: 10px;
-    flex-direction: row;
-    width: 100%;
-    gap: 0em;
-    padding: 1em;
-    margin-bottom: 0em;}
-  
-img {
-    max-width: 100%;
-    max-height: 100%;}
-
 .switch {
     position: relative;
     display: inline-block;
     width: 54px;
     height: 26px;
-    margin-left: 1em;
+    margin-left: 0.5em;
   
     }
     
