@@ -97,7 +97,7 @@ img {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #046915;
+    background-color: darkgrey;
     transition: 0.4s;
     border-radius: 10px; 
     }
@@ -115,7 +115,7 @@ img {
     }
     
     input:checked + .slider {
-    background-color: #f32121;
+    background-color: green;
     }
     
     input:checked + .slider:before {
