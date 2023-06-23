@@ -37,6 +37,7 @@ h2 {color: rgb(255, 255, 255);
     font-size: x-large;
     text-align: center;
     padding: 1em;
+    letter-spacing: 2px;
     background-color: rgba(59, 59, 59, 0.5);}
     
 p { font-family: 'Roboto', sans-serif;
