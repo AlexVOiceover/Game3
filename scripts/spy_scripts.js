@@ -193,7 +193,7 @@ function drawDot(x, y) {
     timer += 0.1;
     document.getElementById("messages").innerText  = "Capturing";
 
-    const rotationAngle = (timer / decodSeconds) * 2 * Math.PI;
+    const rotationAngle = (timer / decodSeconds) * Math.PI;
     drawLine(rotationAngle);
 
     // Check if the timer reaches 10 seconds
