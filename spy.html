@@ -6,6 +6,13 @@
         <link rel="icon" href="images/favicon.ico">
         <title>Spying...</title>
         <link rel="stylesheet" href="styles/my-styles.css">
+        <!--The next script is added to append a unique timestamp, this will force the browser to update the CSS-->
+        <script>
+            const stylesLink = document.getElementById('my-styles');
+            const currentHref = stylesLink.getAttribute('href');
+            const newHref = currentHref + '?cache_bust=' + new Date().getTime();
+            stylesLink.setAttribute('href', newHref);
+          </script>
         <meta name="description" content="Game for the FAO aplication with sound">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">     
@@ -15,7 +22,7 @@
         
   
         <div>
-            <h1>Spy Screen V79</h1>
+            <h1>Spy Screen V80</h1>
             <div id="motion-data"></div>
             <button id="startTransmissionButton">Activate interceptor</button>
 
