@@ -180,10 +180,10 @@ function drawDot(x, y) {
       // Generate a random character and call playMorseCode with that character
       document.getElementById("messages").innerText  = "Decoded!";
       const randomChar = generateRandomCharacter();
-      arrayMorseCode.push(randomChar);;
+      arrayMorse.push(randomChar);;
       playMorseCode(randomChar);
       document.getElementById("inputChar").value = randomChar;
-      document.getElementById("arrayMorseTextbox").value = arrayMorseCode.split(" ");
+      document.getElementById("arrayMorseTextbox").value = arrayMorse.split(" ");
       // Generate new coordinates for the red dot
       submarinePosX = Math.random() * canvas.width;
       submarinePosY = Math.random() * canvas.height;
