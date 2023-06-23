@@ -110,12 +110,16 @@ let submarinePosY = Math.random() * canvas.height;
 
 //line that spins to indicate decoding time
 function drawLine(angle) {
+  const lineLength = Math.sqrt(Math.pow(canvas.width / 2, 2) + Math.pow(canvas.height / 2, 2));
+  const endPointX = lineLength * Math.cos(angle);
+  const endPointY = lineLength * Math.sin(angle);
+
   ctx.save();
   ctx.translate(canvas.width / 2, canvas.height / 2);
   ctx.rotate(angle);
   ctx.beginPath();
-  ctx.moveTo(0, -canvas.height / 2);
-  ctx.lineTo(0, canvas.height / 2);
+  ctx.moveTo(0, 0);
+  ctx.lineTo(endPointX, endPointY);
   ctx.strokeStyle = "rgb(0, 255, 0)";
   ctx.lineWidth = 1;
   ctx.stroke();
