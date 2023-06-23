@@ -32,10 +32,12 @@ document.getElementById("startTransmissionButton").addEventListener("click", () 
   if (backgroundMusic.paused) {
     backgroundMusic.play();
     activated = true
+    canvas.style.backgroundColor = transparent;
     document.getElementById("startTransmissionButton").innerText  = "Stop Interceptor";
   } else {
     backgroundMusic.pause();
     activated =false;
+    canvas.style.backgroundColor = "grey";
     document.getElementById("startTransmissionButton").innerText  = "Start Interceptor";
   }
 
