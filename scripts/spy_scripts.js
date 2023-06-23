@@ -1,6 +1,5 @@
 const maxDegrees = 4;
 
-//Declare the coordinates of the dot
 let x = 0;
 let y = 0;
 let roll = 0;
@@ -23,8 +22,6 @@ backgroundMusic.volume = 0.5;
 document.getElementById("resetPosition").addEventListener("click", () => {
   rolldeviation = roll;
   pitchdeviation = pitch;
- // document.getElementById("xOffset").value = rolldeviation;
- // document.getElementById("yOffset").value = pitchdeviation;
   drawDot(canvas.width/2, canvas.height/2);
 });
 
@@ -39,8 +36,6 @@ document.getElementById("startTransmissionButton").addEventListener("click", () 
 window.addEventListener("deviceorientation", (event) => {
   if (event.gamma === null) {
     console.log("Device orientation not supported or permission denied");
-    //document.getElementById("horizontalTextbox").value = canvas.width/2;
-   // document.getElementById("xValue").value = canvas.width/2;
     updateDotPosition();
     return;
   }
@@ -60,22 +55,15 @@ window.addEventListener("deviceorientation", (event) => {
   // Round the textbox value to 4 decimal places
   horTextboxValue = parseFloat(horTextboxValue.toFixed(4));
 
-  // Update the textbox value
-  //document.getElementById("horizontalTextbox").value = horTextboxValue;
-
   // Calculate the x coordinate for the dot
   x = ((horTextboxValue + 1) / 2) * canvas.width;
-  // document.getElementById("xValue").value = x;
-
-  // updateDotPosition(smoothFactor);
+ 
 });
 
 window.addEventListener("deviceorientation", (event) => {
 
   if (event.beta === null) {
-   // console.log("Device orientation not supported or permission denied");
-   // document.getElementById("horizontalTextbox").value = canvas.height/2;
-   // document.getElementById("xValue").value = canvas.height/2;
+    console.log("Device orientation not supported or permission denied");
     updateDotPosition();
     return;
   }
@@ -97,8 +85,6 @@ window.addEventListener("deviceorientation", (event) => {
 
    // Calculate the y coordinate for the dot
    y = ((verTextboxValue + 1) / 2) * canvas.height;
-
-  // updateDotPosition(smoothFactor);
 
 });
 
@@ -195,6 +181,9 @@ function drawDot(x, y) {
       timer = 0;
     }
   } else {
+    if (timer > 0 && timer < 5) {
+      document.getElementById("messages").innerText = "Lost transmission";
+    }
     timer = 0;
     // document.getElementById("messages").innerText  = "Lost transmission";
   }
