@@ -183,7 +183,7 @@ function drawDot(x, y) {
       arrayMorse.push(randomChar);;
       playMorseCode(randomChar);
       document.getElementById("inputChar").value = randomChar;
-      document.getElementById("arrayMorseTextbox").value = arrayMorse.split(" ");
+      document.getElementById("arrayMorseTextbox").value = arrayMorse.join(" ");
       // Generate new coordinates for the red dot
       submarinePosX = Math.random() * canvas.width;
       submarinePosY = Math.random() * canvas.height;
