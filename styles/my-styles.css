@@ -9,6 +9,8 @@
     width: 100%;
     display: block;
     background-color: transparent;
+    background: url('../images/worldmap_640.png');
+    background-size: cover; /* To cover the entire canvas */
 }
 
 

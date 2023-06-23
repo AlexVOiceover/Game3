@@ -166,11 +166,10 @@ function drawDot(x, y) {
 
   // Moving circle
   ctx.beginPath();
-  ctx.arc(x, y, 8, 0, 2 * Math.PI); // Draw a dot with a radius of 5
+  ctx.arc(x, y, 9, 0, 2 * Math.PI); 
   ctx.strokeStyle = "rgb(0, 255, 255)";
   ctx.lineWidth = 3;
   ctx.stroke();
- 
 }
 
 function updateDotPosition(smooth) {
