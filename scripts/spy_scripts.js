@@ -1,5 +1,5 @@
 const maxDegrees = 4;
-const decodSeconds = 7;
+const decodSeconds = 10;
 
 let x = 0;
 let y = 0;
@@ -111,8 +111,9 @@ let submarinePosY = Math.random() * canvas.height;
 //line that spins to indicate decoding time
 function drawLine(angle) {
   const lineLength = Math.sqrt(Math.pow(canvas.width / 2, 2) + Math.pow(canvas.height / 2, 2));
-  const endPointX = lineLength * Math.cos(angle);
-  const endPointY = lineLength * Math.sin(angle);
+  const adjustedAngle = angle - Math.PI / 2; // Subtract Math.PI / 2 from the angle
+  const endPointX = lineLength * Math.cos(adjustedAngle);
+  const endPointY = lineLength * Math.sin(adjustedAngle);
 
   ctx.save();
   ctx.translate(canvas.width / 2, canvas.height / 2);
@@ -120,7 +121,7 @@ function drawLine(angle) {
   ctx.beginPath();
   ctx.moveTo(0, 0);
   ctx.lineTo(endPointX, endPointY);
-  ctx.strokeStyle = "rgb(0, 255, 0)";
+  ctx.strokeStyle = "white";
   ctx.lineWidth = 1;
   ctx.stroke();
   ctx.restore();
