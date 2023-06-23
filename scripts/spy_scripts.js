@@ -221,7 +221,7 @@ function drawDot(x, y) {
     // document.getElementById("messages").innerText  = "Lost transmission";
   }
 
-  document.getElementById("counter").value = timer.toFixed(1);
+  //document.getElementById("counter").value = timer.toFixed(1);
 }
 
 function updateDotPosition(smooth) {
