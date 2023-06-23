@@ -78,7 +78,7 @@ img {
     position: relative;
     display: inline-block;
     width: 60px;
-    height: 34px;
+    height: 25px;
     }
     
     .switch input {
@@ -94,7 +94,7 @@ img {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: #046915;
     transition: 0.4s;
     }
     
@@ -110,7 +110,7 @@ img {
     }
     
     input:checked + .slider {
-    background-color: #2196F3;
+    background-color: #f32121;
     }
     
     input:checked + .slider:before {
