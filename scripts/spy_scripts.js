@@ -11,7 +11,7 @@ const smoothFactor = 0.8;
 let timer = 0;
 let activated = false;
 let arrayMorse = [];
-
+let lastChar;
 
 const playAudio = (src, callback) => {
   const audio = new Audio(src);
@@ -181,9 +181,9 @@ function drawDot(x, y) {
     if (timer >= decodSeconds) {
       // Generate a random character and call playMorseCode with that character
       document.getElementById("messages").innerText  = "Decoded!";
-      const randomChar = generateRandomCharacter();
-      arrayMorse.push(randomChar);;
-      playMorseCode(randomChar);
+      lastChar = generateRandomCharacter();
+      arrayMorse.push(lastChar);;
+      playMorseCode(lastChar);
       //document.getElementById("inputChar").value = randomChar;
       document.getElementById("arrayMorseTextbox").value = arrayMorse.join(" ");
       // Generate new coordinates for the red dot
@@ -281,9 +281,9 @@ function playMorseCode(char) {
 }
 
 document.getElementById("playMorseCode").addEventListener("click", () => {
-  const inputChar = document.getElementById("inputChar").value;
-  if (inputChar.length === 1) {
-      playMorseCode(inputChar);
+  //const inputChar = document.getElementById("inputChar").value;
+  if (lastChar.length === 1) {
+      playMorseCode(lastChar);
   }
 });
 
