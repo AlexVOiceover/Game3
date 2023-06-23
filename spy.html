@@ -12,8 +12,7 @@
     </head>
  
     <body>
-        
-  
+ 
         <div>
             <h1>Spy Screen V84</h1>
             <div id="motion-data"></div>
@@ -53,16 +52,5 @@
             document.write('<script src="scripts/spy_scripts.js?cache_bust=' + new Date().getTime() + '"><\/script>');
         </script>
        
-        <!--The next script is added to append a unique timestamp, this will force the browser to update the CSS-->
-        <script>
-            function updateStylesheet() {
-            const stylesLink = document.getElementById('my-styles');
-            const currentHref = stylesLink.getAttribute('href');
-            const newHref = currentHref + '?cache_bust=' + new Date().getTime();
-            stylesLink.setAttribute('href', newHref);
-            }
-            window.onload = updateStylesheet;
-        </script>
-
     </body>
 </html>
