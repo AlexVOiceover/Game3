@@ -127,21 +127,25 @@ function drawDot(x, y) {
   ctx.beginPath();
   ctx.arc(canvas.width / 2, canvas.height / 2, 90, 0, 2 * Math.PI);
   ctx.strokeStyle = "rgb(0, 255, 0)";
+  ctx.lineWidth = 1;
   ctx.stroke();
 
   ctx.beginPath();
   ctx.arc(canvas.width / 2, canvas.height / 2, 50, 0, 2 * Math.PI);
   ctx.strokeStyle = "rgb(0, 255, 0)";
+  ctx.lineWidth = 1;
   ctx.stroke();
 
   ctx.beginPath();
   ctx.arc(canvas.width / 2, canvas.height / 2, 25, 0, 2 * Math.PI);
   ctx.strokeStyle = "rgb(0, 255, 0)";
+  ctx.lineWidth = 1;
   ctx.stroke();
 
   ctx.beginPath();
   ctx.arc(canvas.width / 2, canvas.height / 2, 5, 0, 2 * Math.PI);
   ctx.strokeStyle = "rgb(0, 255, 0)";
+  ctx.lineWidth = 1;
   ctx.stroke();
 
    // Draw horizontal white line
@@ -149,6 +153,7 @@ function drawDot(x, y) {
    ctx.moveTo(0, canvas.height / 2);
    ctx.lineTo(canvas.width, canvas.height / 2);
    ctx.strokeStyle = "rgb(0, 255, 0)";
+   ctx.lineWidth = 1;
    ctx.stroke();
  
    // Draw vertical white line
@@ -156,6 +161,7 @@ function drawDot(x, y) {
    ctx.moveTo(canvas.width / 2, 0);
    ctx.lineTo(canvas.width / 2, canvas.height);
    ctx.strokeStyle = "rgb(0, 255, 0)";
+   ctx.lineWidth = 1;
    ctx.stroke();
  
    // submarine
@@ -167,7 +173,7 @@ function drawDot(x, y) {
   // Moving circle
   ctx.beginPath();
   ctx.arc(x, y, 9, 0, 2 * Math.PI); 
-  ctx.strokeStyle = "rgb(0, 255, 255)";
+  ctx.strokeStyle = "white";
   ctx.lineWidth = 3;
   ctx.stroke();
 }
