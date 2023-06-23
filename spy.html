@@ -6,16 +6,6 @@
         <link rel="icon" href="images/favicon.ico">
         <title>Spying...</title>
         <link rel="stylesheet" href="styles/my-styles.css">
-        <!--The next script is added to append a unique timestamp, this will force the browser to update the CSS-->
-        <script>
-            function updateStylesheet() {
-              const stylesLink = document.getElementById('my-styles');
-              const currentHref = stylesLink.getAttribute('href');
-              const newHref = currentHref + '?cache_bust=' + new Date().getTime();
-              stylesLink.setAttribute('href', newHref);
-            }
-            document.addEventListener('DOMContentLoaded', updateStylesheet);
-          </script>
         <meta name="description" content="Game for the FAO aplication with sound">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">     
@@ -25,7 +15,7 @@
         
   
         <div>
-            <h1>Spy Screen V82</h1>
+            <h1>Spy Screen V83</h1>
             <div id="motion-data"></div>
             <button id="startTransmissionButton">Activate interceptor</button>
             <audio id="backgroundMusic" src="audios/spy_background.ogg" autoplay loop preload="auto"></audio>
@@ -64,5 +54,16 @@
             document.write('<script src="scripts/spy_scripts.js?cache_bust=' + new Date().getTime() + '"><\/script>');
           </script>
        
+        <!--The next script is added to append a unique timestamp, this will force the browser to update the CSS-->
+        <script>
+            function updateStylesheet() {
+            const stylesLink = document.getElementById('my-styles');
+            const currentHref = stylesLink.getAttribute('href');
+            const newHref = currentHref + '?cache_bust=' + new Date().getTime();
+            stylesLink.setAttribute('href', newHref);
+            }
+            updateStylesheet();
+        </script>
+
     </body>
 </html>
