@@ -15,7 +15,7 @@
         
   
         <div>
-            <h1>Spy Screen V83</h1>
+            <h1>Spy Screen V84</h1>
             <div id="motion-data"></div>
             <button id="startTransmissionButton">Activate interceptor</button>
             <audio id="backgroundMusic" src="audios/spy_background.ogg" autoplay loop preload="auto"></audio>
@@ -49,10 +49,9 @@
         </div>
        
          <!-- Using the next script I ad a timestamp, this way it will reload the JS when I reload the page, otherwise it was keeping the old JS after an update -->
-        <script>
-           
+        <script>      
             document.write('<script src="scripts/spy_scripts.js?cache_bust=' + new Date().getTime() + '"><\/script>');
-          </script>
+        </script>
        
         <!--The next script is added to append a unique timestamp, this will force the browser to update the CSS-->
         <script>
@@ -62,7 +61,7 @@
             const newHref = currentHref + '?cache_bust=' + new Date().getTime();
             stylesLink.setAttribute('href', newHref);
             }
-            updateStylesheet();
+            window.onload = updateStylesheet;
         </script>
 
     </body>
