@@ -29,6 +29,7 @@ h1 {color: rgb(255, 255, 255);
     text-align: center;
     font-size: xx-large;
     margin-bottom: 2em;
+    letter-spacing: 3px;
     background-color: rgba(59, 59, 59, 0.5); /* Grey transparent background */}
 
 h2 {color: rgb(255, 255, 255);
