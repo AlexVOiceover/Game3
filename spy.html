@@ -14,12 +14,16 @@
     <body>
  
         <div>
-            <h1>Spy Screen V96</h1>
-            <label class="switch">
-                <input type="checkbox" id="startTransmissionButton">
-                <span class="slider"></span>
-              </label>
-            <!-- <button id="startTransmissionButton">Activate interceptor</button>  -->
+            <h1>Spy Screen V97</h1>
+
+            <div class="controls-container">
+                <label class="switch">
+                    <input type="checkbox" id="startTransmissionButton">
+                    <span class="slider"></span>
+                </label>
+                <img class="calibrate-icon" id="resetPosition" src="images/calibrate.png" alt="Calibrate Gyro">
+            </div>
+
             <audio id="backgroundMusic" src="audios/spy_background.ogg" autoplay loop preload="auto"></audio>
         </div>
     
@@ -29,12 +33,7 @@
 
         <div> 
             <button id="playMorseCode">Play last signal</button>
-        </div>
-
-        <div>
-            <img class="calibrate-icon" id="resetPosition" src="images/calibrate.png" alt="Calibrate Gyro">
-        </div>
-          
+        </div>      
         
         <div>
             <input type="text" id="counter"  readonly style="display: block; width: 9em; margin: 10px auto; text-align: center;">

@@ -14,8 +14,16 @@
     background-size: cover; /* To cover the entire canvas */
 }
 
+.controls-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
 .calibrate-icon {
     cursor: pointer;
+    width: 40px;
+    height: 40px; 
 }
 
 
