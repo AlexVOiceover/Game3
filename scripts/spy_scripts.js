@@ -170,7 +170,7 @@ function drawDot(x, y) {
   ctx.beginPath();
   ctx.arc(x, y, 9, 0, 2 * Math.PI); 
   ctx.strokeStyle = "white";
-  ctx.lineWidth = 3;
+  ctx.lineWidth = 2;
   ctx.stroke();
 
   // Check if the red dot is inside the blue circle
@@ -196,7 +196,7 @@ function drawDot(x, y) {
     }
   } else {
     timer = 0;
-    document.getElementById("messages").innerText  = "Lost transmission";
+    // document.getElementById("messages").innerText  = "Lost transmission";
   }
 
   document.getElementById("counter").value = timer.toFixed(1);
