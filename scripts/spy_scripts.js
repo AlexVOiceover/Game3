@@ -181,7 +181,7 @@ function drawDot(x, y) {
 
   if (isInside) {
     timer += 0.1;
-    document.getElementById("messages").value = "Capturing";
+    document.getElementById("messages").innerText  = "Capturing";
 
     // 2. Check if the timer reaches 10 seconds
     if (timer >= 10) {
@@ -198,7 +198,7 @@ function drawDot(x, y) {
     }
   } else {
     timer = 0;
-    document.getElementById("messages").value = "Lost transmission";
+    document.getElementById("messages").innerText  = "Lost transmission";
   }
 
   document.getElementById("counter").value = timer.toFixed(1);
