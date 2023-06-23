@@ -183,9 +183,10 @@ function drawDot(x, y) {
     timer += 0.1;
     document.getElementById("messages").innerText  = "Capturing";
 
-    // 2. Check if the timer reaches 10 seconds
+    // Check if the timer reaches 10 seconds
     if (timer >= 10) {
-      // 3. Generate a random character and call playMorseCode with that character
+      // Generate a random character and call playMorseCode with that character
+      document.getElementById("messages").innerText  = "Decoded!";
       const randomChar = generateRandomCharacter();
       playMorseCode(randomChar);
       document.getElementById("inputChar").value = randomChar;
