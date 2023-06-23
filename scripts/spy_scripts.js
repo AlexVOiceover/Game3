@@ -130,7 +130,7 @@ function drawDot(x, y) {
   ctx.stroke();
 
   ctx.beginPath();
-  ctx.arc(canvas.width / 2, canvas.height / 2, 75, 0, 2 * Math.PI);
+  ctx.arc(canvas.width / 2, canvas.height / 2, 65, 0, 2 * Math.PI);
   ctx.strokeStyle = "rgb(0, 255, 0)";
   ctx.lineWidth = 1;
   ctx.stroke();
