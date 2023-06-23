@@ -8,8 +8,7 @@
     /* position: absolute; */
     width: 100%;
     display: block;
-    background-color:"grey";
-   /* background-color: transparent; */
+    background-color: transparent;
     background: url('../images/worldmap_640.png');
     background-size: cover; /* To cover the entire canvas */
 }
