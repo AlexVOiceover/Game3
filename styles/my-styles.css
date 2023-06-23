@@ -22,7 +22,7 @@
 
 .calibrate-icon {
     cursor: pointer;
-    width: 80px;
+    width: 60px;
 }
 
 
@@ -81,7 +81,7 @@ body {padding: 3em;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgb(109, 109, 109);
+    background-color: rgb(82, 82, 82);
     transition: 0.4s;
     border-radius: 10px; 
     }
