@@ -266,7 +266,7 @@ function playMorseCode(char) {
   const dotDuration = 0.1 * multiplier; // 100ms
   const dashDuration = 0.3 * multiplier; // 300ms
   const gapDuration = 0.3 * multiplier; // 100ms
-  const frequency = 2000; // 1000Hz
+  const frequency = 500; // 1000Hz
 
   const code = morseCode[char.toUpperCase()];
   let currentTime = 0;
