@@ -20,7 +20,7 @@ const playAudio = (src, callback) => {
 };
 
 const backgroundMusic = document.getElementById("backgroundMusic");
-backgroundMusic.volume = 0.5;
+// backgroundMusic.volume = 0.5;
 
 document.getElementById("resetPosition").addEventListener("click", () => {
   rolldeviation = roll;
@@ -30,10 +30,10 @@ document.getElementById("resetPosition").addEventListener("click", () => {
 
 document.getElementById("startTransmissionButton").addEventListener("change", function () {
   if (this.checked) {
-    backgroundMusic.play();
+    // backgroundMusic.play();
     activated = true;
     } else {
-    backgroundMusic.pause();
+   // backgroundMusic.pause();
     activated = false;
   }
 });
