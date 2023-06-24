@@ -1,5 +1,3 @@
-const frequency = 750; // 1000Hz
-
 document.addEventListener("DOMContentLoaded", () => {
     const morseButton = document.getElementById("morseButton");
     const morseTextbox = document.getElementById("morseTextbox");
@@ -11,32 +9,30 @@ document.addEventListener("DOMContentLoaded", () => {
     let audioContext = new (window.AudioContext || window.webkitAudioContext)();
     let oscillator;
     let audioEnabled = false;
-
+  
     enableAudioSwitch.addEventListener("change", function () {
-        if (this.checked) {
-            audioEnabled = true;
-          } else {
-            audioEnabled = false;
-        }
-      });
- 
-
+      if (this.checked) {
+        audioEnabled = true;
+      } else {
+        audioEnabled = false;
+      }
+    });
+  
     morseButton.addEventListener("pointerdown", () => {
       pressStartTime = new Date();
   
       if (audioEnabled) {
         if (!audioContext) {
-            audioContext = new (window.AudioContext || window.webkitAudioContext)();
-          }
-        const oscillator = audioContext.createOscillator();
+          audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        oscillator = audioContext.createOscillator(); // Remove 'const' from here
         const gainNode = audioContext.createGain();
-        
+  
         oscillator.type = "sine"; // Set the type of wave
         oscillator.frequency.value = frequency; // Set the frequency of the tone
-    
+  
         oscillator.connect(audioContext.destination);
         oscillator.start();
-        
       }
     });
   
@@ -45,17 +41,16 @@ document.addEventListener("DOMContentLoaded", () => {
       const morseChar = pressDuration < 300 ? "." : "-"; // Threshold of 300ms to differentiate between dot and dash
       morseInput += morseChar;
   
-      //if (audioEnabled) {
-        // Stop playing the tone
+      // Stop playing the tone
+      if (oscillator) {
         oscillator.stop();
-
+  
         // Add this line to release resources after the tone has played
         oscillator.onended = () => {
-        gainNode.disconnect(audioContext.destination);
-        oscillator.disconnect(gainNode);
-  };
-
-      //}
+          gainNode.disconnect(audioContext.destination);
+          oscillator.disconnect(gainNode);
+        };
+      }
   
       // Update the textbox
       morseTextbox.value = morseInput;
