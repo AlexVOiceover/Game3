@@ -184,12 +184,35 @@ function drawDot(x, y) {
    ctx.lineWidth = 1;
    ctx.stroke();
  
-   // Signal
+
+
+  
    if (activated){
+
+
+
+
+
+    // Calculate the normalized timer value in the range [0, 1]
+    const normalizedTimer = timer / decodSeconds;
+    // Calculate the opacity of the red dot based on the normalized timer value
+    const opacity = 1 - (0.5 * normalizedTimer);
+    // Set the globalAlpha property of the canvas context to the calculated opacity
+    ctx.globalAlpha = opacity;
+    // Draw the red dot with the updated opacity
+    ctx.beginPath();
+    ctx.arc(signalPosX, signalPosY, 5, 0, 2 * Math.PI);
+    ctx.fillStyle = "rgb(255, 85, 85)";
+    ctx.fill();
+    // Reset the globalAlpha property to 1
+   // ctx.globalAlpha = 1;
+
+/*
+ // Signal, Red Dot
     ctx.beginPath();
     ctx.arc(signalPosX, signalPosY, 5, 0, 2 * Math.PI); // Draw a dot with a radius of 5
     ctx.fillStyle  = "rgb(255, 85, 85)";
-    ctx.fill();
+    ctx.fill(); */
  
     // Moving circle
     ctx.beginPath();
@@ -223,30 +246,10 @@ function drawDot(x, y) {
 
 
 
-    // Calculate the normalized timer value in the range [0, 1]
-    const normalizedTimer = timer / decodSeconds;
-
-    // Calculate the opacity of the red dot based on the normalized timer value
-    const opacity = 1 - (0.5 * normalizedTimer);
-
-    // Set the globalAlpha property of the canvas context to the calculated opacity
-    ctx.globalAlpha = opacity;
-
-    // Draw the red dot with the updated opacity
-    ctx.beginPath();
-    ctx.arc(signalPosX, signalPosY, 5, 0, 2 * Math.PI);
-    ctx.fillStyle = "rgb(255, 85, 85)";
-    ctx.fill();
-
-    // Reset the globalAlpha property to 1
-    ctx.globalAlpha = 1;
-
-
-
 
  
 
-    // Check if the timer reaches 10 seconds
+    // Check if the timer reaches decodSeconds seconds
     if (timer >= decodSeconds) {
       // Generate a random character and call playMorseCode with that character
       document.getElementById("messages").innerText  = "Decoded!";
