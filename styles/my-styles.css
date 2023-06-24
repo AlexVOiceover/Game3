@@ -36,13 +36,16 @@
 
 .morseButton:focus {
     outline: none;
-    
     border-radius: 50%;
 }
 
 .morseButton:active {
     background-color: rgb(255, 0, 0, 0.5);
     outline: none;
+}
+
+.morseButton::-moz-focus-inner {
+    border: 0;
 }
 
 h1 {color: rgb(199, 199, 199);
