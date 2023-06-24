@@ -208,7 +208,7 @@ function drawDot(x, y) {
 
     // Red dot will face with time
      // Calculate the normalized timer value in the range [0, 1]
-     const normalizedTimer = timer / decodSeconds;
+     const normalizedTimer = timerLine / decodSeconds;
      // Calculate the opacity of the red dot based on the normalized timer value
      const opacity = 1 - (0.5 * normalizedTimer);
      // Set the globalAlpha property of the canvas context to the calculated opacity
