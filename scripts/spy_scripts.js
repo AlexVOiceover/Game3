@@ -1,6 +1,5 @@
-const maxDegrees = 4;
-const decodSeconds = 10;
-
+const maxDegrees = 5;
+const decodSeconds = 8;
 let x = 0;
 let y = 0;
 let roll = 0;
@@ -12,7 +11,7 @@ let timer = 0;
 let activated = false;
 let arrayMorse = [];
 let lastChar;
-const maxDiameter = 150; 
+const maxDiameter = 200; 
 
 const playAudio = (src, callback) => {
   const audio = new Audio(src);
