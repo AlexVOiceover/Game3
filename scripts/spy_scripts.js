@@ -187,12 +187,12 @@ function drawDot(x, y) {
    
    if (activated){
 
-/*
+
  // Signal, Red Dot
     ctx.beginPath();
     ctx.arc(signalPosX, signalPosY, 5, 0, 2 * Math.PI); // Draw a dot with a radius of 5
     ctx.fillStyle  = "rgb(255, 85, 85)";
-    ctx.fill(); */
+    ctx.fill(); 
  
     // Moving circle
     ctx.beginPath();
@@ -206,6 +206,7 @@ function drawDot(x, y) {
     const rotationAngle = (timerLine / decodSeconds) * Math.PI;
     drawLine(rotationAngle);
 
+    /*
     // Red dot will decrease with time
      // Calculate the normalized timer value in the range [0, 1]
      const normalizedTimer = decodSeconds / timerLine;
@@ -214,7 +215,7 @@ function drawDot(x, y) {
      ctx.beginPath();
      ctx.arc(signalPosX, signalPosY, 5*normalizedTimer, 0, 2 * Math.PI);
      ctx.fillStyle = "rgb(255, 85, 85)";
-     ctx.fill();
+     ctx.fill(); */
 
   }
 
