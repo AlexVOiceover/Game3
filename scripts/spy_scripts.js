@@ -213,7 +213,7 @@ function drawDot(x, y) {
      const remainingTime = decodSeconds - (timer % decodSeconds);
 
      // Draw the decreasing circle
-     drawDecreasingCircle(ctx, submarinePosX, submarinePosY, maxDiameter, remainingTime, decodSeconds);
+     drawDecreasingCircle(ctx, signalPosX, signalPosY, maxDiameter, remainingTime, decodSeconds);
  
 
     // Check if the timer reaches 10 seconds
