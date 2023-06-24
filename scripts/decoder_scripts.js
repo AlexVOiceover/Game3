@@ -1,5 +1,3 @@
-const frequency = 750; // 1000Hz
-
 document.addEventListener("DOMContentLoaded", () => {
     const morseButton = document.getElementById("morseButton");
     const morseTextbox = document.getElementById("morseTextbox");
@@ -10,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let morseInput = "";
     let audioContext = new (window.AudioContext || window.webkitAudioContext)();
     let oscillator;
+    let gainNode; // Move gainNode to the global scope
     let audioEnabled = false;
   
     enableAudioSwitch.addEventListener("change", function () {
@@ -27,13 +26,14 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!audioContext) {
           audioContext = new (window.AudioContext || window.webkitAudioContext)();
         }
-        oscillator = audioContext.createOscillator(); // Remove 'const' from here
-        const gainNode = audioContext.createGain();
+        oscillator = audioContext.createOscillator();
+        gainNode = audioContext.createGain(); // Remove 'const' from here
   
         oscillator.type = "sine"; // Set the type of wave
         oscillator.frequency.value = frequency; // Set the frequency of the tone
   
-        oscillator.connect(audioContext.destination);
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
         oscillator.start();
       }
     });
