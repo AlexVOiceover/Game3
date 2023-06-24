@@ -18,12 +18,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1em;
-  }
+    margin-bottom: 1em;}
 
 .calibrate-icon {
     cursor: pointer;
     width: 60px;}
+
+.morseButton {
+    cursor: pointer;
+    width: 150px;}
 
 h1 {color: rgb(199, 199, 199);
     font-family: 'Orbitron', sans-serif;
