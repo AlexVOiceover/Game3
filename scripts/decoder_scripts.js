@@ -36,10 +36,17 @@ document.addEventListener("DOMContentLoaded", () => {
       const morseChar = pressDuration < 300 ? "." : "-"; // Threshold of 300ms to differentiate between dot and dash
       morseInput += morseChar;
   
-      if (audioEnabled) {
+      //if (audioEnabled) {
         // Stop playing the tone
         oscillator.stop();
-      }
+
+        // Add this line to release resources after the tone has played
+        oscillator.onended = () => {
+        gainNode.disconnect(audioContext.destination);
+        oscillator.disconnect(gainNode);
+  };
+
+      //}
   
       // Update the textbox
       morseTextbox.value = morseInput;
