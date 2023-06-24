@@ -195,7 +195,7 @@ function drawDot(x, y) {
  
     // Moving circle
     ctx.beginPath();
-    ctx.arc(x, y, 9, 0, 2 * Math.PI); 
+    ctx.arc(x, y, 12, 0, 2 * Math.PI); 
     ctx.strokeStyle = "white";
     ctx.lineWidth = 2;
     ctx.stroke();
@@ -207,7 +207,7 @@ function drawDot(x, y) {
 
     // Red dot will decrease with time
      // Calculate the normalized timer value in the range [0, 1]
-     const normalizedTimer = timerLine / decodSeconds;
+     const normalizedTimer = decodSeconds / timerLine;
      
      // Draw the red dot with the updated opacity
      ctx.beginPath();
