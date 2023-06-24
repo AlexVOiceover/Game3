@@ -14,18 +14,20 @@
     <body>
    
         <div>
-            <h1>Decoder Screen V9</h1>
-
+            <h1>Decoder Screen V10</h1>
+        </div>
         <div> 
-            <button lass="morseButton" id="codeButton">Codeme</button>
+            <button class="morseButton" id="codeButton">Codeme</button>
         </div>   
        
-        </div>
-
-        <button onclick="location.href='index.html'">Back</button>
-        
-    
        
-        <script src="scripts/decoder-scripts.js"></script>
+        <div> 
+        <button onclick="location.href='index.html'">Back</button>
+        </div> 
+    
+       <!-- Using the next script I add a timestamp, this way it will reload the JS when I reload the page, otherwise it was keeping the old JS after an update -->
+        <script>      
+            document.write('<script src="scripts/decoder_scripts.js?cache_bust=' + new Date().getTime() + '"><\/script>');
+        </script>
     </body>
 </html>
