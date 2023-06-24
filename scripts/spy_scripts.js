@@ -12,6 +12,7 @@ let timer = 0;
 let activated = false;
 let arrayMorse = [];
 let lastChar;
+const maxDiameter = 150; 
 
 const playAudio = (src, callback) => {
   const audio = new Audio(src);
@@ -105,8 +106,8 @@ let smoothY = 0;
 const canvas = document.getElementById("dotCanvas");
 const ctx = canvas.getContext("2d");
 
-let submarinePosX = Math.random() * canvas.width;
-let submarinePosY = Math.random() * canvas.height;
+let signalPosX = Math.random() * canvas.width;
+let signalPosY = Math.random() * canvas.height;
 
 //line that spins to indicate decoding time
 function drawLine(angle) {
@@ -126,6 +127,17 @@ function drawLine(angle) {
   ctx.stroke();
   ctx.restore();
 }
+
+//Decreasing circle over signal
+function drawDecreasingCircle(ctx, x, y, maxDiameter, remainingTime, totalTime) {
+  const diameter = maxDiameter * (remainingTime / totalTime);
+  ctx.beginPath();
+  ctx.arc(x, y, diameter / 2, 0, 2 * Math.PI);
+  ctx.strokeStyle = 'white';
+  ctx.stroke();
+  ctx.restore();
+}
+
 
 function drawDot(x, y) {
   // Clear the canvas
@@ -172,10 +184,10 @@ function drawDot(x, y) {
    ctx.lineWidth = 1;
    ctx.stroke();
  
-   // submarine
+   // Signal
    if (activated){
     ctx.beginPath();
-    ctx.arc(submarinePosX, submarinePosY, 5, 0, 2 * Math.PI); // Draw a dot with a radius of 5
+    ctx.arc(signalPosX, signalPosY, 5, 0, 2 * Math.PI); // Draw a dot with a radius of 5
     ctx.fillStyle  = "rgb(255, 85, 85)";
     ctx.fill();
  
@@ -188,7 +200,7 @@ function drawDot(x, y) {
   }
 
   // Check if the red dot is inside the blue circle
-  const isInside = isRedDotInsideBlueCircle(submarinePosX, submarinePosY, x, y, 9);
+  const isInside = isRedDotInsideBlueCircle(signalPosX, signalPosY, x, y, 9);
 
   if (isInside) {
     timer += 0.1;
@@ -196,6 +208,13 @@ function drawDot(x, y) {
 
     const rotationAngle = (timer / decodSeconds) * Math.PI;
     drawLine(rotationAngle);
+
+     // Calculate the remaining time and normalize it to the range [0, decodSeconds]
+     const remainingTime = decodSeconds - (timer % decodSeconds);
+
+     // Draw the decreasing circle
+     drawDecreasingCircle(ctx, submarinePosX, submarinePosY, maxDiameter, remainingTime, decodSeconds);
+ 
 
     // Check if the timer reaches 10 seconds
     if (timer >= decodSeconds) {
@@ -207,8 +226,8 @@ function drawDot(x, y) {
       //document.getElementById("inputChar").value = randomChar;
       document.getElementById("arrayMorseTextbox").value = arrayMorse.join(" ");
       // Generate new coordinates for the red dot
-      submarinePosX = Math.random() * canvas.width;
-      submarinePosY = Math.random() * canvas.height;
+      signalPosX = Math.random() * canvas.width;
+      signalPosY = Math.random() * canvas.height;
 
       // Reset the timer
       timer = 0;
