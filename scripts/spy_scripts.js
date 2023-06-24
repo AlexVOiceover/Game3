@@ -198,7 +198,7 @@ function drawDot(x, y) {
     ctx.lineWidth = 2;
     ctx.stroke();
 
-    timerLine += 0.03;
+    timerLine += 0.01;
     const rotationAngle = (timerLine / decodSeconds) * Math.PI;
     drawLine(rotationAngle);
 
