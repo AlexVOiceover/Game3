@@ -183,29 +183,8 @@ function drawDot(x, y) {
    ctx.strokeStyle = "rgb(0, 255, 0)";
    ctx.lineWidth = 1;
    ctx.stroke();
- 
-
-
-  
+   
    if (activated){
-
-
-
-
-
-    // Calculate the normalized timer value in the range [0, 1]
-    const normalizedTimer = timer / decodSeconds;
-    // Calculate the opacity of the red dot based on the normalized timer value
-    const opacity = 1 - (0.5 * normalizedTimer);
-    // Set the globalAlpha property of the canvas context to the calculated opacity
-    ctx.globalAlpha = opacity;
-    // Draw the red dot with the updated opacity
-    ctx.beginPath();
-    ctx.arc(signalPosX, signalPosY, 5, 0, 2 * Math.PI);
-    ctx.fillStyle = "rgb(255, 85, 85)";
-    ctx.fill();
-    // Reset the globalAlpha property to 1
-   // ctx.globalAlpha = 1;
 
 /*
  // Signal, Red Dot
@@ -221,9 +200,27 @@ function drawDot(x, y) {
     ctx.lineWidth = 2;
     ctx.stroke();
 
-    timerLine += 0.01;
+    timerLine += 0.03;
+    //Draw radar line
     const rotationAngle = (timerLine / decodSeconds) * Math.PI;
     drawLine(rotationAngle);
+
+
+    // Red dot will face with time
+     // Calculate the normalized timer value in the range [0, 1]
+     const normalizedTimer = timer / decodSeconds;
+     // Calculate the opacity of the red dot based on the normalized timer value
+     const opacity = 1 - (0.5 * normalizedTimer);
+     // Set the globalAlpha property of the canvas context to the calculated opacity
+     ctx.globalAlpha = opacity;
+     // Draw the red dot with the updated opacity
+     ctx.beginPath();
+     ctx.arc(signalPosX, signalPosY, 5, 0, 2 * Math.PI);
+     ctx.fillStyle = "rgb(255, 85, 85)";
+     ctx.fill();
+     // Reset the globalAlpha property to 1
+    // ctx.globalAlpha = 1;
+
 
   }
 
@@ -242,12 +239,6 @@ function drawDot(x, y) {
      drawDecreasingCircle(ctx, signalPosX, signalPosY, maxDiameter, remainingTime, decodSeconds);
 
 
-
-
-
-
-
- 
 
     // Check if the timer reaches decodSeconds seconds
     if (timer >= decodSeconds) {
