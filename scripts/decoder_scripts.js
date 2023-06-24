@@ -35,11 +35,11 @@ document.addEventListener("DOMContentLoaded", () => {
   let pressDuration;
   let morseInput = "";
 
-  morseButton.addEventListener("mousedown", () => {
+  morseButton.addEventListener("pointerdown", () => {
     pressStartTime = new Date();
   });
 
-  morseButton.addEventListener("mouseup", () => {
+  morseButton.addEventListener("pointerup", () => {
     pressDuration = new Date() - pressStartTime;
     const morseChar = pressDuration < 300 ? "." : "-"; // Threshold of 300ms to differentiate between dot and dash
     morseInput += morseChar;
