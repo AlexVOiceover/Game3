@@ -234,7 +234,7 @@ function drawDot(x, y) {
 
     // Draw the red dot with the updated opacity
     ctx.beginPath();
-    ctx.arc(submarinePosX, submarinePosY, 5, 0, 2 * Math.PI);
+    ctx.arc(signalPosX, signalPosY, 5, 0, 2 * Math.PI);
     ctx.fillStyle = "rgb(255, 85, 85)";
     ctx.fill();
 
