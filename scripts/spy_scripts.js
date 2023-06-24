@@ -100,6 +100,7 @@ window.addEventListener("deviceorientation", (event) => {
 function lerp(a, b, t) {
   return a + (b - a) * t;
 }
+
 let smoothX = 0;
 let smoothY = 0;
 
