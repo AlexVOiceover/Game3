@@ -40,6 +40,10 @@
     border-radius: 50%;
 }
 
+.morseButton:active {
+    background-color: rgb(255, 0, 0, 0.5);
+}
+
 h1 {color: rgb(199, 199, 199);
     font-family: 'Orbitron', sans-serif;
     text-align: center;
