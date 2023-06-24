@@ -12,7 +12,7 @@ let timerLine = 0;
 let activated = false;
 let arrayMorse = [];
 let lastChar;
-const maxDiameter = 200; 
+const maxDiameter = 300; 
 
 const playAudio = (src, callback) => {
   const audio = new Audio(src);
@@ -109,7 +109,7 @@ const ctx = canvas.getContext("2d");
 let signalPosX = Math.random() * canvas.width;
 let signalPosY = Math.random() * canvas.height;
 
-//line that spins to indicate decoding time
+//Radar line
 function drawLine(angle) {
   const lineLength = Math.sqrt(Math.pow(canvas.width / 2, 2) + Math.pow(canvas.height / 2, 2));
   const adjustedAngle = angle - Math.PI / 2; // Subtract Math.PI / 2 from the angle
@@ -204,7 +204,7 @@ function drawDot(x, y) {
 
   }
 
-  // Check if the red dot is inside the blue circle
+  // Check if the red dot is inside the white circle
   const isInside = isRedDotInsideBlueCircle(signalPosX, signalPosY, x, y, 9);
 
   if (isInside) {
@@ -217,6 +217,33 @@ function drawDot(x, y) {
 
      // Draw the decreasing circle
      drawDecreasingCircle(ctx, signalPosX, signalPosY, maxDiameter, remainingTime, decodSeconds);
+
+
+
+
+
+
+    // Calculate the normalized timer value in the range [0, 1]
+    const normalizedTimer = timer / decodSeconds;
+
+    // Calculate the opacity of the red dot based on the normalized timer value
+    const opacity = 1 - (0.5 * normalizedTimer);
+
+    // Set the globalAlpha property of the canvas context to the calculated opacity
+    ctx.globalAlpha = opacity;
+
+    // Draw the red dot with the updated opacity
+    ctx.beginPath();
+    ctx.arc(submarinePosX, submarinePosY, 5, 0, 2 * Math.PI);
+    ctx.fillStyle = "rgb(255, 85, 85)";
+    ctx.fill();
+
+    // Reset the globalAlpha property to 1
+    ctx.globalAlpha = 1;
+
+
+
+
  
 
     // Check if the timer reaches 10 seconds
@@ -240,10 +267,8 @@ function drawDot(x, y) {
       document.getElementById("messages").innerText = "Lost transmission";
     }
     timer = 0;
-    // document.getElementById("messages").innerText  = "Lost transmission";
   }
-
-  //document.getElementById("counter").value = timer.toFixed(1);
+ 
 }
 
 function updateDotPosition(smooth) {
