@@ -1,3 +1,4 @@
+const frequency = 750; // 1000Hz
 
 document.addEventListener("DOMContentLoaded", () => {
     const morseButton = document.getElementById("morseButton");
@@ -19,15 +20,23 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
  
+
     morseButton.addEventListener("pointerdown", () => {
       pressStartTime = new Date();
   
       if (audioEnabled) {
-        oscillator = audioContext.createOscillator();
-        oscillator.frequency.value = 750; // Set the frequency of the tone
+        if (!audioContext) {
+            audioContext = new (window.AudioContext || window.webkitAudioContext)();
+          }
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+        
         oscillator.type = "sine"; // Set the type of wave
+        oscillator.frequency.value = frequency; // Set the frequency of the tone
+    
         oscillator.connect(audioContext.destination);
         oscillator.start();
+        
       }
     });
   
