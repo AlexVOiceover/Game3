@@ -3,7 +3,7 @@ let activated = false;
 document.addEventListener("DOMContentLoaded", () => {
     const morseButton = document.getElementById("morseButton");
     const morseTextbox = document.getElementById("morseTextbox");
-    const enableAudioButton = document.getElementById("enableAudioButton");
+    const enableAudioSwitch = document.getElementById("enableAudioSwitch");
   
     let pressStartTime;
     let pressDuration;
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let oscillator;
     let audioEnabled = false;
 
-    enableAudioButton.addEventListener("change", function () {
+    enableAudioSwitch.addEventListener("change", function () {
         if (this.checked) {
           activated = true;
           } else {
@@ -20,11 +20,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
 
-  
+  /*
     enableAudioButton.addEventListener("click", () => {
       audioEnabled = true;
       enableAudioButton.disabled = true;
-    });
+    }); */
   
     morseButton.addEventListener("pointerdown", () => {
       pressStartTime = new Date();
