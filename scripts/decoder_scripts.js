@@ -1,3 +1,5 @@
+let activated = false;
+
 document.addEventListener("DOMContentLoaded", () => {
     const morseButton = document.getElementById("morseButton");
     const morseTextbox = document.getElementById("morseTextbox");
@@ -9,6 +11,15 @@ document.addEventListener("DOMContentLoaded", () => {
     let audioContext = new (window.AudioContext || window.webkitAudioContext)();
     let oscillator;
     let audioEnabled = false;
+
+    enableAudioButton.addEventListener("change", function () {
+        if (this.checked) {
+          activated = true;
+          } else {
+          activated = false;
+        }
+      });
+
   
     enableAudioButton.addEventListener("click", () => {
       audioEnabled = true;
