@@ -8,6 +8,7 @@ let rolldeviation = 0;
 let pitchdeviation = 0;
 const smoothFactor = 0.8;
 let timer = 0;
+let timerLine = 0;
 let activated = false;
 let arrayMorse = [];
 let lastChar;
@@ -196,6 +197,11 @@ function drawDot(x, y) {
     ctx.strokeStyle = "white";
     ctx.lineWidth = 2;
     ctx.stroke();
+
+    timerLine += 0.1;
+    const rotationAngle = (timerLine / decodSeconds) * Math.PI;
+    drawLine(rotationAngle);
+
   }
 
   // Check if the red dot is inside the blue circle
@@ -205,9 +211,7 @@ function drawDot(x, y) {
     timer += 0.1;
     document.getElementById("messages").innerText  = "Capturing";
 
-    const rotationAngle = (timer / decodSeconds) * Math.PI;
-    drawLine(rotationAngle);
-
+  
      // Calculate the remaining time and normalize it to the range [0, decodSeconds]
      const remainingTime = decodSeconds - (timer % decodSeconds);
 
