@@ -1,3 +1,5 @@
+const frequency = 750;
+
 document.addEventListener("DOMContentLoaded", () => {
     const morseButton = document.getElementById("morseButton");
     const morseTextbox = document.getElementById("morseTextbox");
