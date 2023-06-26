@@ -226,7 +226,7 @@ function drawDot(x, y) {
       drawSegment(timerLine);
 
       // Focus circle
-      if (timerLine <= 1) {
+      if (timerLine <= 1 && arrayMorse.length < numSymbols) {
         ctx.beginPath();
         // ctx.arc(x, y, 12, 0, 2 * Math.PI); 
         ctx.arc(x, y, focusCircleDiameter, 0, 2 * Math.PI); 
