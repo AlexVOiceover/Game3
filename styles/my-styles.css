@@ -19,13 +19,13 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1em;
-    margin-top: 3em;}
+    margin-top: 1em;}
 
 .charactersGuessed-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1em;
+    margin-bottom: 3em;
     margin-top: 1em;}
 
 .charactersTextboxes {
@@ -101,6 +101,17 @@
 .morseButton::-moz-focus-inner {
     border: 0;
 }
+
+.interceptorButton {
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+    font-size: large;
+    display: block;
+    margin: 0 auto;
+    margin-top: 3em;
+    margin-bottom: 3em;
+    background-color: rgba(5, 54, 1, 0.9);
+    border: none;}
 
 h1 {color: rgb(199, 199, 199);
     font-family: 'Orbitron', sans-serif;
