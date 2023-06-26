@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const translateMorseCode = () => {
 
-    const morseInput = morseTextbox.value.trim();
+    let morseInput = morseTextbox.value.trim();
     const character = Object.keys(morseCode).find((key) => morseCode[key] === morseInput);
 
     if (character) {
@@ -54,6 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     morseTextbox.value = "";
+    morseInput = "";
 };
 
   morseButton.addEventListener("pointerdown", () => {
