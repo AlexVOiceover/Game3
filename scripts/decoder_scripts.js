@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let isPlaying = false;
   let isStopBeepCalled = false; //Needed to dont call stopBeep twice
   const timeBetweenCharacters = 800;
+  const minDurationDash = 250;
 
   const morseCode = {
     'A': '.-',    'B': '-...',  'C': '-.-.',  'D': '-..',   'E': '.',
@@ -102,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!morseButton.disabled) {
       pressDuration = new Date() - pressStartTime;
-      const morseChar = pressDuration < 300 ? "." : "-";
+      const morseChar = pressDuration < minDurationDash ? "." : "-";
       morseInput += morseChar;
       morseButton.classList.remove("pressed");
     }
