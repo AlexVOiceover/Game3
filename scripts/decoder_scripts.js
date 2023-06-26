@@ -14,13 +14,16 @@ document.addEventListener("DOMContentLoaded", () => {
   let audioEnabled = false;
   let isPlaying = false;
 
+  morseButton.disabled = true;
 
   morseButton.addEventListener("pointerdown", () => {
-  // Add the 'pressed' class when the button is pressed
-  morseButton.classList.add("pressed");
+    // Add the 'pressed' class when the button is pressed
+    morseButton.classList.add("pressed");
   });
 
   enableAudioSwitch.addEventListener("change", function () {
+    // Toggle the disabled state of the button based on the switch state
+    morseButton.disabled = !toggleSwitch.checked;
     if (this.checked) {
       audioEnabled = true;
     } else {
@@ -77,8 +80,5 @@ document.addEventListener("DOMContentLoaded", () => {
   morseButton.addEventListener("pointerleave", stopBeep);
   morseButton.addEventListener("pointercancel", stopBeep);
 
-  // Add this event listener to prevent the default behavior of pointermove
-  /*morseButton.addEventListener("pointermove", (event) => {
-    event.preventDefault();
-  });*/
+
 });
