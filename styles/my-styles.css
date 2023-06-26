@@ -21,10 +21,13 @@
     margin-bottom: 1em;}
 
 .morseTextboxes {
+    border: none;
     color: rgb(199, 199, 199);
     font-family: 'Orbitron', sans-serif;
     background-color: rgba(34, 63, 40, 0.55);
-}
+    font-size: 16px;
+    margin-left: 2em;
+    margin-right: 2em}
 
 .calibrate-icon {
     cursor: pointer;
@@ -42,7 +45,7 @@
     margin: 0 auto;
     border-radius: 50%;
     margin-top: 3em;
-    margin-bottom: 5em;
+    margin-bottom: 3em;
     background-color: rgba(40, 148, 30, 0.9);
     -webkit-tap-highlight-color: transparent;
     touch-action: none;
