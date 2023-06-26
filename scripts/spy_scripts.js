@@ -381,9 +381,10 @@ if (finishedGame) {
       isRight = false;
     }
   }
-  });
   document.getElementById("messages").innerText = "Decodification successful";
   console.log(isRight)
+  });
+
 }
 
 // Function to generate a random character
