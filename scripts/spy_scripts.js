@@ -16,6 +16,7 @@ let lastChar;
 const maxDiameter = 300;
 const numSymbols = 5;
 
+
 const backgroundMusic = document.getElementById("backgroundMusic");
 backgroundMusic.volume = 0.5;
 
@@ -35,10 +36,19 @@ document.getElementById("startTransmissionButton").addEventListener("change", fu
   }
 });
 
-
+// Get the charaters-container element
+const upperContainer = document.querySelector('.characters-container');
+// Loop through the number of symbols and create textboxes
+for (let i = 0; i < numSymbols; i++) {
+  const textbox = document.createElement('input');
+  textbox.type = 'text';
+  textbox.classList.add('charactersTextboxes');
+  // Add the textbox to the container
+  upperContainer.appendChild(textbox);
+}
 
 // Get the charaters-container element
-const container = document.querySelector('.characters-container');
+const guessedContainer = document.querySelector('.charactersGuessed-container');
 // Loop through the number of symbols and create textboxes
 for (let i = 0; i < numSymbols; i++) {
   const textbox = document.createElement('input');
@@ -47,7 +57,6 @@ for (let i = 0; i < numSymbols; i++) {
   // Add the textbox to the container
   container.appendChild(textbox);
 }
-
 
 
 
@@ -243,6 +252,7 @@ function drawDot(x, y) {
       playMorseCode(lastChar);
       //document.getElementById("inputChar").value = randomChar;
       document.getElementById("arrayMorseTextbox").value = arrayMorse.join(" ");
+      upperContainer[arrayMorse.length - 1] = lastChar;
       // Generate new coordinates for the red dot
       signalPosX = Math.random() * canvas.width;
       signalPosY = Math.random() * canvas.height;
