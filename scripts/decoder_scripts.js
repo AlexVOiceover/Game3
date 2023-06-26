@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-    morseTextbox.value = "";
+    // morseTextbox.value = "";
 
 };
 
