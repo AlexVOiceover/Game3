@@ -251,7 +251,7 @@ function drawDot(x, y) {
       lastChar = generateRandomCharacter();
       console.log(lastChar);
       arrayMorse.push(lastChar);
-      upperContainer[arrayMorse.length].innerText = lastChar;
+      upperContainer[arrayMorse.length].value = lastChar;
       playMorseCode(lastChar);
       //document.getElementById("inputChar").value = randomChar;
       document.getElementById("arrayMorseTextbox").value = arrayMorse.join(" ");
