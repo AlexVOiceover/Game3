@@ -388,7 +388,7 @@ document.getElementById("playMorseCode").addEventListener("click", () => {
   } else {
     document.getElementById("messages").innerText = "Decodification failed";
   }
-  console.log(isRight)
+  // console.log(isRight)
   });
 
 
