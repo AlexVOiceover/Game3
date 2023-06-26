@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const translateMorseCode = () => {
     console.log("Dentro translateMorseCode" +morseInput);
-    let morseInput = morseTextbox.value.trim();
+    morseInput = morseTextbox.value.trim();
     const character = Object.keys(morseCode).find((key) => morseCode[key] === morseInput);
 
     if (character) {
