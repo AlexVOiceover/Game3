@@ -124,8 +124,8 @@ function drawLine(angle) {
   ctx.beginPath();
   ctx.moveTo(0, 0);
   ctx.lineTo(endPointX, endPointY);
-  ctx.strokeStyle = "white";
-  ctx.lineWidth = 1;
+  ctx.strokeStyle = "rgb(255,255,255,0.5)";
+  ctx.lineWidth = 2;
   ctx.stroke();
   ctx.restore();
 }
