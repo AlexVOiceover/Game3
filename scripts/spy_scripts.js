@@ -9,7 +9,7 @@ let pitchdeviation = 0;
 const smoothFactor = 0.8;
 let timer = 0;
 let timerLine = 0;
-const segmentSpeed = 0.0005;
+const segmentSpeed = 0.0007;
 let activated = false;
 let arrayMorse = [];
 let lastChar;
@@ -119,7 +119,7 @@ function drawSegment(progress) {
   ctx.arc(0, 0, lineLength, startAngle, endAngle, false);
   ctx.lineTo(0, 0);
   ctx.closePath();
-  ctx.fillStyle = "rgb(0,30,0,0.5)";
+  ctx.fillStyle = "rgb(0,20,0,0.5)";
   ctx.fill();
   ctx.restore();
 }
@@ -209,13 +209,13 @@ function drawDot(x, y) {
     timer += 0.1;
     document.getElementById("messages").innerText  = "Capturing";
 
-  
      // Calculate the remaining time and normalize it to the range [0, decodSeconds]
      const remainingTime = decodSeconds - (timer % decodSeconds);
 
-     // Draw the decreasing circle
-     drawDecreasingCircle(ctx, signalPosX, signalPosY, maxDiameter, remainingTime, decodSeconds);
-
+     // Draw the decreasing circle if segment < 1
+     if (timerLine <= 1) {
+      drawDecreasingCircle(ctx, signalPosX, signalPosY, maxDiameter, remainingTime, decodSeconds);
+     }
 
 
     // Check if the timer reaches decodSeconds seconds
