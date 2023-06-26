@@ -261,7 +261,7 @@ function drawDot(x, y) {
      }
 
 
-    // Check if the timer reaches decodSeconds seconds
+    // Check if the timer reaches decodSeconds seconds = decoded signal
     if (timer >= decodSeconds) {
       // Generate a random character and call playMorseCode with that character
       document.getElementById("messages").innerText  = "Decoded!";
@@ -298,7 +298,7 @@ function updateDotPosition(smooth) {
 function animationLoop() {
   updateDotPosition(smoothFactor);
   requestAnimationFrame(animationLoop);
-  if (arrayMorse.length < numSymbols){finishedGame = true;}
+  if (arrayMorse.length = numSymbols){finishedGame = true;}
 }
 
 // Check if the red dot is inside the white circle
