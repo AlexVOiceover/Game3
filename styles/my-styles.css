@@ -33,10 +33,11 @@
     border-radius: 50%;
     margin-top: 3em;
     margin-bottom: 5em;
+    background-color: rgba(219, 219, 219, 0.5);
     touch-action: none;}
 
 .morseButton.pressed {
-    background-color: rgb(255, 0, 0, 0.5);}
+    background-color: rgba(105, 105, 105, 0.5);}
       
 
 .morseButton:focus {
@@ -45,7 +46,7 @@
 }
 
 .morseButton:active {
-    background-color: rgb(255, 0, 0, 0.5);
+    background-color: rgba(105, 105, 105, 0.5);
     outline: none;
 }
 
