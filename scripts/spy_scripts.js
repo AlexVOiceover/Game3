@@ -213,27 +213,31 @@ function drawDot(x, y) {
    ctx.lineWidth = 1;
    ctx.stroke();
    
-   if (activated && timerLine <= 1 && arrayMorse.length < numSymbols){
+   if (activated){
 
-    // Signal, Red Dot
-      ctx.beginPath();
-      ctx.arc(signalPosX, signalPosY, 5, 0, 2 * Math.PI); // Draw a dot with a radius of 5
-      ctx.fillStyle  = "rgb(255, 85, 85)";
-      ctx.fill();   
+     
 
       timerLine += segmentSpeed;
       // draw Radar Segment;
       drawSegment(timerLine);
 
       // Focus circle
-      //if (timerLine <= 1 && arrayMorse.length < numSymbols) {
+      if (timerLine <= 1 && arrayMorse.length < numSymbols) {
+
+        // Signal, Red Dot
+        ctx.beginPath();
+        ctx.arc(signalPosX, signalPosY, 5, 0, 2 * Math.PI); // Draw a dot with a radius of 5
+        ctx.fillStyle  = "rgb(255, 85, 85)";
+        ctx.fill();  
+
+
         ctx.beginPath();
         // ctx.arc(x, y, 12, 0, 2 * Math.PI); 
         ctx.arc(x, y, focusCircleDiameter, 0, 2 * Math.PI); 
         ctx.strokeStyle = "white";
         ctx.lineWidth = 2;
         ctx.stroke();
-     // }
+      }
    }
 
   // Check if the red dot is inside the white circle
