@@ -266,7 +266,7 @@ function drawDot(x, y) {
       document.getElementById("messages").innerText  = "Decoded!";
       lastChar = generateRandomCharacter();
       arrayMorse.push(lastChar);
-      textboxes[arrayMorse.length - 1].value = "*";;
+      textboxes[arrayMorse.length - 1].value = "*";
       playMorseCode(lastChar);
       //document.getElementById("inputChar").value = randomChar;
       document.getElementById("arrayMorseTextbox").value = arrayMorse.join(" ");
@@ -377,11 +377,15 @@ document.getElementById("playMorseCode").addEventListener("click", () => {
   document.getElementById("verifyCode").addEventListener("click", () => {
   let isRight = true;  
   for (let i = 0; i < arrayMorse.length; i++) {
-    if (arrayMorse[i] !== guessedtextboxes[i].vlaue){
+    if (arrayMorse[i] !== guessedtextboxes[i].value){
       isRight = false;
     }
   }
-  document.getElementById("messages").innerText = "Decodification successful";
+  if (isRight) {
+    document.getElementById("messages").innerText = "Decodification successful";
+  } else {
+    document.getElementById("messages").innerText = "Decodification failed";
+  }
   console.log(isRight)
   });
 
