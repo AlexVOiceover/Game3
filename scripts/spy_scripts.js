@@ -297,7 +297,8 @@ function updateDotPosition(smooth) {
 function animationLoop() {
   updateDotPosition(smoothFactor);
   requestAnimationFrame(animationLoop);
-  
+  console.log(arrayMorse.length);
+  console.log(arrayMorse);
   if (arrayMorse.length = numSymbols){finishedGame = true;}
 }
 
