@@ -17,6 +17,7 @@ const maxDiameter = 300;
 const numSymbols = 5;
 const focusCircleDiameter = 30;
 let finishedGame = false;
+let playingBeep = false;
 
 
 const backgroundMusic = document.getElementById("backgroundMusic");
@@ -273,9 +274,9 @@ function drawDot(x, y) {
 
 
     // Check if the timer reaches decodSeconds seconds = decoded signal
-    if (timer >= decodSeconds) {
+    if (timer >= decodSeconds && !playingBeep) {
       // Generate a random character and call playMorseCode with that character
-      document.getElementById("messages").innerText  = "Decoded!";
+      document.getElementById("messages").innerText  = "Signal captured";
       lastChar = generateRandomCharacter();
       arrayMorse.push(lastChar);
       textboxes[arrayMorse.length - 1].value = "*";
@@ -292,7 +293,7 @@ function drawDot(x, y) {
     }
   } else {
     if (timer > 0 && timer < decodSeconds) {
-      document.getElementById("messages").innerText = "Lost transmission";
+      document.getElementById("messages").innerText = "Signal lost";
     }
     timer = 0;
   }
@@ -348,6 +349,11 @@ function playTone(frequency, duration) {
 }
 
 function playMorseCode(char) {
+
+  if (playingBeep) {
+    return;
+  }
+
   const morseCode = {
       'A': '.-',    'B': '-...',  'C': '-.-.',  'D': '-..',   'E': '.',
       'F': '..-.',  'G': '--.',   'H': '....',  'I': '..',    'J': '.---',
@@ -370,11 +376,19 @@ function playMorseCode(char) {
 
   for (let i = 0; i < code.length; i++) {
       setTimeout(() => {
+          playingBeep = true;
           playTone(frequency, code[i] === '.' ? dotDuration : dashDuration);
       }, currentTime * 1000);
 
       currentTime += (code[i] === '.' ? dotDuration : dashDuration) + gapDuration;
   }
+ // Set playingBeep back to false after the last beep finishes
+ function setPlayingBeepToFalse() {
+  playingBeep = false;
+}
+
+const delay = currentTime * 1000;
+setTimeout(setPlayingBeepToFalse, delay);
 }
 
 /*
