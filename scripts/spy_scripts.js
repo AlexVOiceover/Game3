@@ -205,7 +205,7 @@ function drawDot(x, y) {
     //Draw radar line
     const rotationAngle = (timerLine / decodSeconds) * Math.PI;
    // drawLine(rotationAngle);
-    drawLine(timerLine);
+   drawSegment(timerLine);
 
 
   }
