@@ -24,6 +24,10 @@
     cursor: pointer;
     width: 60px;}
 
+.exit-icon {
+    cursor: pointer;
+    width: 60px;}
+
 .morseButton {
     cursor: pointer;
     width: 300px;

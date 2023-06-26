@@ -43,12 +43,13 @@ document.addEventListener("DOMContentLoaded", () => {
   let translationTimeout;
 
   const translateMorseCode = () => {
-    // morseInput = "";
+    
     let morseInput = morseTextbox.value.trim();
     const character = Object.keys(morseCode).find((key) => morseCode[key] === morseInput);
 
     if (character) {
       arrayMorseTextbox.value += character;
+      morseInput = "";
     } else {
       arrayMorseTextbox.value += "*";
     }
