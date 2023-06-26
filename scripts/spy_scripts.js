@@ -9,7 +9,7 @@ let pitchdeviation = 0;
 const smoothFactor = 0.8;
 let timer = 0;
 let timerLine = 0;
-const segmentSpeed = 0.001;
+const segmentSpeed = 0.0002;
 let activated = false;
 let arrayMorse = [];
 let lastChar;
@@ -114,6 +114,7 @@ let signalPosY = Math.random() * canvas.height;
 
 //Radar segment. input 0 to 1
 function drawSegment(progress) {
+  console.log(progress);
   const lineLength = Math.sqrt(Math.pow(canvas.width / 2, 2) + Math.pow(canvas.height / 2, 2));
   const startAngle = -Math.PI / 2; // Start at 12 o'clock
   const endAngle = startAngle + 2 * Math.PI * progress;
@@ -202,8 +203,7 @@ function drawDot(x, y) {
     ctx.lineWidth = 2;
     ctx.stroke();
 
-    timerLine += segmentSpeed
- 
+   timerLine += segmentSpeed;
    // draw Radar Segment;
    drawSegment(timerLine);
 
