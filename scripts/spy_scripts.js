@@ -37,7 +37,7 @@ document.getElementById("startTransmissionButton").addEventListener("change", fu
 });
 
 // Get the charaters-container element
-const upperContainer = document.querySelector('.characters-container');
+const upperContainer = document.querySelectorAll('.characters-container');
 // Loop through the number of symbols and create textboxes
 for (let i = 0; i < numSymbols; i++) {
   const textbox = document.createElement('input');
