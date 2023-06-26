@@ -103,6 +103,7 @@
 
 .interceptorButton {
     cursor: pointer;
+    width: 3em;
     color: rgb(199, 199, 199);
     font-family: 'Orbitron', sans-serif;
     font-size: large;
