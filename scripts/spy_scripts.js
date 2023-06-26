@@ -14,11 +14,12 @@ let arrayMorse = [];
 let lastChar;
 const maxDiameter = 300; 
 
+/*
 const playAudio = (src, callback) => {
   const audio = new Audio(src);
- // audio.play();
+  audio.play();
   audio.addEventListener("ended", callback);
-};
+}; */
 
 const backgroundMusic = document.getElementById("backgroundMusic");
 backgroundMusic.volume = 0.5;
