@@ -13,7 +13,8 @@ const segmentSpeed = 0.0007;
 let activated = false;
 let arrayMorse = [];
 let lastChar;
-const maxDiameter = 300; 
+const maxDiameter = 300;
+const numSymbols = 5;
 
 const backgroundMusic = document.getElementById("backgroundMusic");
 backgroundMusic.volume = 0.5;
@@ -33,6 +34,21 @@ document.getElementById("startTransmissionButton").addEventListener("change", fu
     activated = false;
   }
 });
+
+
+
+// Get the charaters-container element
+const container = document.querySelector('.characters-container');
+// Loop through the number of symbols and create textboxes
+for (let i = 0; i < numSymbols; i++) {
+  const textbox = document.createElement('input');
+  textbox.type = 'text';
+  textbox.classList.add('morseTextboxes');
+  // Add the textbox to the container
+  container.appendChild(textbox);
+}
+
+
 
 
 window.addEventListener("deviceorientation", (event) => {

@@ -14,6 +14,12 @@
     background-size: cover; /* To cover the entire canvas */
 }
 
+.characters-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1em;}
+
 .controls-container {
     display: flex;
     justify-content: space-between;
