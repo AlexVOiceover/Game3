@@ -111,20 +111,17 @@ const ctx = canvas.getContext("2d");
 let signalPosX = Math.random() * canvas.width;
 let signalPosY = Math.random() * canvas.height;
 
-//Radar segment
-function drawLine(angle, segmentWidth) {
+//Radar segment. input 0 to 1
+function drawSegment(progress) {
   const lineLength = Math.sqrt(Math.pow(canvas.width / 2, 2) + Math.pow(canvas.height / 2, 2));
-  const adjustedAngle = angle - Math.PI / 2; // Subtract Math.PI / 2 from the angle
-  const endPointX = lineLength * Math.cos(adjustedAngle);
-  const endPointY = lineLength * Math.sin(adjustedAngle);
+  const startAngle = -Math.PI / 2; // Start at 12 o'clock
+  const endAngle = startAngle + 2 * Math.PI * progress;
 
   ctx.save();
   ctx.translate(canvas.width / 2, canvas.height / 2);
-  ctx.rotate(angle);
   ctx.beginPath();
   ctx.moveTo(0, 0);
-  ctx.lineTo(endPointX, endPointY);
-  ctx.arc(0, 0, lineLength, adjustedAngle - segmentWidth / 2, adjustedAngle + segmentWidth / 2, false);
+  ctx.arc(0, 0, lineLength, startAngle, endAngle, false);
   ctx.lineTo(0, 0);
   ctx.closePath();
   ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
@@ -204,11 +201,11 @@ function drawDot(x, y) {
     ctx.lineWidth = 2;
     ctx.stroke();
 
-    timerLine += 0.03;
+    timerLine += 0.01;
     //Draw radar line
     const rotationAngle = (timerLine / decodSeconds) * Math.PI;
-    drawLine(rotationAngle,(30 * Math.PI) / 180);
-
+   // drawLine(rotationAngle);
+    drawLine(timerLine);
 
 
   }
