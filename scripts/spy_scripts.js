@@ -119,7 +119,7 @@ function drawSegment(progress) {
   ctx.arc(0, 0, lineLength, startAngle, endAngle, false);
   ctx.lineTo(0, 0);
   ctx.closePath();
-  ctx.fillStyle = "rgb(0,50,0,0.5)";
+  ctx.fillStyle = "rgb(0,30,0,0.5)";
   ctx.fill();
   ctx.restore();
 }
@@ -164,7 +164,7 @@ function drawDot(x, y) {
   ctx.lineWidth = 1;
   ctx.stroke();
 
-   // Draw horizontal white line
+   // Draw horizontal green line
    ctx.beginPath();
    ctx.moveTo(0, canvas.height / 2);
    ctx.lineTo(canvas.width, canvas.height / 2);
@@ -172,7 +172,7 @@ function drawDot(x, y) {
    ctx.lineWidth = 1;
    ctx.stroke();
  
-   // Draw vertical white line
+   // Draw vertical green line
    ctx.beginPath();
    ctx.moveTo(canvas.width / 2, 0);
    ctx.lineTo(canvas.width / 2, canvas.height);
@@ -192,12 +192,14 @@ function drawDot(x, y) {
       // draw Radar Segment;
       drawSegment(timerLine);
 
-      // Moving circle
-      ctx.beginPath();
-      ctx.arc(x, y, 12, 0, 2 * Math.PI); 
-      ctx.strokeStyle = "white";
-      ctx.lineWidth = 2;
-      ctx.stroke();
+      // Focus circle
+      if (timerLine <= 1) {
+        ctx.beginPath();
+        ctx.arc(x, y, 12, 0, 2 * Math.PI); 
+        ctx.strokeStyle = "white";
+        ctx.lineWidth = 2;
+        ctx.stroke();
+      }
    }
 
   // Check if the red dot is inside the white circle
