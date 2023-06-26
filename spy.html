@@ -20,6 +20,7 @@
                     <span class="slider"></span>
                 </label>
                 <img class="calibrate-icon" id="resetPosition" src="images/calibrate.png" alt="Calibrate Gyro">
+                <input type="image" class="exit-icon" src="images/exit.png" alt="Exit" onclick="location.href='index.html'" />
             </div>
 
             <h1>Interceptor V130</h1>
@@ -40,11 +41,7 @@
         <div>
             <input type="text" id="arrayMorseTextbox" class="morseTextboxes" readonly style="display: block; width: 9em; margin: 10px auto; text-align: center;">
          </div>
-               
-        <div> 
-            <input type="image" class="exit-icon" src="images/exit.png" alt="Exit" onclick="location.href='index.html'" />       
-        </div> 
-       
+                      
          <!-- Using the next script I add a timestamp, this way it will reload the JS when I reload the page, otherwise it was keeping the old JS after an update -->
         <script>      
             document.write('<script src="scripts/spy_scripts.js?cache_bust=' + new Date().getTime() + '"><\/script>');
