@@ -25,7 +25,9 @@
     color: rgb(199, 199, 199);
     font-family: 'Orbitron', sans-serif;
     background-color: rgba(34, 63, 40, 0.55);
-    font-size: x-large;}
+    font-size: x-large;
+    width: calc(1ch + 8px); /* Set the width to approximately one character plus 8px padding */
+}
 
 .controls-container {
     display: flex;
