@@ -377,6 +377,8 @@ document.getElementById("playMorseCode").addEventListener("click", () => {
   document.getElementById("verifyCode").addEventListener("click", () => {
   let isRight = true;  
   for (let i = 0; i < arrayMorse.length; i++) {
+    console.log("Array i" + arrayMorse[i]);
+    console.log(guessedtextboxes[i].value);
     if (arrayMorse[i] !== guessedtextboxes[i].value){
       isRight = false;
     }
