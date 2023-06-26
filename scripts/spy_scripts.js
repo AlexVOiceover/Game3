@@ -114,7 +114,7 @@ let signalPosY = Math.random() * canvas.height;
 
 //Radar segment. input 0 to 1
 function drawSegment(progress) {
-  console.log(progress);
+  //console.log(progress);
   const lineLength = Math.sqrt(Math.pow(canvas.width / 2, 2) + Math.pow(canvas.height / 2, 2));
   const startAngle = -Math.PI / 2; // Start at 12 o'clock
   const endAngle = startAngle + 2 * Math.PI * progress;
@@ -126,7 +126,7 @@ function drawSegment(progress) {
   ctx.arc(0, 0, lineLength, startAngle, endAngle, false);
   ctx.lineTo(0, 0);
   ctx.closePath();
-  ctx.fillStyle = "rgb(240,240,240,0.7)";
+  ctx.fillStyle = "rgb(10,10,10,0.7)";
   ctx.fill();
   ctx.restore();
 }
