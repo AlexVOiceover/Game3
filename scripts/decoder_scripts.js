@@ -64,10 +64,11 @@ document.addEventListener("DOMContentLoaded", () => {
 };
 
   morseButton.addEventListener("pointerdown", () => {
-    if (!morseButton.disabled) {
-      // Add the 'pressed' class when the button is pressed
-      morseButton.classList.add("pressed");
-    }
+    if (morseButton.disabled) return; 
+   
+    // Add the 'pressed' class when the button is pressed
+    morseButton.classList.add("pressed");
+   
 
     isStopBeepCalled = false;
 
@@ -97,6 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const stopBeep = () => {
+    if (morseButton.disabled) return;
     if (isStopBeepCalled) {
       return;
     }
