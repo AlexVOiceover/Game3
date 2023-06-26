@@ -43,7 +43,7 @@ const container = document.querySelector('.characters-container');
 for (let i = 0; i < numSymbols; i++) {
   const textbox = document.createElement('input');
   textbox.type = 'text';
-  textbox.classList.add('morseTextboxes');
+  textbox.classList.add('charactersTextboxes');
   // Add the textbox to the container
   container.appendChild(textbox);
 }
