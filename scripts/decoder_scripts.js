@@ -14,6 +14,12 @@ document.addEventListener("DOMContentLoaded", () => {
   let audioEnabled = false;
   let isPlaying = false;
 
+
+  morseButton.addEventListener("pointerdown", () => {
+  // Add the 'pressed' class when the button is pressed
+  morseButton.classList.add("pressed");
+  });
+
   enableAudioSwitch.addEventListener("change", function () {
     if (this.checked) {
       audioEnabled = true;
@@ -52,6 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
     pressDuration = new Date() - pressStartTime;
     const morseChar = pressDuration < 300 ? "." : "-";
     morseInput += morseChar;
+    morseButton.classList.remove("pressed");
 
     if (oscillator) {
       oscillator.stop();
