@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let gainNode;
   let audioEnabled = false;
   let isPlaying = false;
-  let isStopBeepCalled = false; //Needed to dont call stopBeeo twice
+  let isStopBeepCalled = false; //Needed to dont call stopBeep twice
   const timeBetweenCharacters = 800;
 
   const morseCode = {
@@ -54,7 +54,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     morseTextbox.value = "";
-    morseInput = "";
+    clearTimeout(translationTimeout);
+    
+     // Clear the morseTextbox and reset its value
+     morseTextbox.value = "";
+     translationTimeout = setTimeout(translateMorseCode, timeBetweenCharacters);
+
 };
 
   morseButton.addEventListener("pointerdown", () => {
