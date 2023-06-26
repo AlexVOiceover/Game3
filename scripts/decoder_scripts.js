@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let translationTimeout;
 
   const translateMorseCode = () => {
-
+    morseInput = "";
     let morseInput = morseTextbox.value.trim();
     const character = Object.keys(morseCode).find((key) => morseCode[key] === morseInput);
 
@@ -54,11 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     morseTextbox.value = "";
-    clearTimeout(translationTimeout);
-    
-     // Clear the morseTextbox and reset its value
-     morseTextbox.value = "";
-     translationTimeout = setTimeout(translateMorseCode, timeBetweenCharacters);
 
 };
 
