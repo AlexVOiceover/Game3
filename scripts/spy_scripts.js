@@ -15,6 +15,7 @@ let arrayMorse = [];
 let lastChar;
 const maxDiameter = 300;
 const numSymbols = 5;
+const focusCircleDiameter = 30;
 
 
 const backgroundMusic = document.getElementById("backgroundMusic");
@@ -222,7 +223,7 @@ function drawDot(x, y) {
       if (timerLine <= 1) {
         ctx.beginPath();
         // ctx.arc(x, y, 12, 0, 2 * Math.PI); 
-        ctx.arc(x, y, 52, 0, 2 * Math.PI); 
+        ctx.arc(x, y, focusCircleDiameter, 0, 2 * Math.PI); 
         ctx.strokeStyle = "white";
         ctx.lineWidth = 2;
         ctx.stroke();
@@ -230,7 +231,7 @@ function drawDot(x, y) {
    }
 
   // Check if the red dot is inside the white circle
-  const isInside = isRedDotInsideBlueCircle(signalPosX, signalPosY, x, y, 9);
+  const isInside = isRedDotInsideBlueCircle(signalPosX, signalPosY, x, y, focusCircleDiameter);
 
   if (isInside) {
     timer += 0.1;
