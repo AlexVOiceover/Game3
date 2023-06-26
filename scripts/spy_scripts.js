@@ -182,26 +182,23 @@ function drawDot(x, y) {
    
    if (activated){
 
+    // Signal, Red Dot
+      ctx.beginPath();
+      ctx.arc(signalPosX, signalPosY, 5, 0, 2 * Math.PI); // Draw a dot with a radius of 5
+      ctx.fillStyle  = "rgb(255, 85, 85)";
+      ctx.fill();   
 
- // Signal, Red Dot
-    ctx.beginPath();
-    ctx.arc(signalPosX, signalPosY, 5, 0, 2 * Math.PI); // Draw a dot with a radius of 5
-    ctx.fillStyle  = "rgb(255, 85, 85)";
-    ctx.fill(); 
- 
-    // Moving circle
-    ctx.beginPath();
-    ctx.arc(x, y, 12, 0, 2 * Math.PI); 
-    ctx.strokeStyle = "white";
-    ctx.lineWidth = 2;
-    ctx.stroke();
+      timerLine += segmentSpeed;
+      // draw Radar Segment;
+      drawSegment(timerLine);
 
-   timerLine += segmentSpeed;
-   // draw Radar Segment;
-   drawSegment(timerLine);
-
-
-  }
+      // Moving circle
+      ctx.beginPath();
+      ctx.arc(x, y, 12, 0, 2 * Math.PI); 
+      ctx.strokeStyle = "white";
+      ctx.lineWidth = 2;
+      ctx.stroke();
+   }
 
   // Check if the red dot is inside the white circle
   const isInside = isRedDotInsideBlueCircle(signalPosX, signalPosY, x, y, 9);
