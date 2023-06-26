@@ -391,13 +391,13 @@ const delay = currentTime * 1000;
 setTimeout(setPlayingBeepToFalse, delay);
 }
 
-/*
+
 document.getElementById("playMorseCode").addEventListener("click", () => {
   //const inputChar = document.getElementById("inputChar").value;
   if (lastChar.length === 1) {
       playMorseCode(lastChar);
   }
-}); */
+}); 
 
 
   document.getElementById("verifyCode").addEventListener("click", () => {
