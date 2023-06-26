@@ -345,12 +345,13 @@ function playMorseCode(char) {
   }
 }
 
+/*
 document.getElementById("playMorseCode").addEventListener("click", () => {
   //const inputChar = document.getElementById("inputChar").value;
   if (lastChar.length === 1) {
       playMorseCode(lastChar);
   }
-});
+}); */
 
 // Function to generate a random character
 function generateRandomCharacter() {
