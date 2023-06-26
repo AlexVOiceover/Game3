@@ -248,7 +248,7 @@ function drawDot(x, y) {
     if (timer >= decodSeconds) {
       // Generate a random character and call playMorseCode with that character
       document.getElementById("messages").innerText  = "Decoded!";
-      upperContainer[arrayMorse.length - 1] = lastChar;
+      upperContainer[arrayMorse.length - 1] = arrayMorse[arrayMorse.length];
       console.log(lastChar);
       lastChar = generateRandomCharacter();
       arrayMorse.push(lastChar);;
