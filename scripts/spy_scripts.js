@@ -71,7 +71,7 @@ const guessedtextboxes = guessedContainer.querySelectorAll('.charactersTextboxes
 
 
 window.addEventListener("deviceorientation", (event) => {
-  if (activated) {
+  if (activated && !finishedGame) {
     if (event.gamma === null) {
       console.log("Device orientation not supported or permission denied");
       updateDotPosition();
@@ -99,7 +99,7 @@ window.addEventListener("deviceorientation", (event) => {
 });
 
 window.addEventListener("deviceorientation", (event) => {
-  if (activated) {
+  if (activated && !finishedGame) {
     if (event.beta === null) {
       console.log("Device orientation not supported or permission denied");
       updateDotPosition();
@@ -297,9 +297,8 @@ function updateDotPosition(smooth) {
 function animationLoop() {
   updateDotPosition(smoothFactor);
   requestAnimationFrame(animationLoop);
-  console.log(arrayMorse.length);
-  console.log(arrayMorse);
-  if (arrayMorse.length = numSymbols){finishedGame = true;}
+
+  if (arrayMorse.length === numSymbols){finishedGame = true;}
 }
 
 // Check if the red dot is inside the white circle
