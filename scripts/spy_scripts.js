@@ -47,6 +47,7 @@ for (let i = 0; i < numSymbols; i++) {
   upperContainer.appendChild(textbox);
 }
 
+//CHANGE THESE TO USE ID INSTEAD OF CLASS
 // Get the charaters-container element
 const guessedContainer = document.querySelector('.charactersGuessed-container');
 // Loop through the number of symbols and create textboxes
