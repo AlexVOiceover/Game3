@@ -373,6 +373,19 @@ document.getElementById("playMorseCode").addEventListener("click", () => {
   }
 }); */
 
+if (finishedGame) {
+  document.getElementById("verifyCode").addEventListener("click", () => {
+  let isRight = true;  
+  for (let i = 0; i < arrayMorse.length; i++) {
+    if (arrayMorse[i] !== guessedtextboxes[i].vlaue){
+      isRight = false;
+    }
+  }
+  });
+  document.getElementById("messages").innerText = "Decodification successful";
+  console.log(isRight)
+}
+
 // Function to generate a random character
 function generateRandomCharacter() {
   const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
