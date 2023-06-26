@@ -10,9 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
   let morseInput = "";
   let audioContext = new (window.AudioContext || window.webkitAudioContext)();
   let oscillator;
-  let gainNode; // Move gainNode to the global scope
+  let gainNode;
   let audioEnabled = false;
-  let isPlaying = false; // Add isPlaying flag
+  let isPlaying = false;
 
   enableAudioSwitch.addEventListener("change", function () {
     if (this.checked) {
@@ -37,35 +37,36 @@ document.addEventListener("DOMContentLoaded", () => {
       oscillator = audioContext.createOscillator();
       gainNode = audioContext.createGain();
 
-      oscillator.type = "sine"; // Set the type of wave
-      oscillator.frequency.value = frequency; // Set the frequency of the tone
+      oscillator.type = "sine";
+      oscillator.frequency.value = frequency;
 
       oscillator.connect(gainNode);
       gainNode.connect(audioContext.destination);
       oscillator.start();
 
-      isPlaying = true; // Set isPlaying flag to true
+      isPlaying = true;
     }
   });
 
-  morseButton.addEventListener("pointerup", () => {
+  const stopBeep = () => {
     pressDuration = new Date() - pressStartTime;
-    const morseChar = pressDuration < 300 ? "." : "-"; // Threshold of 300ms to differentiate between dot and dash
+    const morseChar = pressDuration < 300 ? "." : "-";
     morseInput += morseChar;
 
-    // Stop playing the tone
     if (oscillator) {
       oscillator.stop();
 
-      // Add this line to release resources after the tone has played
       oscillator.onended = () => {
         gainNode.disconnect(audioContext.destination);
         oscillator.disconnect(gainNode);
-        isPlaying = false; // Set isPlaying flag to false
+        isPlaying = false;
       };
     }
 
-    // Update the textbox
     morseTextbox.value = morseInput;
-  });
+  };
+
+  morseButton.addEventListener("pointerup", stopBeep);
+  morseButton.addEventListener("pointerleave", stopBeep);
+  morseButton.addEventListener("pointercancel", stopBeep);
 });
