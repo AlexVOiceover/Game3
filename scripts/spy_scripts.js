@@ -248,12 +248,14 @@ function drawDot(x, y) {
     if (timer >= decodSeconds) {
       // Generate a random character and call playMorseCode with that character
       document.getElementById("messages").innerText  = "Decoded!";
+      upperContainer[arrayMorse.length - 1] = lastChar;
+      console.log(lastChar);
       lastChar = generateRandomCharacter();
       arrayMorse.push(lastChar);;
       playMorseCode(lastChar);
       //document.getElementById("inputChar").value = randomChar;
       document.getElementById("arrayMorseTextbox").value = arrayMorse.join(" ");
-      upperContainer[arrayMorse.length - 1] = lastChar;
+      
       // Generate new coordinates for the red dot
       signalPosX = Math.random() * canvas.width;
       signalPosY = Math.random() * canvas.height;
