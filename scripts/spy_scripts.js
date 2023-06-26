@@ -61,12 +61,24 @@ const guessedContainer = document.querySelector('.charactersGuessed-container');
 for (let i = 0; i < numSymbols; i++) {
   const textbox = document.createElement('input');
   textbox.type = 'text';
+  textbox.maxLength = 1; 
   textbox.classList.add('charactersTextboxes');
   // Add the textbox to the container
   guessedContainer.appendChild(textbox);
 }
 // Get all the textboxes with the class 'charactersTextboxes'
 const guessedtextboxes = guessedContainer.querySelectorAll('.charactersTextboxes');
+// After inserting each character jumps to the next one
+guessedContainer.addEventListener('input', (e) => {
+  const target = e.target;
+  if (target.value.length >= target.maxLength) {
+    const next = target.nextElementSibling;
+    if (next && next.tagName.toLowerCase() === 'input') {
+      next.focus();
+    }
+  }
+});
+
 
 
 
@@ -377,8 +389,7 @@ document.getElementById("playMorseCode").addEventListener("click", () => {
   document.getElementById("verifyCode").addEventListener("click", () => {
   let isRight = true;  
   for (let i = 0; i < arrayMorse.length; i++) {
-    console.log("Array i" + arrayMorse[i]);
-    console.log(guessedtextboxes[i].value);
+  
     if (arrayMorse[i] !== guessedtextboxes[i].value){
       isRight = false;
     }
