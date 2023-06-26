@@ -257,10 +257,8 @@ function drawDot(x, y) {
       // Generate a random character and call playMorseCode with that character
       document.getElementById("messages").innerText  = "Decoded!";
       lastChar = generateRandomCharacter();
-      console.log(lastChar);
       arrayMorse.push(lastChar);
-      console.log(arrayMorse);
-      textboxes[arrayMorse.length].value = lastChar;
+      textboxes[arrayMorse.length - 1].value = lastChar;
       playMorseCode(lastChar);
       //document.getElementById("inputChar").value = randomChar;
       document.getElementById("arrayMorseTextbox").value = arrayMorse.join(" ");

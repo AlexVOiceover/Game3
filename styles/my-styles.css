@@ -32,7 +32,7 @@
     font-family: 'Orbitron', sans-serif;
     background-color: rgba(34, 63, 40, 0.55);
     font-size: medium;
-    width: calc(1ch + 8px); /* Set the width to approximately one character plus 8px padding */
+    width: 3em; /* Set the width to approximately one character plus 8px padding */
 }
 
 .controls-container {
