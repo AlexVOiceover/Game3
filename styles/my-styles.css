@@ -31,9 +31,8 @@
     color: rgb(199, 199, 199);
     font-family: 'Orbitron', sans-serif;
     background-color: rgba(34, 63, 40, 0.55);
-    font-size: medium;
-    width: 3em; /* Set the width to approximately one character plus 8px padding */
-}
+    font-size: larger;
+    width: 3em;}
 
 .controls-container {
     display: flex;
