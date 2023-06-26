@@ -47,6 +47,10 @@ for (let i = 0; i < numSymbols; i++) {
   // Add the textbox to the container
   upperContainer.appendChild(textbox);
 }
+// Get all the textboxes with the class 'charactersTextboxes'
+const textboxes = upperContainer.querySelectorAll('.charactersTextboxes');
+
+
 
 //CHANGE THESE TO USE ID INSTEAD OF CLASS
 // Get the charaters-container element
@@ -59,6 +63,8 @@ for (let i = 0; i < numSymbols; i++) {
   // Add the textbox to the container
   guessedContainer.appendChild(textbox);
 }
+// Get all the textboxes with the class 'charactersTextboxes'
+const guessedtextboxes = guessedContainer.querySelectorAll('.charactersTextboxes');
 
 
 
@@ -254,7 +260,7 @@ function drawDot(x, y) {
       console.log(lastChar);
       arrayMorse.push(lastChar);
       console.log(arrayMorse);
-      upperContainer[arrayMorse.length].value = lastChar;
+      textboxes[arrayMorse.length].value = lastChar;
       playMorseCode(lastChar);
       //document.getElementById("inputChar").value = randomChar;
       document.getElementById("arrayMorseTextbox").value = arrayMorse.join(" ");
