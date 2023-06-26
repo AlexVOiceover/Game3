@@ -32,7 +32,8 @@
     margin: 0 auto;
     border-radius: 50%;
     margin-top: 3em;
-    margin-bottom: 5em}
+    margin-bottom: 5em;
+    touch-action: none;}
 
 .morseButton:focus {
     outline: none;
