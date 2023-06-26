@@ -383,7 +383,7 @@ document.getElementById("playMorseCode").addEventListener("click", () => {
       isRight = false;
     }
   }
-  if (isRight) {
+  if (isRight && arrayMorse.length == numSymbols) {
     document.getElementById("messages").innerText = "Decodification successful";
   } else {
     document.getElementById("messages").innerText = "Decodification failed";
