@@ -71,7 +71,7 @@ const guessedtextboxes = guessedContainer.querySelectorAll('.charactersTextboxes
 
 
 window.addEventListener("deviceorientation", (event) => {
-  if (activated && !finishedGame) {
+  if (activated) {
     if (event.gamma === null) {
       console.log("Device orientation not supported or permission denied");
       updateDotPosition();
@@ -99,7 +99,7 @@ window.addEventListener("deviceorientation", (event) => {
 });
 
 window.addEventListener("deviceorientation", (event) => {
-  if (activated && !finishedGame) {
+  if (activated) {
     if (event.beta === null) {
       console.log("Device orientation not supported or permission denied");
       updateDotPosition();
