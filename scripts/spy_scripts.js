@@ -240,7 +240,7 @@ function drawDot(x, y) {
         ctx.lineWidth = 2;
         ctx.stroke();
         }
-      } else { document.getElementById("messages").innerText  = "Time out!";}
+      }// else { document.getElementById("messages").innerText  = "Time out!";}
       
    }
 
