@@ -221,7 +221,8 @@ function drawDot(x, y) {
       // Focus circle
       if (timerLine <= 1) {
         ctx.beginPath();
-        ctx.arc(x, y, 12, 0, 2 * Math.PI); 
+        // ctx.arc(x, y, 12, 0, 2 * Math.PI); 
+        ctx.arc(x, y, 52, 0, 2 * Math.PI); 
         ctx.strokeStyle = "white";
         ctx.lineWidth = 2;
         ctx.stroke();
@@ -250,8 +251,8 @@ function drawDot(x, y) {
       document.getElementById("messages").innerText  = "Decoded!";
       lastChar = generateRandomCharacter();
       console.log(lastChar);
-      console.log(arrayMorse);
       arrayMorse.push(lastChar);
+      console.log(arrayMorse);
       upperContainer[arrayMorse.length].value = lastChar;
       playMorseCode(lastChar);
       //document.getElementById("inputChar").value = randomChar;
