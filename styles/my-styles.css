@@ -18,13 +18,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1em;}
+    margin-bottom: 1em;
+    margin-top: 5em;}
 
 .charactersGuessed-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1em;}
+    margin-bottom: 1em;
+    margin-top: 3em;}
 
 .charactersTextboxes {
     border: none;
