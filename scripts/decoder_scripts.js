@@ -50,7 +50,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (character) {
     arrayMorseTextbox.value += character;
+
+    morseInput = "";
     morseTextbox.value = "";
+
   } else {
     arrayMorseTextbox.value += "*";
   }
