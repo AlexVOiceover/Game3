@@ -3,6 +3,7 @@ const frequency = 750;
 document.addEventListener("DOMContentLoaded", () => {
   const morseButton = document.getElementById("morseButton");
   const morseTextbox = document.getElementById("morseTextbox");
+  const arrayMorseTextbox = document.getElementById("arrayMorseTextbox");
   const enableAudioSwitch = document.getElementById("enableAudioSwitch");
 
   let pressStartTime;
@@ -42,23 +43,17 @@ document.addEventListener("DOMContentLoaded", () => {
   let translationTimeout;
 
   const translateMorseCode = () => {
-  const morseTextbox = document.getElementById("morseTextbox");
-  const arrayMorseTextbox = document.getElementById("arrayMorseTextbox");
-  const morseInput = morseTextbox.value.trim();
 
-  const character = Object.keys(morseCode).find((key) => morseCode[key] === morseInput);
+    const morseInput = morseTextbox.value.trim();
+    const character = Object.keys(morseCode).find((key) => morseCode[key] === morseInput);
 
-  if (character) {
-    arrayMorseTextbox.value += character;
+    if (character) {
+      arrayMorseTextbox.value += character;
+    } else {
+      arrayMorseTextbox.value += "*";
+    }
 
-    morseInput = "";
     morseTextbox.value = "";
-
-  } else {
-    arrayMorseTextbox.value += "*";
-  }
-
-  morseTextbox.value = "";
 };
 
   morseButton.addEventListener("pointerdown", () => {
@@ -95,7 +90,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const stopBeep = () => {
-
     if (isStopBeepCalled) {
       return;
     }
