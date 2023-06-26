@@ -55,7 +55,7 @@ for (let i = 0; i < numSymbols; i++) {
   textbox.type = 'text';
   textbox.classList.add('charactersTextboxes');
   // Add the textbox to the container
-  container.appendChild(textbox);
+  guessedcontainer.appendChild(textbox);
 }
 
 
