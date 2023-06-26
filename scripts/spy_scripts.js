@@ -250,6 +250,7 @@ function drawDot(x, y) {
       document.getElementById("messages").innerText  = "Decoded!";
       lastChar = generateRandomCharacter();
       console.log(lastChar);
+      console.log(arrayMorse);
       arrayMorse.push(lastChar);
       upperContainer[arrayMorse.length].value = lastChar;
       playMorseCode(lastChar);
