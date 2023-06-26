@@ -32,7 +32,7 @@
     border: none;
     color: rgb(199, 199, 199);
     font-family: 'Orbitron', sans-serif;
-    background-color: rgba(34, 63, 40, 0.55);
+    background-color: rgba(34, 63, 40, 0.8);
     font-size: larger;
     text-align: center;
     width: 3em;}
@@ -51,7 +51,7 @@
     border: none;
     color: rgb(199, 199, 199);
     font-family: 'Orbitron', sans-serif;
-    background-color: rgba(34, 63, 40, 0.55);
+    background-color: rgba(34, 63, 40, 0.8);
     font-size: x-large;
     letter-spacing: 0.4em;
     margin-left: 4em;
