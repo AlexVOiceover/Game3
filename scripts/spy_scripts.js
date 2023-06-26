@@ -216,9 +216,7 @@ function drawDot(x, y) {
    ctx.stroke();
    
    if (activated){
-
-     
-
+  
       timerLine += segmentSpeed;
       // draw Radar Segment;
       drawSegment(timerLine);
@@ -226,6 +224,7 @@ function drawDot(x, y) {
       // Focus circle
       if (timerLine <= 1) {
 
+        console.log(finishedGame);
         if (!finishedGame){
         // Signal, Red Dot
         ctx.beginPath();
@@ -298,6 +297,7 @@ function updateDotPosition(smooth) {
 function animationLoop() {
   updateDotPosition(smoothFactor);
   requestAnimationFrame(animationLoop);
+  
   if (arrayMorse.length = numSymbols){finishedGame = true;}
 }
 
