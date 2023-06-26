@@ -14,6 +14,17 @@ document.addEventListener("DOMContentLoaded", () => {
   let audioEnabled = false;
   let isPlaying = false;
   let isStopBeepCalled = false; //Needed to dont call stopBeeo twice
+  const timeBetweenCharacters = 800;
+
+  const morseCode = {
+    'A': '.-',    'B': '-...',  'C': '-.-.',  'D': '-..',   'E': '.',
+    'F': '..-.',  'G': '--.',   'H': '....',  'I': '..',    'J': '.---',
+    'K': '-.-',   'L': '.-..',  'M': '--',    'N': '-.',    'O': '---',
+    'P': '.--.',  'Q': '--.-',  'R': '.-.',   'S': '...',   'T': '-',
+    'U': '..-',   'V': '...-',  'W': '.--',   'X': '-..-',  'Y': '-.--',
+    'Z': '--..',  '0': '-----', '1': '.----', '2': '..---', '3': '...--',
+    '4': '....-', '5': '.....', '6': '-....', '7': '--...', '8': '---..', '9': '----.'
+};
 
   morseButton.disabled = true;
 
@@ -27,6 +38,24 @@ document.addEventListener("DOMContentLoaded", () => {
       audioEnabled = false;
     }
   });
+
+  let translationTimeout;
+
+  const translateMorseCode = () => {
+  const morseTextbox = document.getElementById("morseTextbox");
+  const arrayMorseTextbox = document.getElementById("arrayMorseTextbox");
+  const morseInput = morseTextbox.value.trim();
+
+  const character = Object.keys(morseCode).find((key) => morseCode[key] === morseInput);
+
+  if (character) {
+    arrayMorseTextbox.value += character;
+  } else {
+    arrayMorseTextbox.value += "*";
+  }
+
+  morseTextbox.value = "";
+};
 
   morseButton.addEventListener("pointerdown", () => {
     if (!morseButton.disabled) {
@@ -83,6 +112,9 @@ document.addEventListener("DOMContentLoaded", () => {
         isPlaying = false;
       };
     }
+
+    clearTimeout(translationTimeout);
+    translationTimeout = setTimeout(translateMorseCode, timeBetweenCharacters);
 
     morseTextbox.value = morseInput;
     isStopBeepCalled = true;
