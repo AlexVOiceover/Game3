@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let gainNode;
   let audioEnabled = false;
   let isPlaying = false;
+  let isStopBeepCalled = false; //Needed to dont call stopBeeo twice
 
   morseButton.disabled = true;
 
@@ -32,6 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
       // Add the 'pressed' class when the button is pressed
       morseButton.classList.add("pressed");
     }
+
+    isStopBeepCalled = false;
 
     pressStartTime = new Date();
 
@@ -59,6 +62,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const stopBeep = () => {
+
+    if (isStopBeepCalled) {
+      return;
+    }
+
     if (!morseButton.disabled) {
       pressDuration = new Date() - pressStartTime;
       const morseChar = pressDuration < 300 ? "." : "-";
@@ -77,6 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     morseTextbox.value = morseInput;
+    isStopBeepCalled = true;
   };
 
   morseButton.addEventListener("pointerup", stopBeep);
