@@ -9,6 +9,7 @@ let pitchdeviation = 0;
 const smoothFactor = 0.8;
 let timer = 0;
 let timerLine = 0;
+const segmentSpeed = 0.001;
 let activated = false;
 let arrayMorse = [];
 let lastChar;
@@ -201,10 +202,9 @@ function drawDot(x, y) {
     ctx.lineWidth = 2;
     ctx.stroke();
 
-    timerLine += 0.01;
-    //Draw radar line
-    const rotationAngle = (timerLine / decodSeconds) * Math.PI;
-   // drawLine(rotationAngle);
+    timerLine += segmentSpeed
+ 
+   // draw Radar Segment;
    drawSegment(timerLine);
 
 
