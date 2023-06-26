@@ -16,11 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   morseButton.disabled = true;
 
-  morseButton.addEventListener("pointerdown", () => {
-    // Add the 'pressed' class when the button is pressed
-    morseButton.classList.add("pressed");
-  });
-
   enableAudioSwitch.addEventListener("change", function () {
     // Toggle the disabled state of the button based on the switch state
     morseButton.disabled = !enableAudioSwitch.checked;
@@ -33,6 +28,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   morseButton.addEventListener("pointerdown", () => {
+    if (!morseButton.disabled) {
+      // Add the 'pressed' class when the button is pressed
+      morseButton.classList.add("pressed");
+    }
+
     pressStartTime = new Date();
 
     if (audioEnabled) {
@@ -59,10 +59,12 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const stopBeep = () => {
-    pressDuration = new Date() - pressStartTime;
-    const morseChar = pressDuration < 300 ? "." : "-";
-    morseInput += morseChar;
-    morseButton.classList.remove("pressed");
+    if (!morseButton.disabled) {
+      pressDuration = new Date() - pressStartTime;
+      const morseChar = pressDuration < 300 ? "." : "-";
+      morseInput += morseChar;
+      morseButton.classList.remove("pressed");
+    }
 
     if (oscillator) {
       oscillator.stop();
@@ -80,6 +82,4 @@ document.addEventListener("DOMContentLoaded", () => {
   morseButton.addEventListener("pointerup", stopBeep);
   morseButton.addEventListener("pointerleave", stopBeep);
   morseButton.addEventListener("pointercancel", stopBeep);
-
-
 });
