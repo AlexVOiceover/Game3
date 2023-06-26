@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
   morseButton.addEventListener("pointercancel", stopBeep);
 
   // Add this event listener to prevent the default behavior of pointermove
-  morseButton.addEventListener("pointermove", (event) => {
+  /*morseButton.addEventListener("pointermove", (event) => {
     event.preventDefault();
-  });
+  });*/
 });
