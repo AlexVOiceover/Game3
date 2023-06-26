@@ -223,8 +223,9 @@ function drawDot(x, y) {
       drawSegment(timerLine);
 
       // Focus circle
-      if (timerLine <= 1 && arrayMorse.length < numSymbols) {
+      if (timerLine <= 1) {
 
+        if (arrayMorse.length < numSymbols){
         // Signal, Red Dot
         ctx.beginPath();
         ctx.arc(signalPosX, signalPosY, 5, 0, 2 * Math.PI); // Draw a dot with a radius of 5
@@ -238,7 +239,9 @@ function drawDot(x, y) {
         ctx.strokeStyle = "white";
         ctx.lineWidth = 2;
         ctx.stroke();
-      }
+        }
+      } else { document.getElementById("messages").innerText  = "Time out!";}
+      
    }
 
   // Check if the red dot is inside the white circle
