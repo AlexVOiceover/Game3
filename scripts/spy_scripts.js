@@ -9,18 +9,11 @@ let pitchdeviation = 0;
 const smoothFactor = 0.8;
 let timer = 0;
 let timerLine = 0;
-const segmentSpeed = 0.0002;
+const segmentSpeed = 0.001;
 let activated = false;
 let arrayMorse = [];
 let lastChar;
 const maxDiameter = 300; 
-
-/*
-const playAudio = (src, callback) => {
-  const audio = new Audio(src);
-  audio.play();
-  audio.addEventListener("ended", callback);
-}; */
 
 const backgroundMusic = document.getElementById("backgroundMusic");
 backgroundMusic.volume = 0.5;
