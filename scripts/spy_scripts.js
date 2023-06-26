@@ -111,8 +111,8 @@ const ctx = canvas.getContext("2d");
 let signalPosX = Math.random() * canvas.width;
 let signalPosY = Math.random() * canvas.height;
 
-//Radar line
-function drawLine(angle) {
+//Radar segment
+function drawLine(angle, segmentWidth) {
   const lineLength = Math.sqrt(Math.pow(canvas.width / 2, 2) + Math.pow(canvas.height / 2, 2));
   const adjustedAngle = angle - Math.PI / 2; // Subtract Math.PI / 2 from the angle
   const endPointX = lineLength * Math.cos(adjustedAngle);
@@ -124,9 +124,11 @@ function drawLine(angle) {
   ctx.beginPath();
   ctx.moveTo(0, 0);
   ctx.lineTo(endPointX, endPointY);
-  ctx.strokeStyle = "rgb(255,255,255,0.5)";
-  ctx.lineWidth = 2;
-  ctx.stroke();
+  ctx.arc(0, 0, lineLength, adjustedAngle - segmentWidth / 2, adjustedAngle + segmentWidth / 2, false);
+  ctx.lineTo(0, 0);
+  ctx.closePath();
+  ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
+  ctx.fill();
   ctx.restore();
 }
 
@@ -205,18 +207,9 @@ function drawDot(x, y) {
     timerLine += 0.03;
     //Draw radar line
     const rotationAngle = (timerLine / decodSeconds) * Math.PI;
-    drawLine(rotationAngle);
+    drawLine(rotationAngle,(30 * Math.PI) / 180);
 
-    /*
-    // Red dot will decrease with time
-     // Calculate the normalized timer value in the range [0, 1]
-     const normalizedTimer = decodSeconds / timerLine;
-     
-     // Draw the red dot with the updated opacity
-     ctx.beginPath();
-     ctx.arc(signalPosX, signalPosY, 5*normalizedTimer, 0, 2 * Math.PI);
-     ctx.fillStyle = "rgb(255, 85, 85)";
-     ctx.fill(); */
+
 
   }
 
