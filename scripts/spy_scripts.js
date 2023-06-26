@@ -16,6 +16,7 @@ let lastChar;
 const maxDiameter = 300;
 const numSymbols = 5;
 const focusCircleDiameter = 30;
+let finishedGame = false;
 
 
 const backgroundMusic = document.getElementById("backgroundMusic");
@@ -70,7 +71,7 @@ const guessedtextboxes = guessedContainer.querySelectorAll('.charactersTextboxes
 
 
 window.addEventListener("deviceorientation", (event) => {
-  if (activated) {
+  if (activated && !finishedGame) {
     if (event.gamma === null) {
       console.log("Device orientation not supported or permission denied");
       updateDotPosition();
@@ -98,7 +99,7 @@ window.addEventListener("deviceorientation", (event) => {
 });
 
 window.addEventListener("deviceorientation", (event) => {
-  if (activated) {
+  if (activated && !finishedGame) {
     if (event.beta === null) {
       console.log("Device orientation not supported or permission denied");
       updateDotPosition();
@@ -225,7 +226,7 @@ function drawDot(x, y) {
       // Focus circle
       if (timerLine <= 1) {
 
-        if (arrayMorse.length < numSymbols){
+        if (!finishedGame){
         // Signal, Red Dot
         ctx.beginPath();
         ctx.arc(signalPosX, signalPosY, 5, 0, 2 * Math.PI); // Draw a dot with a radius of 5
@@ -297,6 +298,7 @@ function updateDotPosition(smooth) {
 function animationLoop() {
   updateDotPosition(smoothFactor);
   requestAnimationFrame(animationLoop);
+  if (arrayMorse.length < numSymbols){finishedGame = true;}
 }
 
 // Check if the red dot is inside the white circle
