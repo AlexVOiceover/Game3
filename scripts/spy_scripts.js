@@ -126,7 +126,7 @@ function drawSegment(progress) {
   ctx.arc(0, 0, lineLength, startAngle, endAngle, false);
   ctx.lineTo(0, 0);
   ctx.closePath();
-  ctx.fillStyle = "rgb(240,240,240,0.2)";
+  ctx.fillStyle = "rgb(240,240,240,0.7)";
   ctx.fill();
   ctx.restore();
 }
