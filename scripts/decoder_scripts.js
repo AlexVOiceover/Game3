@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
   enableAudioSwitch.addEventListener("change", function () {
     // Toggle the disabled state of the button based on the switch state
     morseButton.disabled = !enableAudioSwitch.checked;
+    
     if (this.checked) {
       audioEnabled = true;
     } else {

@@ -50,6 +50,11 @@
     outline: none;
 }
 
+.morseButton:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+
 .morseButton::-moz-focus-inner {
     border: 0;
 }
