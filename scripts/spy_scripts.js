@@ -44,6 +44,7 @@ for (let i = 0; i < numSymbols; i++) {
   const textbox = document.createElement('input');
   textbox.type = 'text';
   textbox.classList.add('charactersTextboxes');
+  textbox.classList.add('charactersTextboxes--readonly');
   // Add the textbox to the container
   upperContainer.appendChild(textbox);
 }
@@ -262,7 +263,7 @@ function drawDot(x, y) {
       document.getElementById("messages").innerText  = "Decoded!";
       lastChar = generateRandomCharacter();
       arrayMorse.push(lastChar);
-      textboxes[arrayMorse.length - 1].value = lastChar;
+      textboxes[arrayMorse.length - 1].value = "*";;
       playMorseCode(lastChar);
       //document.getElementById("inputChar").value = randomChar;
       document.getElementById("arrayMorseTextbox").value = arrayMorse.join(" ");

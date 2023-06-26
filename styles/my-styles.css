@@ -35,6 +35,10 @@
     align-items: center;
     width: 3em;}
 
+.charactersTextboxes--readonly {
+    pointer-events: none;
+    user-select: none;}
+
 .controls-container {
     display: flex;
     justify-content: space-between;
