@@ -411,8 +411,9 @@ document.getElementById("playMorseCode").addEventListener("click", () => {
     document.getElementById("messages").innerText = "Decodification successful";
   } else {
     document.getElementById("messages").innerText = "Decodification failed";
+    document.getElementById("messages").style.backgroundColor = "rgba(63, 34, 40, 0.55)";
   }
-  // console.log(isRight)
+
   });
 
 
