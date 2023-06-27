@@ -67,10 +67,12 @@
 .mute-icon {
     cursor: pointer;
     width: 30px;
+    display: inline-block;
     /* background-image: url("../images/mute.png"); */
 }
 .mute-icon.muted {
     width: 30px;
+    display: inline-block;
     background-image: url("../images/nomute.png"); 
 } 
 
