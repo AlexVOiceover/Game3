@@ -43,7 +43,7 @@
 .controls-container {
     display: flex;
     justify-content: space-between;
-    align-items: stretch;
+    align-items: center;
     margin-bottom: 1em;
     gap: 2em;}
 
