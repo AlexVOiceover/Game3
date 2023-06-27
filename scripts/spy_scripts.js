@@ -34,6 +34,7 @@ document.getElementById("resetPosition").addEventListener("click", resetPosition
 //Will reset gyro when the page is loaded
 document.addEventListener("DOMContentLoaded", function() {
   resetPosition();
+  console.log("Reset Position");
 });
 
 document.getElementById("startTransmissionButton").addEventListener("change", function () {
