@@ -24,8 +24,8 @@ const backgroundMusic = document.getElementById("backgroundMusic");
 backgroundMusic.volume = 0.5;
 
 function resetPosition() {
-  rolldeviation = roll;
-  pitchdeviation = pitch;
+  rolldeviation = event.gamma.toFixed(4);;
+  pitchdeviation = event.beta.toFixed(4);;
   drawDot(canvas.width / 2, canvas.height / 2);
 }
 
