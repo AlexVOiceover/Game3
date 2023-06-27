@@ -394,7 +394,7 @@ setTimeout(setPlayingBeepToFalse, delay);
 
 document.getElementById("playMorseCode").addEventListener("click", () => {
   //const inputChar = document.getElementById("inputChar").value;
-  if (lastChar.length === 1) {
+  if (lastChar) {
       playMorseCode(lastChar);
   }
 }); 
