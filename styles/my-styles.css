@@ -46,6 +46,12 @@
     align-items: center;
     margin-bottom: 1em;}
 
+.decoder-controls-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1em;}
+
 .morseTextboxes {
     border: none;
     color: rgb(199, 199, 199);

@@ -30,15 +30,15 @@
             <button class="morseButton" id="morseButton" disabled></button>
         </div> 
 
-        <div class="controls-container">
-            <div>
-                <input type="text" class="morseTextboxes" id="morseTextbox"  readonly style="display: block; width: 80%; margin: 10px auto; text-align: center;">
+        <div class="decoder-controls-container">
+            <div style="flex: 4;"> <!-- 40% width -->
+              <input type="text" class="morseTextboxes" id="morseTextbox" readonly style="display: block; width: 100%; margin: 10px auto; text-align: center;">
             </div>
-            <div>
-                <input type="text" class="morseTextboxes" id="arrayMorseTextbox"  readonly style="display: block; width: 120%; margin: 10px auto; text-align: center;">
-             </div>
-        </div>
-        <p> V92 </p>
+            <div style="flex: 6;"> <!-- 60% width -->
+              <input type="text" class="morseTextboxes" id="arrayMorseTextbox" readonly style="display: block; width: 100%; margin: 10px auto; text-align: center;">
+            </div>
+          </div>
+        <p> V93 </p>
     
        <!-- Using the next script I add a timestamp, this way it will reload the JS when I reload the page, otherwise it was keeping the old JS after an update -->
         <script>      
