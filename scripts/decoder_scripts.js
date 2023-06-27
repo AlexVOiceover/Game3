@@ -45,6 +45,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   muteButton.addEventListener("pointerdown", () => {
     isMuted = !isMuted;
+    // Toggle the 'muted' subclass based on the isMuted variable
+    muteButton.classList.toggle("muted", isMuted);
   });
   
 

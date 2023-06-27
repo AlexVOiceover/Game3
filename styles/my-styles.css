@@ -64,6 +64,17 @@
     cursor: pointer;
     width: 30px;}
 
+.mute-icon {
+    cursor: pointer;
+    width: 30px;
+    display: block;
+    background-image: url('images/mute.png');
+    position: absolute;}
+
+.mute-icon.muted {
+    background-image: url('images/nomute.png');}
+
+
 .morseButton {
     cursor: pointer;
     width: 300px;
