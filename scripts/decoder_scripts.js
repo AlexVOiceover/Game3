@@ -1,6 +1,8 @@
 const frequency = 750;
+let isMuted = false;
 
 document.addEventListener("DOMContentLoaded", () => {
+  const muteButton = document.getElementById("muteButton");
   const morseButton = document.getElementById("morseButton");
   const morseTextbox = document.getElementById("morseTextbox");
   const arrayMorseTextbox = document.getElementById("arrayMorseTextbox");
@@ -41,6 +43,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  muteButton.addEventListener("pointerdown", () => {
+    isMuted = !isMuted;
+  });
+  
+
   let translationTimeout;
 
   const translateMorseCode = () => {
@@ -75,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     pressStartTime = new Date();
 
-    if (audioEnabled) {
+    if (audioEnabled && !isMuted ) {
       if (!audioContext) {
         audioContext = new (window.AudioContext || window.webkitAudioContext)();
       }
