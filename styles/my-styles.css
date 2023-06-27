@@ -44,7 +44,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1em;}
+    margin-bottom: 1em;
+    gap: 3em;}
 
 .decoder-controls-container {
     display: flex;
@@ -119,7 +120,7 @@
 
 .interceptorButton {
     cursor: pointer;
-    width: 3em;
+    width: 100%;
     color: rgb(199, 199, 199);
     font-family: 'Orbitron', sans-serif;
     font-size: large;
