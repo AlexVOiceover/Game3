@@ -14,7 +14,7 @@ let activated = false;
 let arrayMorse = [];
 let lastChar;
 const maxDiameter = 300;
-const numSymbols = 5;
+const numSymbols = 4;
 const focusCircleDiameter = 30;
 let finishedGame = false;
 let playingBeep = false;
@@ -290,7 +290,6 @@ function drawDot(x, y) {
 
       // Reset the timer
       timer = 0;
-
       document.getElementById("playMorseCode").classList.add('enabled');
     }
   } else {
@@ -407,7 +406,7 @@ document.getElementById("playMorseCode").addEventListener("click", () => {
     
     if (arrayMorse[i] !== guessedtextboxes[i].value){
       isRight = false;
-      textboxes[i].backgroundColor = "rgba(100, 34, 40, 0.5)";
+      textboxes[i].style.backgroundColor = "rgba(100, 34, 40, 0.5)";
     }
 
     // Write the right signals on textboxes
