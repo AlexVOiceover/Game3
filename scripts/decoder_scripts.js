@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const morseTextbox = document.getElementById("morseTextbox");
   const arrayMorseTextbox = document.getElementById("arrayMorseTextbox");
   const enableAudioSwitch = document.getElementById("enableAudioSwitch");
+  const deleteLastSignal = document.getElementById("deleteLastSignal");
 
   let pressStartTime;
   let pressDuration;
@@ -57,6 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
     morseInput = morseTextbox.value.trim();
     const character = Object.keys(morseCode).find((key) => morseCode[key] === morseInput);
 
+    //Adding as String, modify to use array
     if (character) {
       console.log("Dentro if character antes" +morseInput);
       arrayMorseTextbox.value += character;
@@ -72,6 +74,15 @@ document.addEventListener("DOMContentLoaded", () => {
     morseTextbox.value = "";
 
 };
+
+//This also needs to be modified if change to array
+deleteLastSignal.addEventListener("pointerdown", () => {
+  // Check if arrayMorseTextbox.value is not empty
+  if (arrayMorseTextbox.value.length > 0) {
+    // Remove the last character of the string
+    arrayMorseTextbox.value = arrayMorseTextbox.value.slice(0, -1);
+  }
+});
 
   morseButton.addEventListener("pointerdown", () => {
     if (morseButton.disabled) return; 
