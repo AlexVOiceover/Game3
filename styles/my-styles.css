@@ -67,8 +67,7 @@
 .mute-icon {
     cursor: pointer;
     width: 30px;
-    height: 30px;
-    display: inline-block;
+   /* display: inline-block; */
     background-image: url("../images/mute.png");
     background-size: cover;}
 
