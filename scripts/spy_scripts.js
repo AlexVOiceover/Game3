@@ -24,8 +24,13 @@ const backgroundMusic = document.getElementById("backgroundMusic");
 backgroundMusic.volume = 0.5;
 
 function resetPosition() {
-  rolldeviation = event.gamma.toFixed(4);;
-  pitchdeviation = event.beta.toFixed(4);;
+  if (event.gamma !== null) {
+    rolldeviation = event.gamma.toFixed(4);
+  }
+  if (event.beta !== null) {
+    pitchdeviation = event.beta.toFixed(4);
+  }
+    
   drawDot(canvas.width / 2, canvas.height / 2);
 }
 
@@ -34,7 +39,6 @@ document.getElementById("resetPosition").addEventListener("click", resetPosition
 //Will reset gyro when the page is loaded
 document.addEventListener("DOMContentLoaded", function() {
   resetPosition();
-  console.log("Reset Position");
 });
 
 document.getElementById("startTransmissionButton").addEventListener("change", function () {
