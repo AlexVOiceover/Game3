@@ -66,6 +66,7 @@
 
 .calibrate-icon {
     cursor: pointer;
+    width: auto;
     background-image: url("../images/calibrateDisabled.png");}
 
 .calibrate-icon.enabled {
