@@ -255,7 +255,8 @@ function drawDot(x, y) {
           }
       } else if (!finishedGame ) { 
         document.getElementById("messages").innerText  = "Time out!";
-        document.getElementById("messages").style.backgroundColor = "rgba(63, 34, 40, 0.55)";}
+        document.getElementById("messages").style.backgroundColor = "rgba(63, 34, 40, 0.55)";
+        finishedGame=true;}
       
    }
 
