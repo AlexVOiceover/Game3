@@ -7,9 +7,9 @@ const playAudio = (src, callback) => {
   const backgroundMusic = document.getElementById("indexBackgroundMusic");
   backgroundMusic.volume = 0.8; // Adjust the volume as needed
   
-  document.getElementById("startGame").addEventListener("click", () => {    
-      backgroundMusic.play();
-  });
+ /* document.getElementById("startGame").addEventListener("click", () => {    
+      backgroundMusic.play()
+  }); */
 
   document.getElementById("spy").addEventListener("click", () => {
     fadeOutAndRedirect("spy.html");
