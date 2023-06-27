@@ -37,6 +37,7 @@ document.getElementById("startTransmissionButton").addEventListener("change", fu
     backgroundMusic.pause();
     activated = false;
   }
+  document.getElementById("resetPosition").classList.toggle("enabled");
 });
 
 // Get the charaters-container element
@@ -52,7 +53,6 @@ for (let i = 0; i < numSymbols; i++) {
 }
 // Get all the textboxes with the class 'charactersTextboxes'
 const textboxes = upperContainer.querySelectorAll('.charactersTextboxes');
-
 
 
 //CHANGE THESE TO USE ID INSTEAD OF CLASS
@@ -79,9 +79,6 @@ guessedContainer.addEventListener('input', (e) => {
     }
   }
 });
-
-
-
 
 window.addEventListener("deviceorientation", (event) => {
   if (activated && !finishedGame) {
@@ -255,7 +252,7 @@ function drawDot(x, y) {
           }
       } else if (!finishedGame ) { 
         document.getElementById("messages").innerText  = "Time out!";
-        document.getElementById("messages").style.backgroundColor = "rgba(63, 34, 40, 0.55)";
+        document.getElementById("messages").style.backgroundColor = "rgba(100, 34, 40, 0.55)";
         finishedGame=true;}
       
    }
@@ -416,7 +413,7 @@ document.getElementById("playMorseCode").addEventListener("click", () => {
     document.getElementById("messages").innerText = "Decodification successful";
   } else {
     document.getElementById("messages").innerText = "Decodification failed";
-    document.getElementById("messages").style.backgroundColor = "rgba(63, 34, 40, 0.55)";
+    document.getElementById("messages").style.backgroundColor = "rgba(100, 34, 40, 0.55)";
    
   }
   finishedGame = true;
