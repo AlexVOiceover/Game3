@@ -407,6 +407,7 @@ document.getElementById("playMorseCode").addEventListener("click", () => {
     
     if (arrayMorse[i] !== guessedtextboxes[i].value){
       isRight = false;
+      textboxes[i].backgroundColor = "rgba(100, 34, 40, 0.5)";
     }
 
     // Write the right signals on textboxes
