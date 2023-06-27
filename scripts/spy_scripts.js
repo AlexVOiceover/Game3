@@ -21,7 +21,7 @@ let playingBeep = false;
 
 
 const backgroundMusic = document.getElementById("backgroundMusic");
-backgroundMusic.volume = 0.3;
+backgroundMusic.volume = 0.4;
 
 function resetPosition() {
   rolldeviation = roll;
