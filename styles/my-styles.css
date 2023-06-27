@@ -43,7 +43,7 @@
 .controls-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: stretch;
     margin-bottom: 1em;
     gap: 3em;}
 
@@ -135,7 +135,11 @@ h1 {color: rgb(199, 199, 199);
     font-size: xx-large;
     margin-bottom: 2em;
     letter-spacing: 3px;
-    background-color: rgba(34, 63, 40, 0.55);}
+    background-color: rgba(34, 63, 40, 0.55);
+    user-select: none;
+    -moz-user-select: none; /* Firefox */
+    -webkit-user-select: none; /* Safari and Chrome */
+    -ms-user-select: none; /* IE 10+ */}
 
 h2 {color: rgb(199, 199, 199);
     font-family: 'Orbitron', sans-serif;
@@ -143,7 +147,11 @@ h2 {color: rgb(199, 199, 199);
     text-align: center;
     padding: 1em;
     letter-spacing: 2px;
-    background-color: rgba(34, 63, 40, 0.55);}
+    background-color: rgba(34, 63, 40, 0.55);
+    user-select: none;
+    -moz-user-select: none; /* Firefox */
+    -webkit-user-select: none; /* Safari and Chrome */
+    -ms-user-select: none; /* IE 10+ */}
 
 p {color: aliceblue;}
     
