@@ -404,10 +404,14 @@ document.getElementById("playMorseCode").addEventListener("click", () => {
   document.getElementById("verifyCode").addEventListener("click", () => {
   let isRight = true;  
   for (let i = 0; i < arrayMorse.length; i++) {
-  
+    
     if (arrayMorse[i] !== guessedtextboxes[i].value){
       isRight = false;
     }
+
+    // Write the right signals on textboxes
+    textboxes[i].value = arrayMorse[i];
+
   }
   if (isRight && arrayMorse.length == numSymbols) {
     document.getElementById("messages").innerText = "Decodification successful";
