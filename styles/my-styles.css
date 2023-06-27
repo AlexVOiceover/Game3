@@ -6,7 +6,9 @@
     font-size: Medium;
     text-align: justify;
     text-justify: auto;
-    width: 100%;}
+    width: 100%;
+    padding: 1em;
+    margin-bottom: 2em;}
 
 #canvasContainer {
     width: 100%;
