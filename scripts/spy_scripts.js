@@ -372,7 +372,7 @@ function playMorseCode(char) {
       '4': '....-', '5': '.....', '6': '-....', '7': '--...', '8': '---..', '9': '----.'
   };
 
-  const multiplier = 0.7;
+  const multiplier = 0.8;
 
   const dotDuration = 0.1 * multiplier; // 100ms
   const dashDuration = 0.4 * multiplier; // 300ms
