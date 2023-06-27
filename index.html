@@ -4,9 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">   
         <link rel="icon" href="images/favicon.ico">
-        <title>Enigma</title>
+        <title>Spy game</title>
         <link rel="stylesheet" href="styles/my-styles.css">
-        <meta name="description" content="Game for the FAO aplication with sound">
+        <meta name="description" content="Game for the FAO aplication">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,20 +17,24 @@
         
   
         <div>
-            <h1>Decode </h1>
+            <h1>Spy Game</h1>
 
-            <div class="instructionsTextbox">All the instructions goes here bla bla bla</div>
+            <div class="instructionsTextbox">Iterceptor will capture the enemy signals,
+                 each signal will produce a morse code that will be decode by the decoder. 
+                Interceptor will need to capture all the signals before the scan finishes the whole world.
+                
+            </div>
        
             <div class="controls-container">
-                <button class="metallic" id="spy">Spy</button>
-                <button class="metallic" id="decode">Decode</button>
+                <button class="metallic" id="spy">Interceptor</button>
+                <button class="metallic" id="decode">Decoder</button>
                 <button class="metallic" id="findHelper">QR</button>
             </div>
 
             <audio id="indexBackgroundMusic" src="audios/index_background.ogg" loop preload="auto"></audio>
 
         </div>
-        <p>V21</p>
+        <p>V22</p>
         <!-- <button id="startGame">Start Game</button> -->
         <script src="scripts/index_scripts.js"></script>
     </body>
