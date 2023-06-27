@@ -26,7 +26,7 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 2em;
-    margin-top: 2em;}
+    margin-bottom: 2em;}
 
 .charactersTextboxes {
     border: none;
@@ -87,7 +87,7 @@
 
 .interceptorButton {
     cursor: pointer;
-    width: 100%;
+    width: auto;
     color: rgb(199, 199, 199);
     font-family: 'Orbitron', sans-serif;
     font-size: large;
