@@ -70,6 +70,7 @@
     /* background-image: url("../images/mute.png"); */
 }
 .mute-icon.muted {
+    width: 30px;
     background-image: url("../images/nomute.png"); 
 } 
 
