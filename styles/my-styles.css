@@ -84,7 +84,7 @@
     height: 30px;
     background-image: url("../images/replay.png");
     background-size: cover;
-    margin-left: 2em;}
+    margin-left: 1em;}
 
 .interceptorButton {
     cursor: pointer;

@@ -232,27 +232,27 @@ function drawDot(x, y) {
   
       timerLine += segmentSpeed;
       // draw Radar Segment;
-      drawSegment(timerLine);
+      //REFACTOR THESE IFS
+      if (!finishedGame){drawSegment(timerLine);}
 
       // Focus circle
       if (timerLine <= 1) {
 
-        console.log(finishedGame);
-        if (!finishedGame){
-        // Signal, Red Dot
-        ctx.beginPath();
-        ctx.arc(signalPosX, signalPosY, 5, 0, 2 * Math.PI); // Draw a dot with a radius of 5
-        ctx.fillStyle  = "rgb(255, 85, 85)";
-        ctx.fill();  
+         if (!finishedGame){
+          // Signal, Red Dot
+          ctx.beginPath();
+          ctx.arc(signalPosX, signalPosY, 5, 0, 2 * Math.PI); // Draw a dot with a radius of 5
+          ctx.fillStyle  = "rgb(255, 85, 85)";
+          ctx.fill();  
 
 
-        ctx.beginPath();
-        // ctx.arc(x, y, 12, 0, 2 * Math.PI); 
-        ctx.arc(x, y, focusCircleDiameter, 0, 2 * Math.PI); 
-        ctx.strokeStyle = "white";
-        ctx.lineWidth = 2;
-        ctx.stroke();
-        }
+          ctx.beginPath();
+          // ctx.arc(x, y, 12, 0, 2 * Math.PI); 
+          ctx.arc(x, y, focusCircleDiameter, 0, 2 * Math.PI); 
+          ctx.strokeStyle = "white";
+          ctx.lineWidth = 2;
+          ctx.stroke();
+          }
       } else if (!finishedGame ) { document.getElementById("messages").innerText  = "Time out!";}
       
    }
