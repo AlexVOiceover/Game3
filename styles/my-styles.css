@@ -74,8 +74,13 @@
 .mute-icon {
     cursor: pointer;
     width: 30px;
-   /* display: inline-block; */
     background-image: url("../images/nomute.png");
+    background-size: cover;}
+
+.replay-button {
+    cursor: pointer;
+    width: 30px;
+    background-image: url("../images/replay.png");
     background-size: cover;}
 
 .mute-icon.muted {
