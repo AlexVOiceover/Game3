@@ -374,7 +374,7 @@ function playMorseCode(char) {
 
   const multiplier = 0.8;
 
-  const dotDuration = 0.1 * multiplier; // 100ms
+  const dotDuration = 0.2 * multiplier; // 100ms
   const dashDuration = 0.4 * multiplier; // 300ms
   const gapDuration = 0.2 * multiplier; // 100ms
   const frequency = 750; // 1000Hz
