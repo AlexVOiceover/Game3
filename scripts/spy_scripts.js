@@ -292,6 +292,8 @@ function drawDot(x, y) {
 
       // Reset the timer
       timer = 0;
+
+      document.getElementById("playMorseCode").classList.add('enabled');
     }
   } else {
     if (timer > 0 && timer < decodSeconds) {

@@ -82,9 +82,13 @@
     cursor: pointer;
     width: 30px;
     height: 30px;
-    background-image: url("../images/replay.png");
+    background-image: url("../images/replayDisabled.png");
     background-size: cover;
     margin-left: 1em;}
+    
+.replay-button.enabled{
+    background-image: url("../images/replay.png");
+}
 
 .interceptorButton {
     cursor: pointer;
