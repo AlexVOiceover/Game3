@@ -113,6 +113,7 @@
 } 
 
 .metallic{
+    color: rgb(0, 66, 17);
     cursor: pointer;
     font-family: 'Orbitron', sans-serif;
     font-size: x-large;

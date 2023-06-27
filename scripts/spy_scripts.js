@@ -15,7 +15,7 @@ let arrayMorse = [];
 let lastChar;
 const maxDiameter = 300;
 const numSymbols = 4;
-const focusCircleDiameter = 30;
+let focusCircleDiameter = 20;
 let finishedGame = false;
 let playingBeep = false;
 
@@ -45,6 +45,7 @@ document.getElementById("startTransmissionButton").addEventListener("change", fu
     activated = false;
   }
   document.getElementById("resetPosition").classList.toggle("enabled");
+
 });
 
 // Get the charaters-container element
