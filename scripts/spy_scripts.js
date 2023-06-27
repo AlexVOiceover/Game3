@@ -372,11 +372,11 @@ function playMorseCode(char) {
       '4': '....-', '5': '.....', '6': '-....', '7': '--...', '8': '---..', '9': '----.'
   };
 
-  const multiplier = 1;
+  const multiplier = 0.7;
 
   const dotDuration = 0.1 * multiplier; // 100ms
   const dashDuration = 0.4 * multiplier; // 300ms
-  const gapDuration = 0.3 * multiplier; // 100ms
+  const gapDuration = 0.2 * multiplier; // 100ms
   const frequency = 750; // 1000Hz
 
   const code = morseCode[char.toUpperCase()];
