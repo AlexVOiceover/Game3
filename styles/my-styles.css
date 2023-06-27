@@ -52,9 +52,7 @@
     font-family: 'Orbitron', sans-serif;
     background-color: rgba(34, 63, 40, 0.8);
     font-size: x-large;
-    letter-spacing: 0.4em;
-    margin-left: 4em;
-    margin-right: 4em}
+    letter-spacing: 0.4em;}
 
 .calibrate-icon {
     cursor: pointer;
