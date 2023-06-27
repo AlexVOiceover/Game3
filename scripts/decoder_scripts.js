@@ -70,9 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
       morseInput = "";
 
     }
-
     morseTextbox.value = "";
-
 };
 
 //This also needs to be modified if change to array
@@ -83,6 +81,7 @@ deleteLastSignal.addEventListener("pointerdown", () => {
     arrayMorseTextbox.value = arrayMorseTextbox.value.slice(0, -1);
   }
 });
+
 
   morseButton.addEventListener("pointerdown", () => {
     if (morseButton.disabled) return; 
