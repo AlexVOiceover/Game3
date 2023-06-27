@@ -412,8 +412,9 @@ document.getElementById("playMorseCode").addEventListener("click", () => {
   } else {
     document.getElementById("messages").innerText = "Decodification failed";
     document.getElementById("messages").style.backgroundColor = "rgba(63, 34, 40, 0.55)";
+   
   }
-
+  finishedGame = true;
   });
 
 
