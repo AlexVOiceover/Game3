@@ -1,4 +1,4 @@
-const frequency = 750;
+const frequency = 1000;
 let isMuted = false;
 
 document.addEventListener("DOMContentLoaded", () => {

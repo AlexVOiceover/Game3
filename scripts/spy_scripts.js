@@ -18,6 +18,7 @@ const numSymbols = 4;
 let focusCircleDiameter = 20;
 let finishedGame = false;
 let playingBeep = false;
+const frequency = 1200; // 1000Hz
 
 
 const backgroundMusic = document.getElementById("backgroundMusic");
@@ -378,7 +379,7 @@ function playMorseCode(char) {
   const dotDuration = 0.2 * multiplier; // 100ms
   const dashDuration = 0.5 * multiplier; // 300ms
   const gapDuration = 0.2 * multiplier; // 100ms
-  const frequency = 750; // 1000Hz
+ 
 
   const code = morseCode[char.toUpperCase()];
   let currentTime = 0;
