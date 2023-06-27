@@ -68,11 +68,11 @@
     cursor: pointer;
     width: 30px;
    /* display: inline-block; */
-    background-image: url("../images/mute.png");
+    background-image: url("../images/nomute.png");
     background-size: cover;}
 
 .mute-icon.muted {
-    background-image: url("../images/nomute.png"); 
+    background-image: url("../images/mute.png"); 
 } 
 
 .morseButton {
