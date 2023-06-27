@@ -70,7 +70,8 @@
     background-image: url("../images/mute.png");}
 
 .mute-icon.muted {
-    background-image: url("../images/nomute.png");}
+   /* background-image: url("../images/nomute.png"); */
+}
 
 
 .morseButton {
