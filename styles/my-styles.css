@@ -63,15 +63,15 @@
 .exit-icon {
     cursor: pointer;
     width: 30px;}
-/*
+
 .mute-icon {
     cursor: pointer;
     width: 30px;
-    background-image: url("../images/mute.png");}
-
+    /* background-image: url("../images/mute.png"); */
+}
 .mute-icon.muted {
-   /* background-image: url("../images/nomute.png"); 
-} */
+    background-image: url("../images/nomute.png"); 
+} 
 
 
 .morseButton {
