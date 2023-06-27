@@ -80,6 +80,7 @@
 .replay-button {
     cursor: pointer;
     width: 30px;
+    height: 30px;
     background-image: url("../images/replay.png");
     background-size: cover;}
 
