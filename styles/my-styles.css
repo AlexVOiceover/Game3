@@ -156,7 +156,8 @@
     background-color: rgba(40, 148, 30, 0.9);
     -webkit-tap-highlight-color: transparent;
     touch-action: none;
-    border: none;}
+    border: none;
+    background-image: url("../images/roundPCB.png");}
 
 .morseButton.pressed {
     background-color: rgba(23, 85, 17, 0.9);}
