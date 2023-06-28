@@ -48,7 +48,7 @@ var span = document.getElementsByClassName("close")[0];
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
   modal.style.display = "block";
-  document.getElementById("img01").src = "./images/url.png";
+  document.getElementById("img01").src = ".Game3/images/url.png";
 }
 
 // When the user clicks on <span> (x), close the modal
