@@ -30,6 +30,7 @@
 
 #device {
     width: 300px;
+    height: 300px;
     display: block;
     background: url("./images/deviceUp.png");
     margin: auto;
