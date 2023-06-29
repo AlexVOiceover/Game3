@@ -201,6 +201,7 @@ h1 {color: rgb(199, 199, 199);
     margin-bottom: 2em;
     letter-spacing: 3px;
     background-color: rgba(34, 63, 40, 0.55);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
     user-select: none;
     -moz-user-select: none; /* Firefox */
     -webkit-user-select: none; /* Safari and Chrome */
@@ -213,6 +214,7 @@ h2 {color: rgb(199, 199, 199);
     padding: 1em;
     letter-spacing: 2px;
     background-color: rgba(34, 63, 40, 0.55);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
     user-select: none;
     -moz-user-select: none; /* Firefox */
     -webkit-user-select: none; /* Safari and Chrome */
