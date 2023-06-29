@@ -141,12 +141,14 @@
     cursor: pointer;
     height: 30px;
     width: 30px;
+    border-radius: 50%;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);}
 
 .mute-icon {
     cursor: pointer;
     width: 30px;
     height: 30px;
+    border-radius: 50%;
     background-image: url("../images/nomute.png");
     background-size: cover;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);}
