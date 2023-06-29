@@ -28,6 +28,14 @@
     background-size: cover; /* To cover the entire canvas */
 }
 
+#morseButtonCanvas {
+    width: 100%;
+    display: block;
+    background-color: transparent;
+    background-image: url("../images/stapler.jpg");
+    background-size: cover;
+}
+
 .characters-container {
     display: flex;
     justify-content: space-between;
@@ -146,18 +154,18 @@
 
 .morseButton {
     cursor: pointer;
-    width: 300px;
-    height: 300px;
+    /*width: 300px;
+    height: 300px;*/
     display: block;
     margin: 0 auto;
-    border-radius: 50%;
+   /* border-radius: 50%;*/
     margin-top: 3em;
     margin-bottom: 3em;
     background-color: rgba(40, 148, 30, 0.9);
     -webkit-tap-highlight-color: transparent;
     touch-action: none;
     border: none;
-    background-image: url("../images/roundPCB.png");}
+   }
 
 .morseButton.pressed {
     background-color: rgba(23, 85, 17, 0.9);}
