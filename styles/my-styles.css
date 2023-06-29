@@ -28,16 +28,16 @@
     background-size: cover; /* To cover the entire canvas */
 }
 
-#morseButtonCanvas {
-    width: 100%;
-    height: 100%;
+#device {
+    width: 300px;
     display: block;
-    background-color: transparent;
-    background-image: url("../images/stapler1200.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background: url("./images/deviceUp.png");
+    margin: auto;
+    border-radius: 20px;
 }
+
+#device.down {
+    background: url("./images/deviceDown.png");}
 
 .characters-container {
     display: flex;

@@ -3,7 +3,8 @@ let isMuted = false;
 
 document.addEventListener("DOMContentLoaded", () => {
   const muteButton = document.getElementById("muteButton");
-  const morseButton = document.getElementById("morseButton");
+ // const morseButton = document.getElementById("morseButton");
+  const morseButton = document.getElementById("device");
   const morseTextbox = document.getElementById("morseTextbox");
   const arrayMorseTextbox = document.getElementById("arrayMorseTextbox");
   const enableAudioSwitch = document.getElementById("enableAudioSwitch");
@@ -86,6 +87,12 @@ deleteLastSignal.addEventListener("pointerdown", () => {
   morseButton.addEventListener("pointerdown", () => {
     if (morseButton.disabled) return; 
    
+
+    //Added for the new button
+    document.getElementById('device').classList.toggle("down");
+
+
+
     // Add the 'pressed' class when the button is pressed
     morseButton.classList.add("pressed");
    
