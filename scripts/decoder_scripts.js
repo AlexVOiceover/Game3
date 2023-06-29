@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
             pressDuration = new Date() - pressStartTime;
             const morseChar = pressDuration < minDurationDash ? "." : "-";
             morseInput += morseChar;
-            device.classList.remove("pressed");
+            device.classList.remove("down");
         }
 
         if (oscillator) {
