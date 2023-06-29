@@ -21,19 +21,20 @@
   }
 
 #dotCanvas {
+    background: url('../images/worldmap_640.png');
     width: 100%;
     display: block;
     background-color: transparent;
-    background: url('../images/worldmap_640.png');
     background-size: cover; /* To cover the entire canvas */
 }
 
 #device {
+    margin-top: 1em;
+    background: url("../images/deviceUp.jpg");
     cursor: pointer;
     width: 300px;
     height: 300px;
     display: block;
-    background: url("../images/deviceUp.jpg");
     margin: auto;
     background-size: cover;
     border-radius: 20px;
@@ -43,20 +44,20 @@
 }
 
 #device.down {
+    background: url("../images/deviceDown.jpg");
     width: 300px;
     height: 300px;
     margin: auto;
     display: block;
-    background: url("../images/deviceDown.jpg");
     background-size: cover;}
 
 #device:focus {
+    background: url("../images/deviceDown.jpg");
     width: 300px;
     height: 300px;
     margin: auto;
     display: block;
-    background-size: cover;
-    background: url("../images/deviceDown.jpg");}
+    background-size: cover;}
 
 /*#device:active {
     width: 300px;
