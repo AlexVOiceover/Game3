@@ -30,7 +30,7 @@
 
 #device {
     margin-top: 1em;
-    background: url("../images/deviceUp.jpg");
+    background: url("../images/deviceUpDark.jpg");
     cursor: pointer;
     width: 300px;
     height: 300px;
@@ -44,7 +44,7 @@
 }
 
 #device.down {
-    background: url("../images/deviceDown.jpg");
+    background: url("../images/deviceDownDark.jpg");
     width: 300px;
     height: 300px;
     margin: auto;
@@ -52,7 +52,7 @@
     background-size: cover;}
 
 #device:focus {
-    background: url("../images/deviceDown.jpg");
+  
     width: 300px;
     height: 300px;
     margin: auto;
