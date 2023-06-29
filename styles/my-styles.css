@@ -31,10 +31,10 @@
 #device {
     margin-top: 2em;
     margin-bottom: 2em;
-    background: url("../images/deviceUpDarkSmall.jpg");
+    background: url("../images/deviceUpDark.jpg");
     cursor: pointer;
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
     margin: auto;
     background-size: cover;
@@ -45,7 +45,7 @@
 }
 
 #device.down {
-    background: url("../images/deviceDownDarkSmall.jpg");
+    background: url("../images/deviceDownDark.jpg");
 
     margin: auto;
     display: block;
