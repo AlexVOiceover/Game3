@@ -31,16 +31,16 @@
             <div class="decoder-controls-container">
                  <canvas id="morseButtonCanvas"></canvas>
             </div>
-
+ <!--
         <div> 
             <button class="morseButton" id="morseButton" disabled></button>
         </div> 
 
         <div class="decoder-controls-container">
-            <div style="flex: 4;"> <!-- 40% width -->
+            <div style="flex: 4;"> 
               <input type="text" class="morseTextboxes" id="morseTextbox" readonly style="display: block; width: 100%; margin: 10px auto; text-align: center;">
             </div>
-            <div style="flex: 6;"> <!-- 60% width -->
+            <div style="flex: 6;"> 
               <input type="text" class="morseTextboxes" id="arrayMorseTextbox" readonly style="display: block; width: 100%; margin: 10px auto; text-align: center;">
             </div>
         </div>
@@ -49,7 +49,7 @@
         </div>
         <p>V170</p>
     
-       <!-- Using the next script I add a timestamp, this way it will reload the JS when I reload the page, otherwise it was keeping the old JS after an update -->
+       Using the next script I add a timestamp, this way it will reload the JS when I reload the page, otherwise it was keeping the old JS after an update -->
         <script>      
             document.write('<script src="scripts/decoder_scripts.js?cache_bust=' + new Date().getTime() + '"><\/script>');
         </script>
