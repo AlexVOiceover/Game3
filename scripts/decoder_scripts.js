@@ -92,8 +92,6 @@ document.addEventListener("DOMContentLoaded", () => {
         //Added for the new button
         device.classList.add("down");
 
-    
-
         isStopBeepCalled = false;
 
         pressStartTime = new Date();

@@ -57,14 +57,14 @@
     display: block;
     background-size: cover;}
 
-#device:active {
+/*#device:active {
     width: 300px;
     height: 300px;
     display: block;
     background-size: cover;
     background: url("../images/deviceDown.jpg");
     outline: none;
-}
+} */
 
 #device:disabled {
     background-color:  rgba(82, 82, 82, 0.7);
