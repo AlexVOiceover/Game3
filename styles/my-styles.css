@@ -29,7 +29,8 @@
 }
 
 #device {
-    margin-top: 1em;
+    margin-top: 2em;
+    margin-bottom: 2em;
     background: url("../images/deviceUpDark.jpg");
     cursor: pointer;
     width: 300px;
