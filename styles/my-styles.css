@@ -222,7 +222,8 @@ h2 {color: rgb(199, 199, 199);
 p {color: aliceblue;}
     
 body {padding: 3em;
-    background-image: url("../images/background01.jpg");
+    /*background-image: url("../images/background01.jpg");*/
+    background-image: url("https://media.discordapp.net/attachments/1123886795453640724/1123996165227151421/alexvoice_A_metallic_pannel_composed_of_different_other_panels__59c36e5a-7c0b-4f36-89d8-9b6293eea872.png?width=1177&height=1177");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
