@@ -141,7 +141,7 @@
     cursor: pointer;
     height: 30px;
     width: 30px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);}
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);}
 
 .mute-icon {
     cursor: pointer;
@@ -149,7 +149,7 @@
     height: 30px;
     background-image: url("../images/nomute.png");
     background-size: cover;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);}
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);}
 
 .replay-button {
     cursor: pointer;
@@ -190,48 +190,7 @@
        linear-gradient(180deg, hsl(0,0%,78%)  0%, 
        hsl(0,0%,90%) 47%, 
        hsl(0,0%,78%) 53%,
-       hsl(0,0%,70%)100%);
-   }
-
-.morseButton {
-    cursor: pointer;
-    width: 300px;
-    height: 300px;
-    display: block;
-    margin: 0 auto;
-    border-radius: 50%;
-    margin-top: 3em;
-    margin-bottom: 3em;
-    background-color: rgba(40, 148, 30, 0.9);
-    -webkit-tap-highlight-color: transparent;
-    touch-action: none;
-    border: none;
-   }
-
-.morseButton.pressed {
-    background-color: rgba(23, 85, 17, 0.9);}
-      
-
-.morseButton:focus {
-    outline: none;
-    border-radius: 50%;
-}
-
-.morseButton:active {
-    background-color: rgba(23, 85, 17, 0.9);;
-    outline: none;
-}
-
-.morseButton:disabled {
-    background-color:  rgba(82, 82, 82, 0.7);
-    cursor: not-allowed;
-  }
-
-.morseButton::-moz-focus-inner {
-    border: 0;
-}
-
-
+       hsl(0,0%,70%)100%);}
 
 h1 {color: rgb(199, 199, 199);
     font-family: 'Orbitron', sans-serif;
@@ -272,7 +231,7 @@ body {padding: 3em;
     display: inline-block;
     width: 54px;
     height: 26px;
-}
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);}
     
     .switch input {
     opacity: 0;
