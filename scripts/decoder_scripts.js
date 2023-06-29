@@ -55,16 +55,16 @@ document.addEventListener("DOMContentLoaded", () => {
     let translationTimeout;
 
     const translateMorseCode = () => {
-      console.log("Dentro translateMorseCode" +morseInput);
+     // console.log("Dentro translateMorseCode" +morseInput);
       morseInput = morseTextbox.value.trim();
       const character = Object.keys(morseCode).find((key) => morseCode[key] === morseInput);
   
       //Adding as String, modify to use array
       if (character) {
-        console.log("Dentro if character antes" +morseInput);
+       // console.log("Dentro if character antes" +morseInput);
         arrayMorseTextbox.value += character;
         morseInput = "";
-        console.log("Dentro if character despues" +morseInput);
+        // console.log("Dentro if character despues" +morseInput);
    
       } else {
         arrayMorseTextbox.value += "*";
@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         clearTimeout(translationTimeout);
         translationTimeout = setTimeout(translateMorseCode, timeBetweenCharacters);
-        console.log("Dentro stopBeep" +morseInput);
+        // console.log("Dentro stopBeep" +morseInput);
         morseTextbox.value = morseInput;
         isStopBeepCalled = true;
     };
