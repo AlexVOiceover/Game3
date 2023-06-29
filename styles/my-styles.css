@@ -29,8 +29,8 @@
 }
 
 #morseButtonCanvas {
-    width: 100%;
-    height: auto;
+    
+    height: 100%;
     display: block;
     background-color: transparent;
     background-image: url("../images/stapler.jpg");
