@@ -34,7 +34,7 @@
     background: url("../images/deviceUpDark.jpg");
     cursor: pointer;
     width: 100%;
-    height: 100%;
+    height: auto;
     display: block;
     margin: auto;
     background-size: cover;
