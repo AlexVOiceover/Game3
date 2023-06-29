@@ -32,13 +32,13 @@
     width: 300px;
     height: 300px;
     display: block;
-    background: url("./images/deviceUp.png");
+    background: url("../images/deviceUp.png");
     margin: auto;
     border-radius: 20px;
 }
 
 #device.down {
-    background: url("./images/deviceDown.png");}
+    background: url("../images/deviceDown.png");}
 
 .characters-container {
     display: flex;
