@@ -29,6 +29,7 @@
 }
 
 #device {
+    cursor: pointer;
     width: 300px;
     height: 300px;
     display: block;
@@ -36,10 +37,32 @@
     margin: auto;
     background-size: cover;
     border-radius: 20px;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: none;
+    border: none;
 }
 
 #device.down {
     background: url("../images/deviceDown.jpg");}
+
+#device:focus {
+    outline: none;
+    border-radius: 20px;
+}
+
+#device:active {
+    background: url("../images/deviceDown.jpg");
+    outline: none;
+}
+
+#device:disabled {
+    background-color:  rgba(82, 82, 82, 0.7);
+    cursor: not-allowed;
+}
+
+#device::-moz-focus-inner {
+    border: 0;
+}
 
 .characters-container {
     display: flex;

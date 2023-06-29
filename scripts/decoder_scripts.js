@@ -2,159 +2,87 @@ const frequency = 1000;
 let isMuted = false;
 
 document.addEventListener("DOMContentLoaded", () => {
-  const muteButton = document.getElementById("muteButton");
- // const morseButton = document.getElementById("morseButton");
-  const morseButton = document.getElementById("device");
-  const morseTextbox = document.getElementById("morseTextbox");
-  const arrayMorseTextbox = document.getElementById("arrayMorseTextbox");
-  const enableAudioSwitch = document.getElementById("enableAudioSwitch");
-  const deleteLastSignal = document.getElementById("deleteLastSignal");
+    const muteButton = document.getElementById("muteButton");
+    const device = document.getElementById("device");
 
-  let pressStartTime;
-  let pressDuration;
-  let morseInput = "";
-  let audioContext = new (window.AudioContext || window.webkitAudioContext)();
-  let oscillator;
-  let gainNode;
-  let audioEnabled = false;
-  let isPlaying = false;
-  let isStopBeepCalled = false; //Needed to dont call stopBeep twice
-  const timeBetweenCharacters = 800;
-  const minDurationDash = 150;
+    enableAudioSwitch.addEventListener("change", function () {
+        // Toggle the disabled state of the button based on the switch state
+        device.disabled = !enableAudioSwitch.checked;
+        
+        if (this.checked) {
+            audioEnabled = true;
+        } else {
+            audioEnabled = false;
+        }
+    });
 
-  const morseCode = {
-    'A': '.-',    'B': '-...',  'C': '-.-.',  'D': '-..',   'E': '.',
-    'F': '..-.',  'G': '--.',   'H': '....',  'I': '..',    'J': '.---',
-    'K': '-.-',   'L': '.-..',  'M': '--',    'N': '-.',    'O': '---',
-    'P': '.--.',  'Q': '--.-',  'R': '.-.',   'S': '...',   'T': '-',
-    'U': '..-',   'V': '...-',  'W': '.--',   'X': '-..-',  'Y': '-.--',
-    'Z': '--..',  '0': '-----', '1': '.----', '2': '..---', '3': '...--',
-    '4': '....-', '5': '.....', '6': '-....', '7': '--...', '8': '---..', '9': '----.'
-};
+    device.addEventListener("pointerdown", () => {
+        if (device.disabled) return; 
 
-  morseButton.disabled = true;
+        //Added for the new button
+        device.classList.toggle("down");
 
-  enableAudioSwitch.addEventListener("change", function () {
-    // Toggle the disabled state of the button based on the switch state
-    morseButton.disabled = !enableAudioSwitch.checked;
-    
-    if (this.checked) {
-      audioEnabled = true;
-    } else {
-      audioEnabled = false;
-    }
-  });
+        // Add the 'pressed' class when the button is pressed
+        device.classList.add("pressed");
 
-  muteButton.addEventListener("pointerdown", () => {
-    isMuted = !isMuted;
-    // Toggle the 'muted' subclass based on the isMuted variable
-    muteButton.classList.toggle("muted", isMuted);
-  });
-  
+        isStopBeepCalled = false;
 
-  let translationTimeout;
+        pressStartTime = new Date();
 
-  const translateMorseCode = () => {
-    console.log("Dentro translateMorseCode" +morseInput);
-    morseInput = morseTextbox.value.trim();
-    const character = Object.keys(morseCode).find((key) => morseCode[key] === morseInput);
+        if (audioEnabled && !isMuted ) {
+            if (!audioContext) {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            }
 
-    //Adding as String, modify to use array
-    if (character) {
-      console.log("Dentro if character antes" +morseInput);
-      arrayMorseTextbox.value += character;
-      morseInput = "";
-      console.log("Dentro if character despues" +morseInput);
- 
-    } else {
-      arrayMorseTextbox.value += "*";
-      morseInput = "";
+            if (isPlaying && oscillator) {
+                oscillator.stop();
+            }
 
-    }
-    morseTextbox.value = "";
-};
+            oscillator = audioContext.createOscillator();
+            gainNode = audioContext.createGain();
 
-//This also needs to be modified if change to array
-deleteLastSignal.addEventListener("pointerdown", () => {
-  // Check if arrayMorseTextbox.value is not empty
-  if (arrayMorseTextbox.value.length > 0) {
-    // Remove the last character of the string
-    arrayMorseTextbox.value = arrayMorseTextbox.value.slice(0, -1);
-  }
-});
+            oscillator.type = "sine";
+            oscillator.frequency.value = frequency;
 
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+            oscillator.start();
 
-  morseButton.addEventListener("pointerdown", () => {
-    if (morseButton.disabled) return; 
-   
+            isPlaying = true;
+        }
+    });
 
-    //Added for the new button
-    document.getElementById('device').classList.toggle("down");
+    const stopBeep = () => {
+        if (device.disabled) return;
+        if (isStopBeepCalled) {
+            return;
+        }
 
+        if (!device.disabled) {
+            pressDuration = new Date() - pressStartTime;
+            const morseChar = pressDuration < minDurationDash ? "." : "-";
+            morseInput += morseChar;
+            device.classList.remove("pressed");
+        }
 
+        if (oscillator) {
+            oscillator.stop();
 
-    // Add the 'pressed' class when the button is pressed
-    morseButton.classList.add("pressed");
-   
+            oscillator.onended = () => {
+                gainNode.disconnect(audioContext.destination);
+                oscillator.disconnect(gainNode);
+                isPlaying = false;
+            };
+        }
 
-    isStopBeepCalled = false;
+        clearTimeout(translationTimeout);
+        translationTimeout = setTimeout(translateMorseCode, timeBetweenCharacters);
+        console.log("Dentro stopBeep" +morseInput);
+        morseTextbox.value = morseInput;
+        isStopBeepCalled = true;
+    };
 
-    pressStartTime = new Date();
-
-    if (audioEnabled && !isMuted ) {
-      if (!audioContext) {
-        audioContext = new (window.AudioContext || window.webkitAudioContext)();
-      }
-
-      if (isPlaying && oscillator) {
-        oscillator.stop();
-      }
-
-      oscillator = audioContext.createOscillator();
-      gainNode = audioContext.createGain();
-
-      oscillator.type = "sine";
-      oscillator.frequency.value = frequency;
-
-      oscillator.connect(gainNode);
-      gainNode.connect(audioContext.destination);
-      oscillator.start();
-
-      isPlaying = true;
-    }
-  });
-
-  const stopBeep = () => {
-    if (morseButton.disabled) return;
-    if (isStopBeepCalled) {
-      return;
-    }
-
-    if (!morseButton.disabled) {
-      pressDuration = new Date() - pressStartTime;
-      const morseChar = pressDuration < minDurationDash ? "." : "-";
-      morseInput += morseChar;
-      morseButton.classList.remove("pressed");
-    }
-
-    if (oscillator) {
-      oscillator.stop();
-
-      oscillator.onended = () => {
-        gainNode.disconnect(audioContext.destination);
-        oscillator.disconnect(gainNode);
-        isPlaying = false;
-      };
-    }
-
-    clearTimeout(translationTimeout);
-    translationTimeout = setTimeout(translateMorseCode, timeBetweenCharacters);
-    console.log("Dentro stopBeep" +morseInput);
-    morseTextbox.value = morseInput;
-    isStopBeepCalled = true;
-  };
-
-  morseButton.addEventListener("pointerup", stopBeep);
-  morseButton.addEventListener("pointerleave", stopBeep);
-  morseButton.addEventListener("pointercancel", stopBeep);
+    device.addEventListener("pointerup", stopBeep);
+    device.addEventListener("pointerleave", stopBeep);
+    device.addEventListener("pointercancel", stopBeep);
 });
