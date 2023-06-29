@@ -52,6 +52,11 @@
 #device:focus {
     outline: none;
     border-radius: 20px;
+    width: 300px;
+    height: 300px;
+    display: block;
+    background-size: cover;
+    background: url("../images/deviceDown.jpg");
 }
 
 #device:active {
