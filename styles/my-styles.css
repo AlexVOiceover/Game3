@@ -49,14 +49,14 @@
     display: block;
     background-size: cover;
     background: url("../images/deviceDown.jpg");}
-
+/*
 #device:focus {
     width: 300px;
     height: 300px;
     margin: auto;
     display: block;
     background-size: cover;}
-
+*/
 /*#device:active {
     width: 300px;
     height: 300px;
