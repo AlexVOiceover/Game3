@@ -50,7 +50,7 @@ function handleTouch(event) {
       imgDiv.classList.remove("left");
       imgDiv.classList.add("right");
       selectRolTag.innerText = "Decoder";
-      instructions.innerText = "Your duty is to listen carefully to the morse code signals that the interceptor captures, tap them on your device to decrypt them.\n When the world scan is completed pass the charaters to the interceptor.";
+      instructions.innerText = "Listen carefully to the Morse code signals and decrypt them by tapping on your device.\n Once the global scan is complete, pass the characters to the interceptor.";
   
     }
 }
