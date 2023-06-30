@@ -269,13 +269,16 @@ function drawDot(x, y) {
   // Check if the red dot is inside the white circle
   const isInside = isRedDotInsideBlueCircle(signalPosX, signalPosY, x, y, focusCircleDiameter);
 
+  //ADDED TO PLAY TUNNING AUDIO
+  let audio = new Audio('audios/tunning.ogg');
+
   if (isInside) {
     timer += 0.1;
     document.getElementById("messages").innerText  = "Capturing";
 
 
+   
     //ADDED TO PLAY TUNNING AUDIO
-    let audio = new Audio('audios/tunning.ogg');
     audio.play();
 
 
