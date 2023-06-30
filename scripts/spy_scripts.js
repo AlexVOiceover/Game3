@@ -1,5 +1,5 @@
 const maxDegrees = 5;
-const decodTime = 150;
+const decodTime = 15;
 let x = 0;
 let y = 0;
 let roll = 0;
@@ -9,8 +9,7 @@ let pitchdeviation = 0;
 const smoothFactor = 0.8;
 let timer = 0;
 let timerLine = 0;
-//const segmentSpeed = 0.0005;
-const segmentSpeed = 0.000005;
+const segmentSpeed = 0.0005;
 let activated = false;
 let arrayMorse = [];
 let lastChar;
