@@ -35,11 +35,14 @@ function handleTouch(event) {
     proceedButton.disabled = false;
     proceedButton.classList.remove("disabled");
 
+    //Canplaythrough estimates the enough time to load the audio
     const selectAudio = new Audio("./audios/select02.ogg");
     selectAudio.volume = 0.2;
-    selectAudio.play().catch(function(error) {
-      console.log('Failed to play audio:', error);
-  });
+    selectAudio.addEventListener('canplaythrough', function() {
+        selectAudio.play().catch(function(error) {
+            console.log('Failed to play audio:', error);
+        });
+    }, false);
 
     if (touchX < imgWidth / 2) {
       imgDiv.classList.remove("right");
