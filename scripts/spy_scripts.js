@@ -1,5 +1,5 @@
 const maxDegrees = 5;
-const decodSeconds = 8;
+const decodSeconds = 10;
 let x = 0;
 let y = 0;
 let roll = 0;
