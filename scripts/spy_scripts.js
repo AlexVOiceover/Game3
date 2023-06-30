@@ -1,5 +1,5 @@
 const maxDegrees = 5;
-const decodSeconds = 10;
+const decodTime = 12;
 let x = 0;
 let y = 0;
 let roll = 0;
@@ -21,6 +21,7 @@ let playingBeep = false;
 const frequency = 1200; // 1000Hz
 const backgroundMusic = document.getElementById("backgroundMusic");
 backgroundMusic.volume = 0.4;
+
   //ADDED TO PLAY TUNNING AUDIO
   let audio = new Audio('audios/tunning.ogg');
   audio.volume = 0.4;
@@ -284,17 +285,17 @@ function drawDot(x, y) {
     });
 
 
-     // Calculate the remaining time and normalize it to the range [0, decodSeconds]
-     const remainingTime = decodSeconds - (timer % decodSeconds);
+     // Calculate the remaining time and normalize it to the range [0, decodTime]
+     const remainingTime = decodTime - (timer % decodTime);
 
      // Draw the decreasing circle if segment < 1
      if (timerLine <= 1) {
-      drawDecreasingCircle(ctx, signalPosX, signalPosY, maxDiameter, remainingTime, decodSeconds);
+      drawDecreasingCircle(ctx, signalPosX, signalPosY, maxDiameter, remainingTime, decodTime);
      }
 
 
-    // Check if the timer reaches decodSeconds seconds = decoded signal
-    if (timer >= decodSeconds && !playingBeep) {
+    // Check if the timer reaches decodTime seconds = decoded signal
+    if (timer >= decodTime && !playingBeep) {
 
 
 //ADDED TO PLAY TUNNING AUDIO
@@ -322,7 +323,7 @@ audio.currentTime = 0;
       document.getElementById("playMorseCode").classList.add('enabled');
     }
   } else {
-    if (timer > 0 && timer < decodSeconds) {
+    if (timer > 0 && timer < decodTime) {
       document.getElementById("messages").innerText = "Signal lost";
 
 
