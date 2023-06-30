@@ -44,13 +44,13 @@ document.getElementById("startTransmissionButton").addEventListener("change", fu
   if (this.checked) {
     backgroundMusic.play();
     activated = true;
-    resetPosition()
+    
     } else {
     backgroundMusic.pause();
     activated = false;
   }
   document.getElementById("resetPosition").classList.toggle("enabled");
-
+  resetPosition()
 });
 
 // Get the charaters-container element
