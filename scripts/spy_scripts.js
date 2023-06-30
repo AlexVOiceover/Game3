@@ -299,8 +299,11 @@ function drawDot(x, y) {
 audio.pause();
 
       // Generate a random character and call playMorseCode with that character
+      console.log(arrayMorse.length + " NumSymbols " + numSymbols);
+      
       if (arrayMorse.length === numSymbols) {document.getElementById("messages").innerText  = "All signals captured";}
       else {document.getElementById("messages").innerText  = "Signal captured";}
+
       lastChar = generateRandomCharacter();
       arrayMorse.push(lastChar);
       textboxes[arrayMorse.length - 1].value = "*";
