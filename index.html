@@ -19,29 +19,28 @@
 
             <div id="rolSelection"></div>
 
-            
+            <h1 id="selectRolTag">Select rol</h1>
 
-            <div class="instructionsTextbox">Iterceptor will capture the enemy signals,
-                 each signal will produce a morse code that will be decode by the decoder. <br>
-                Interceptor will need to capture all the signals before the scan finishes the whole world.
-               
-            </div>
+            <div id = "instructions" class="instructionsTextbox">Press on the character you want to play with, but bare in mind that this is a
+                cooperative game, you will need a helper to play the other one. <br><br>
+                "QR" will create a link to share with your helper</div>
        
-            <div class="controls-container">
-                <button class="metallic" id="spy">Interceptor</button>
-                <button class="metallic" id="decode">Decoder</button>         
+            
+            <button class="metallic disabled" id="proceed" >Proceed</button>
+          
+           
+
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+                <!-- The Close Button -->
+                <span class="close">&times;</span>
+                <!-- Modal Content (The Image) -->
+                <img class="modal-content" id="img01">
             </div>
 
-                <!-- The Modal -->
-                <div id="myModal" class="modal">
-                    <!-- The Close Button -->
-                    <span class="close">&times;</span>
-                    <!-- Modal Content (The Image) -->
-                    <img class="modal-content" id="img01">
-                </div>
+            <div><button class="metallic" id="findHelper">QR</button></div>
 
-            <button class="metallic" id="findHelper">QR</button>
-
+        <audio id="indexBackgroundMusic" src="audios/spy_background.ogg"  loop preload="auto"></audio>
         </div>
         <p>V30</p>
         <!-- <button id="startGame">Start Game</button> -->

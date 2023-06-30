@@ -1,41 +1,80 @@
-/*const playAudio = (src, callback) => {
+let rol = "none";
+
+const playAudio = (src, callback) => {
     const audio = new Audio(src);
     audio.play();
     audio.addEventListener("ended", callback);
-  }; */
+  }; 
   
-  /*const backgroundMusic = document.getElementById("indexBackgroundMusic");
-  backgroundMusic.volume = 0.8; // Adjust the volume as needed */
-  
- /* document.getElementById("startGame").addEventListener("click", () => {    
-      backgroundMusic.play()
-  }); */
+  const backgroundMusic = document.getElementById("indexBackgroundMusic");
+  backgroundMusic.volume = 0.8; // Adjust the volume as needed 
 
-  document.getElementById("spy").addEventListener("click", () => {
-    fadeOutAndRedirect("spy.html");
+  const proceedButton = document.getElementById("proceed");
+  proceedButton.disabled = true;
+
+  const selectRolTag = document.getElementById("selectRolTag");
+  const instructions = document.getElementById("instructions");
+ 
+  proceedButton.addEventListener("click", () => {
+
+    if (rol === "left"){fadeOutAndRedirect("../spy.html");
+  console.log("Interceptor");}
+    else if (rol === "right"){fadeOutAndRedirect("../decoder.html");
+    console.log("Decoder");}
+
   });
   
-  document.getElementById("decode").addEventListener("click", () => {
-    fadeOutAndRedirect("decoder.html");
-  });
-  
 
-  function fadeOutAndRedirect(targetPage) {
-    let fadeOutDuration = 2000; // 2 seconds in milliseconds
-    let fadeStep = 0.05;
-    let fadeInterval = (fadeOutDuration * fadeStep) / backgroundMusic.volume;
-  
-    let fadeOut = setInterval(() => {
-      if (backgroundMusic.volume - fadeStep <= 0) {
-        clearInterval(fadeOut);
-        backgroundMusic.pause();
-        location.href = targetPage;
-      } else {
-        backgroundMusic.volume -= fadeStep;
-      }
-    }, fadeInterval);
-  }
-  
+
+var imgDiv = document.getElementById("rolSelection");
+
+
+// Add event listener for touch start
+imgDiv.addEventListener('touchstart', function(event) {
+    handleTouch(event);
+}, false);
+
+// Define the function to handle touch
+function handleTouch(event) {
+    var imgWidth = imgDiv.offsetWidth;
+    var touchX = event.touches[0].clientX - imgDiv.getBoundingClientRect().left;
+   
+    proceedButton.disabled = false;
+    proceedButton.classList.remove("disabled");
+
+    if (touchX < imgWidth / 2) {
+      imgDiv.classList.remove("right");
+      imgDiv.classList.add("left");
+      selectRolTag.innerText = "Interceptor";
+      instructions.innerText = "Your task is to use your device's gyro to capture enemy signals. Each capture triggers a Morse code. Have your assistant decode this on their device. Once the global scan finishes, input the decoded characters and hit \"Verify Code\". ";
+      rol = "left";
+
+    } else {
+      imgDiv.classList.remove("left");
+      imgDiv.classList.add("right");
+      selectRolTag.innerText = "Decoder";
+      rol = "right";  
+    }
+}
+
+
+function fadeOutAndRedirect(targetPage) {
+  let fadeOutDuration = 2000; // 2 seconds in milliseconds
+  let fadeStep = 0.05;
+  let fadeInterval = (fadeOutDuration * fadeStep) / backgroundMusic.volume;
+
+  let fadeOut = setInterval(() => {
+    if (backgroundMusic.volume - fadeStep <= 0) {
+      clearInterval(fadeOut);
+      backgroundMusic.pause();
+      location.href = targetPage;
+    } else {
+      backgroundMusic.volume -= fadeStep;
+    }
+  }, fadeInterval);
+}
+
+
 
 // Get the modal
 var modal = document.getElementById("myModal");
@@ -57,27 +96,6 @@ window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
-}
 
-
-
-var imgDiv = document.getElementById("rolSelection");
-
-// Add event listener for touch start
-imgDiv.addEventListener('touchstart', function(event) {
-    handleTouch(event);
-}, false);
-
-// Define the function to handle touch
-function handleTouch(event) {
-    var imgWidth = imgDiv.offsetWidth;
-    var touchX = event.touches[0].clientX - imgDiv.getBoundingClientRect().left;
-
-    if (touchX < imgWidth / 2) {
-        // Touch event occurred on the left half of the image
-        console.log("Touched on the left side");
-    } else {
-        // Touch event occurred on the right half of the image
-        console.log("Touched on the right side");
-    }
+  backgroundMusic.play()
 }
