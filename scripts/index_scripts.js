@@ -36,7 +36,7 @@ function handleTouch(event) {
     proceedButton.classList.remove("disabled");
 
     //Canplaythrough estimates the enough time to load the audio
-    const selectAudio = new Audio("./audios/select02.ogg");
+    const selectAudio = new Audio("./audios/selectRole.ogg");
     selectAudio.volume = 0.2;
     selectAudio.addEventListener('canplaythrough', function() {
         selectAudio.play().catch(function(error) {

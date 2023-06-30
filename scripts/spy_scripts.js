@@ -446,6 +446,16 @@ document.getElementById("playMorseCode").addEventListener("click", () => {
   if (isRight && arrayMorse.length == numSymbols) {
     document.getElementById("messages").innerText = "Decoding success";
     document.getElementById("messages").style.backgroundColor = "rgba(34, 63, 40, 0.55)";
+
+    //Canplaythrough estimates the enough time to load the audio
+    const selectAudio = new Audio("./audios/rightDecode.ogg");
+    selectAudio.volume = 0.2;
+    selectAudio.addEventListener('canplaythrough', function() {
+        selectAudio.play().catch(function(error) {
+            console.log('Failed to play audio:', error);
+        });
+    }, false);
+
   } else {
     document.getElementById("messages").innerText = "Decodification failed";
     document.getElementById("messages").style.backgroundColor = "rgba(100, 34, 40, 0.55)";
