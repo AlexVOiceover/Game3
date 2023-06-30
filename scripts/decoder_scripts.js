@@ -9,8 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const enableAudioSwitch = document.getElementById("enableAudioSwitch");
     const deleteLastSignal = document.getElementById("deleteLastSignal");
 
-    device.disabled;
-
     let pressStartTime;
     let pressDuration;
     let morseInput = "";
@@ -35,7 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
   
     //morseButton.disabled = true;
     device.disabled = true;
-
 
     enableAudioSwitch.addEventListener("change", function () {
         // Toggle the disabled state of the button based on the switch state

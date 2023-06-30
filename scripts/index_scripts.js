@@ -32,9 +32,6 @@ const playAudio = (src, callback) => {
   
 
 
-
-
-
 // Add event listener for touch start
 imgDiv.addEventListener('touchstart', function(event) {
     handleTouch(event);
@@ -81,8 +78,6 @@ function fadeOutAndRedirect(targetPage) {
   }, fadeInterval);
 }
 
-
-
 // Get the modal
 var modal = document.getElementById("myModal");
 // Get the button that opens the modal
@@ -106,3 +101,14 @@ window.onclick = function(event) {
   //I also use it to play the music 
   backgroundMusic.play()
 }
+
+//Use this to stop the music when user swapps to another app
+document.addEventListener('visibilitychange', function() {
+  if (document.hidden){
+      // Pause the music when the page is not visible
+      backgroundMusic.pause();
+  } else {
+      // Resume the music when the page is visible again
+      backgroundMusic.play();
+  }
+});
