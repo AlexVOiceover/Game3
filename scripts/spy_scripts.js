@@ -15,7 +15,7 @@ let arrayMorse = [];
 let lastChar;
 const maxDiameter = 300;
 const numSymbols = 4;
-let focusCircleDiameter = 20;
+let focusCircleDiameter = 50;
 let finishedGame = false;
 let playingBeep = false;
 const frequency = 1200; // 1000Hz
@@ -293,9 +293,8 @@ function drawDot(x, y) {
 
 
 //ADDED TO PLAY TUNNING AUDIO
-      audio.pause();
-      audio.currentTime = 0;
-      audio = null;
+      audio.src ="";
+      
 
 
 
@@ -323,9 +322,7 @@ function drawDot(x, y) {
 
 
 //ADDED TO PLAY TUNNING AUDIO
-audio.pause();
-audio.currentTime = 0;
-audio = null;
+audio.src ="";
 
 
 
