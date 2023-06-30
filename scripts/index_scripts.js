@@ -15,9 +15,9 @@ const playAudio = (src, callback) => {
  
   proceedButton.addEventListener("click", () => {
 
-    if (rol === "left"){fadeOutAndRedirect("../spy.html");
+    if (rol === "left"){fadeOutAndRedirect("./spy.html");
   console.log("Interceptor");}
-    else if (rol === "right"){fadeOutAndRedirect("../decoder.html");
+    else if (rol === "right"){fadeOutAndRedirect("./decoder.html");
     console.log("Decoder");}
 
   });

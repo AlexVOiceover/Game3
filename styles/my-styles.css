@@ -9,8 +9,8 @@
     text-justify: auto;
     padding: 1em;
     line-height: 1.2;
-    margin-top: 1em;
-    margin-bottom: 2em;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
     flex-wrap: wrap;}
 
 #canvasContainer {
