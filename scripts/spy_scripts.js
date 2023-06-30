@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
 }); */
 
 document.getElementById("startTransmissionButton").addEventListener("change", function () {
+  resetPosition()
   if (this.checked) {
     backgroundMusic.play();
     activated = true;
@@ -50,7 +51,7 @@ document.getElementById("startTransmissionButton").addEventListener("change", fu
     activated = false;
   }
   document.getElementById("resetPosition").classList.toggle("enabled");
-  resetPosition()
+  
 });
 
 // Get the charaters-container element
