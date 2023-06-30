@@ -7,11 +7,11 @@ imgDiv.classList.remove("left");
 imgDiv.classList.add("right");
 imgDiv.classList.remove("right");
 
-const playAudio = (src, callback) => {
+/*const playAudio = (src, callback) => {
     const audio = new Audio(src);
     audio.play();
     audio.addEventListener("ended", callback);
-  }; 
+  }; */
   
   const backgroundMusic = document.getElementById("indexBackgroundMusic");
   backgroundMusic.volume = 0.8; // Adjust the volume as needed 
