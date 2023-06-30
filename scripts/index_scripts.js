@@ -1,5 +1,3 @@
-let rol = "none";
-
 const playAudio = (src, callback) => {
     const audio = new Audio(src);
     audio.play();
@@ -10,7 +8,6 @@ const playAudio = (src, callback) => {
   backgroundMusic.volume = 0.8; // Adjust the volume as needed 
 
   const proceedButton = document.getElementById("proceed");
-  proceedButton.disabled = true;
 
   const selectRolTag = document.getElementById("selectRolTag");
   const instructions = document.getElementById("instructions");
@@ -46,14 +43,15 @@ function handleTouch(event) {
       imgDiv.classList.remove("right");
       imgDiv.classList.add("left");
       selectRolTag.innerText = "Interceptor";
-      instructions.innerText = "Your task is to use your device's gyro to capture enemy signals. Each capture triggers a Morse code. Have your assistant decode this on their device. Once the global scan finishes, input the decoded characters and hit \"Verify Code\". ";
-      rol = "left";
+      instructions.innerText = "Your task is to use your device's gyro to capture enemy signals. Each capture triggers a Morse code. Have your assistant decode this on their device. Once the global scan finishes, input the decoded characters and hit \"Verify Code\".";
+
 
     } else {
       imgDiv.classList.remove("left");
       imgDiv.classList.add("right");
       selectRolTag.innerText = "Decoder";
-      rol = "right";  
+      instructions.innerText = "Your duty is to listen carefully to the morse code signals that the interceptor captures, tap them on your device to decrypt them.\n When the world scan is completed pass the charaters to the interceptor.";
+  
     }
 }
 

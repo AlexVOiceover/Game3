@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">   
         <link rel="icon" href="images/favicon.ico">
-        <title>Freq Finders</title>
+        <title>Gyro Spy</title>
         <link rel="stylesheet" href="styles/my-styles.css">
         <meta name="description" content="Game for the FAC aplication">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +15,7 @@
  
     <body>      
         <div>
-            <h1>Freq Finders</h1>
+            <h1>Gyro Spy</h1>
 
             <div id="rolSelection"></div>
 
@@ -25,9 +25,10 @@
                 cooperative game, you will need a helper to play the other one. <br><br>
                 "QR" will create a link to share with your helper</div>
        
-            
-            <button class="metallic disabled" id="proceed" >Proceed</button>
-          
+            <div class="controls-container">
+            <button class="metallic disabled" id="proceed" disabled>Proceed</button>
+            <button class="metallic" id="findHelper">QR</button>
+            </div>
            
 
             <!-- The Modal -->
@@ -38,7 +39,7 @@
                 <img class="modal-content" id="img01">
             </div>
 
-            <div><button class="metallic" id="findHelper">QR</button></div>
+            
 
         <audio id="indexBackgroundMusic" src="audios/spy_background.ogg"  loop preload="auto"></audio>
         </div>
