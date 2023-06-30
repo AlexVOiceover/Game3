@@ -45,7 +45,7 @@ function handleTouch(event) {
     proceedButton.disabled = false;
     proceedButton.classList.remove("disabled");
 
-    const selectAudio = new Audio("./audios/select.ogg");
+    const selectAudio = new Audio("./audios/select01.ogg");
     selectAudio.volume = 0.2;
     selectAudio.play();
 
