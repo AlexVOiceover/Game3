@@ -1,7 +1,11 @@
 # Gyro Spy
 
+This game was built as part of my aplication for the Founders and Coders course. I had already the different pieces of the puzzle, just needed to shape them if a game.
+Founders and coders is about communication, 
+
 The game wont work on 
 works better with the phone horizontal that with the phone in vertical position. The game uses the gyros x and y, even if it admits some deviation in angle it will lose accuracy. A possible extra could be to ask how the user is going to position the phone and use gyros x and z if vertical.
+The interceptor will reset the gyro when activated but you need to reset it just press the green calibration button on the top.
 
 
 # Interceptor and Decoder Game
@@ -21,4 +25,6 @@ Players select their role by touching the left or right side of the screen. The 
 ## License
 
 This project is licensed under the MIT License.
+
+
 
