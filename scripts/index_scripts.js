@@ -6,32 +6,22 @@ imgDiv.classList.add("left");
 imgDiv.classList.remove("left");
 imgDiv.classList.add("right");
 imgDiv.classList.remove("right");
-
-/*const playAudio = (src, callback) => {
-    const audio = new Audio(src);
-    audio.play();
-    audio.addEventListener("ended", callback);
-  }; */
   
-  const backgroundMusic = document.getElementById("indexBackgroundMusic");
-  backgroundMusic.volume = 0.8; // Adjust the volume as needed 
+const backgroundMusic = document.getElementById("indexBackgroundMusic");
+backgroundMusic.volume = 0.8; // Adjust the volume as needed 
 
-  const proceedButton = document.getElementById("proceed");
+const proceedButton = document.getElementById("proceed");
 
-  const selectRolTag = document.getElementById("selectRolTag");
-  const instructions = document.getElementById("instructions");
- 
-  proceedButton.addEventListener("click", () => {
+const selectRolTag = document.getElementById("selectRolTag");
+const instructions = document.getElementById("instructions");
 
-    if (rol === "left"){fadeOutAndRedirect("./spy.html");
-  console.log("Interceptor");}
-    else if (rol === "right"){fadeOutAndRedirect("./decoder.html");
-    console.log("Decoder");}
-
-  });
+proceedButton.addEventListener("click", () => {
+  if (rol === "left"){fadeOutAndRedirect("./spy.html");
+console.log("Interceptor");}
+  else if (rol === "right"){fadeOutAndRedirect("./decoder.html");
+  console.log("Decoder");}
+});
   
-
-
 // Add event listener for touch start
 imgDiv.addEventListener('touchstart', function(event) {
     handleTouch(event);
@@ -45,7 +35,7 @@ function handleTouch(event) {
     proceedButton.disabled = false;
     proceedButton.classList.remove("disabled");
 
-    const selectAudio = new Audio("./audios/select01.ogg");
+    const selectAudio = new Audio("./audios/select02.ogg");
     selectAudio.volume = 0.2;
     selectAudio.play();
 
@@ -55,7 +45,6 @@ function handleTouch(event) {
       selectRolTag.innerText = "Interceptor";
       instructions.innerText = "Your task is to use your device's gyro to capture enemy signals. Each capture triggers a Morse code. Have your assistant decode this on their device. Once the global scan finishes, input the decoded characters and hit \"Verify Code\".";
       rol = "left";
-
     } else {
       imgDiv.classList.remove("left");
       imgDiv.classList.add("right");
@@ -64,7 +53,6 @@ function handleTouch(event) {
       rol = "right";
     }
 }
-
 
 function fadeOutAndRedirect(targetPage) {
   let fadeOutDuration = 2000; // 2 seconds in milliseconds
