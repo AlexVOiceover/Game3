@@ -1,4 +1,12 @@
 var rol;
+var imgDiv = document.getElementById("rolSelection");
+
+// Load all the images 
+imgDiv.classList.add("left");
+imgDiv.classList.remove("left");
+imgDiv.classList.add("right");
+imgDiv.classList.remove("right");
+
 const playAudio = (src, callback) => {
     const audio = new Audio(src);
     audio.play();
@@ -24,7 +32,7 @@ const playAudio = (src, callback) => {
   
 
 
-var imgDiv = document.getElementById("rolSelection");
+
 
 
 // Add event listener for touch start
