@@ -273,6 +273,12 @@ function drawDot(x, y) {
     timer += 0.1;
     document.getElementById("messages").innerText  = "Capturing";
 
+
+    //ADDED TO PLAY TUNNING AUDIO
+    let audio = new Audio('audios/tunning.ogg');
+    audio.play();
+
+
      // Calculate the remaining time and normalize it to the range [0, decodSeconds]
      const remainingTime = decodSeconds - (timer % decodSeconds);
 
@@ -284,6 +290,15 @@ function drawDot(x, y) {
 
     // Check if the timer reaches decodSeconds seconds = decoded signal
     if (timer >= decodSeconds && !playingBeep) {
+
+
+//ADDED TO PLAY TUNNING AUDIO
+      audio.pause();
+      audio.currentTime = 0;
+      audio = null;
+
+
+
       // Generate a random character and call playMorseCode with that character
       document.getElementById("messages").innerText  = "Signal captured";
       lastChar = generateRandomCharacter();
@@ -304,6 +319,17 @@ function drawDot(x, y) {
   } else {
     if (timer > 0 && timer < decodSeconds) {
       document.getElementById("messages").innerText = "Signal lost";
+
+
+
+//ADDED TO PLAY TUNNING AUDIO
+audio.pause();
+audio.currentTime = 0;
+audio = null;
+
+
+
+
     }
     timer = 0;
   }
