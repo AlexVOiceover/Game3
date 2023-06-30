@@ -25,7 +25,7 @@ backgroundMusic.volume = 0.4;
 
   //ADDED TO PLAY TUNNING AUDIO
   let audio = new Audio('audios/tunning.ogg');
-  audio.volume = 0.2;
+  audio.volume = 0.1;
   audio.loop = true;
 
 function resetPosition() {
