@@ -271,6 +271,7 @@ function drawDot(x, y) {
 
   //ADDED TO PLAY TUNNING AUDIO
   let audio = new Audio('audios/tunning.ogg');
+  audio.volume = 0.4;
 
   if (isInside) {
     timer += 0.1;
@@ -279,7 +280,9 @@ function drawDot(x, y) {
 
    
     //ADDED TO PLAY TUNNING AUDIO
-    audio.play();
+    audio.play().catch(function(error) {
+      console.log('Failed to play audio:', error);
+    });
 
 
      // Calculate the remaining time and normalize it to the range [0, decodSeconds]
