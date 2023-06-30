@@ -300,7 +300,7 @@ function drawDot(x, y) {
 
 //ADDED TO PLAY TUNNING AUDIO
 audio.pause();
-audio.currentTime = 0;
+//audio.currentTime = 0;
       
 
 
@@ -330,7 +330,7 @@ audio.currentTime = 0;
 
 //ADDED TO PLAY TUNNING AUDIO
 audio.pause();
-audio.currentTime = 0;
+//audio.currentTime = 0;
 
 
 
