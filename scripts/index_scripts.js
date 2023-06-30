@@ -37,7 +37,9 @@ function handleTouch(event) {
 
     const selectAudio = new Audio("./audios/select02.ogg");
     selectAudio.volume = 0.2;
-    selectAudio.play();
+    selectAudio.play().catch(function(error) {
+      console.log('Failed to play audio:', error);
+  });
 
     if (touchX < imgWidth / 2) {
       imgDiv.classList.remove("right");
