@@ -66,7 +66,6 @@ for (let i = 0; i < numSymbols; i++) {
 // Get all the textboxes with the class 'charactersTextboxes'
 const textboxes = upperContainer.querySelectorAll('.charactersTextboxes');
 
-
 //CHANGE THESE TO USE ID INSTEAD OF CLASS
 // Get the charaters-container element
 const guessedContainer = document.querySelector('.charactersGuessed-container');
@@ -265,21 +264,17 @@ function drawDot(x, y) {
       } else if (!finishedGame ) { 
         document.getElementById("messages").innerText  = "Time out!";
         document.getElementById("messages").style.backgroundColor = "rgba(100, 34, 40, 0.55)";
-        finishedGame=true;}
-      
+        finishedGame=true;}  
    }
 
   // Check if the red dot is inside the white circle
   const isInside = isRedDotInsideBlueCircle(signalPosX, signalPosY, x, y, focusCircleDiameter);
 
-
-
   if (isInside) {
     timer += 0.1;
     document.getElementById("messages").innerText  = "Capturing";
 
-
-   
+  
     //ADDED TO PLAY TUNNING AUDIO
     audio.play().catch(function(error) {
       console.log('Failed to play audio:', error);
@@ -298,13 +293,8 @@ function drawDot(x, y) {
     // Check if the timer reaches decodTime seconds = decoded signal
     if (timer >= decodTime && !playingBeep) {
 
-
 //ADDED TO PLAY TUNNING AUDIO
 audio.pause();
-//audio.currentTime = 0;
-      
-
-
 
       // Generate a random character and call playMorseCode with that character
       document.getElementById("messages").innerText  = "Signal captured";
@@ -327,15 +317,8 @@ audio.pause();
     if (timer > 0 && timer < decodTime) {
       document.getElementById("messages").innerText = "Signal lost";
 
-
-
-//ADDED TO PLAY TUNNING AUDIO
-audio.pause();
-//audio.currentTime = 0;
-
-
-
-
+      //ADDED TO PLAY TUNNING AUDIO
+      audio.pause();
     }
     timer = 0;
   }
@@ -440,7 +423,6 @@ document.getElementById("playMorseCode").addEventListener("click", () => {
   }
 }); 
 
-
   document.getElementById("verifyCode").addEventListener("click", () => {
   let isRight = true;  
   for (let i = 0; i < arrayMorse.length; i++) {
@@ -461,11 +443,9 @@ document.getElementById("playMorseCode").addEventListener("click", () => {
   } else {
     document.getElementById("messages").innerText = "Decodification failed";
     document.getElementById("messages").style.backgroundColor = "rgba(100, 34, 40, 0.55)";
-   
   }
   finishedGame = true;
   });
-
 
 // Function to generate a random character
 function generateRandomCharacter() {
@@ -473,5 +453,16 @@ function generateRandomCharacter() {
   const randomIndex = Math.floor(Math.random() * characters.length);
   return characters[randomIndex];
 }
+
+//Use this to stop the music when user swapps to another app
+document.addEventListener('visibilitychange', function() {
+  if (document.hidden){
+      // Pause the music when the page is not visible
+      backgroundMusic.pause();
+  } else {
+      // Resume the music when the page is visible again
+      backgroundMusic.play();
+  }
+});
 
 animationLoop();
