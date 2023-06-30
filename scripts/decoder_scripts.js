@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const enableAudioSwitch = document.getElementById("enableAudioSwitch");
     const deleteLastSignal = document.getElementById("deleteLastSignal");
 
+    device.disabled;
+
     let pressStartTime;
     let pressDuration;
     let morseInput = "";
@@ -83,17 +85,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   
-
-
-
     device.addEventListener("pointerdown", () => {
         if (device.disabled) return; 
 
-        //Added for the new button
         device.classList.add("down");
-
         isStopBeepCalled = false;
-
         pressStartTime = new Date();
 
         if (audioEnabled && !isMuted ) {
