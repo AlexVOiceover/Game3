@@ -53,8 +53,6 @@
 
 #device:focus {}
 
-
-
 #device:disabled {
     background: url("../images/deviceDownDark.jpg");
     background-size: cover;
@@ -218,7 +216,7 @@ h2 {color: rgb(199, 199, 199);
     -webkit-user-select: none; /* Safari and Chrome */
     -ms-user-select: none; /* IE 10+ */}
 
-p {color: aliceblue;}
+p {color: rgb(145, 145, 145);}
     
 body {padding: 3em;
     background-image: url("../images/midj0191602Darker.jpg");
@@ -322,6 +320,16 @@ body {padding: 3em;
     cursor: pointer;
   }
   
+
+#rolSelection {
+    background-image: url('../images/rolSelection.jpg');
+    width: 100%; 
+    padding-bottom: 70%;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
+}
+
       
 /* For mobile devices*/
 @media all and (pointer:none) , (pointer:coarse) {
