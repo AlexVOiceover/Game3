@@ -456,7 +456,7 @@ document.getElementById("playMorseCode").addEventListener("click", () => {
 
   }
   if (isRight && arrayMorse.length == numSymbols) {
-    document.getElementById("messages").innerText = "Decodification successful";
+    document.getElementById("messages").innerText = "Decoding success";
     document.getElementById("messages").style.backgroundColor = "rgba(34, 63, 40, 0.55)";
   } else {
     document.getElementById("messages").innerText = "Decodification failed";
