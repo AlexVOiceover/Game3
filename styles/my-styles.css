@@ -30,8 +30,8 @@
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);}
 
 #device {
-    margin-top: 2em;
-    margin-bottom: 2em;
+    margin-top: 4em;
+    margin-bottom: 4em;
     background: url("../images/deviceUpDark.jpg");
     cursor: pointer;
     width: 300px;
@@ -139,7 +139,12 @@
 .calibrate-icon.enabled {
     background-image: url("../images/calibrate.png");}
 
-
+.deleteLast-icon {
+    cursor: pointer;
+    height: 30px;
+    width: 53px;
+    background-image: url("../images/deleteLast.png");
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);}
 
 .exit-icon {
     cursor: pointer;
