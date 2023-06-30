@@ -30,8 +30,8 @@
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);}
 
 #device {
-    margin-top: 8em;
-    margin-bottom: 8em;
+    margin-top: 2em;
+    margin-bottom: 2em;
     background: url("../images/deviceUpDark.jpg");
     cursor: pointer;
     width: 300px;
@@ -48,14 +48,11 @@
 
 #device.down {
     background: url("../images/deviceDownDark.jpg");
-
-    margin: auto;
-    display: block;
     background-size: cover;}
 
 #device:focus {
 
-    margin: auto;
+  
     display: block;
     background-size: cover;}
 
