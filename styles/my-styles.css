@@ -30,8 +30,8 @@
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);}
 
 #device {
-    margin-top: 4em;
-    margin-bottom: 4em;
+    margin-top: 8em;
+    margin-bottom: 8em;
     background: url("../images/deviceUpDark.jpg");
     cursor: pointer;
     width: 300px;

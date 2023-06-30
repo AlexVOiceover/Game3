@@ -15,29 +15,20 @@
         <link rel="preload" as="image" href="./images/deviceUp.jpg">
         <link rel="preload" as="image" href="./images/deviceDown.jpg">  
     </head>
- 
+
     <body>
-   
         <div class="controls-container">
             <label class="switch">
                 <input type="checkbox" id="enableAudioSwitch">
                 <span class="slider"></span>
             </label>
-
             <div class="mute-icon" id="muteButton"></div>
-
             <input type="image" class="exit-icon" src="images/exit.png" alt="Exit" onclick="location.href='index.html'" />  
         </div>   
 
-            <h1>Decoder</h1>
+            <h1>Decoder</h1> 
 
-            
-            <button id="device" disabled> </button>
-           
- <!--
-        <div> 
-            <button class="morseButton" id="morseButton" disabled></button>
-        </div> -->
+            <button id="device" disabled> </button>     
 
         <div class="decoder-controls-container">
             <div style="flex: 4;"> 
@@ -49,11 +40,7 @@
             <div style="flex: 1;"> 
                 <div id="deleteLastSignal" class="deleteLast-icon"></div>
             </div>
-
         </div>
-        <!-- <div class="controls-container">
-            <button class="metallic" id="deleteLastSignal">Delete last</button>
-        </div> -->
         <p>V215</p>
     
        <!-- Using the next script I add a timestamp, this way it will reload the JS when I reload the page, otherwise it was keeping the old JS after an update -->
