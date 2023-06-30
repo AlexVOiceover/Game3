@@ -32,13 +32,14 @@
 #device {
     margin-top: 2em;
     margin-bottom: 2em;
+    margin-left: auto;
+    margin-right: auto;
     background: url("../images/deviceUpDark.jpg");
     cursor: pointer;
     width: 300px;
     height: 300px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
     display: block;
-    
     background-size: cover;
     border-radius: 20px;
     -webkit-tap-highlight-color: transparent;
@@ -50,32 +51,17 @@
     background: url("../images/deviceDownDark.jpg");
     background-size: cover;}
 
-#device:focus {
+#device:focus {}
 
-  
-    display: block;
-    background-size: cover;}
 
-/*#device:active {
-    width: 300px;
-    height: 300px;
-    display: block;
-    background-size: cover;
-    background: url("../images/deviceDown.jpg");
-    outline: none;
-} */
 
 #device:disabled {
     background: url("../images/deviceDownDark.jpg");
-    margin: auto;
-    display: block;
     background-size: cover;
-    cursor: not-allowed;
-}
+    cursor: not-allowed;}
 
 #device::-moz-focus-inner {
-    border: 0;
-}
+    border: 0;}
 
 .characters-container {
     display: flex;
