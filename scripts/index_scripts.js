@@ -1,3 +1,4 @@
+var rol;
 const playAudio = (src, callback) => {
     const audio = new Audio(src);
     audio.play();
@@ -44,14 +45,14 @@ function handleTouch(event) {
       imgDiv.classList.add("left");
       selectRolTag.innerText = "Interceptor";
       instructions.innerText = "Your task is to use your device's gyro to capture enemy signals. Each capture triggers a Morse code. Have your assistant decode this on their device. Once the global scan finishes, input the decoded characters and hit \"Verify Code\".";
-
+      rol = "left";
 
     } else {
       imgDiv.classList.remove("left");
       imgDiv.classList.add("right");
       selectRolTag.innerText = "Decoder";
       instructions.innerText = "Listen carefully to the Morse code signals and decrypt them by tapping on your device.\n Once the global scan is complete, pass the characters to the interceptor.";
-  
+      rol = "right";
     }
 }
 
@@ -94,6 +95,6 @@ window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
-
+  //I also use it to play the music 
   backgroundMusic.play()
 }

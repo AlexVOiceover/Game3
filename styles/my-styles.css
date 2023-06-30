@@ -4,11 +4,11 @@
     font-family: 'Orbitron', sans-serif;
     background-color: rgba(199, 199, 199, 0.8);
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
-    font-size: Large;
+    font-size: Medium;
     text-align: justify;
     text-justify: auto;
     padding: 1em;
-    line-height: 1.5;
+    line-height: 1.2;
     margin-top: 1em;
     margin-bottom: 2em;
     flex-wrap: wrap;}
