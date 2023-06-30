@@ -19,10 +19,11 @@ let focusCircleDiameter = 50;
 let finishedGame = false;
 let playingBeep = false;
 const frequency = 1200; // 1000Hz
-
-
 const backgroundMusic = document.getElementById("backgroundMusic");
 backgroundMusic.volume = 0.4;
+  //ADDED TO PLAY TUNNING AUDIO
+  let audio = new Audio('audios/tunning.ogg');
+  audio.volume = 0.4;
 
 function resetPosition() {
   rolldeviation = roll;
@@ -269,9 +270,7 @@ function drawDot(x, y) {
   // Check if the red dot is inside the white circle
   const isInside = isRedDotInsideBlueCircle(signalPosX, signalPosY, x, y, focusCircleDiameter);
 
-  //ADDED TO PLAY TUNNING AUDIO
-  let audio = new Audio('audios/tunning.ogg');
-  audio.volume = 0.4;
+
 
   if (isInside) {
     timer += 0.1;
