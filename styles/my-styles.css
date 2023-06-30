@@ -69,7 +69,10 @@
 } */
 
 #device:disabled {
-    background: url("../images/deviceDown.jpg");
+    background: url("../images/deviceDownDark.jpg");
+    margin: auto;
+    display: block;
+    background-size: cover;
     cursor: not-allowed;
 }
 
