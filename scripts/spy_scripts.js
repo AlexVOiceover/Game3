@@ -9,7 +9,7 @@ let pitchdeviation = 0;
 const smoothFactor = 0.8;
 let timer = 0;
 let timerLine = 0;
-const segmentSpeed = 0.0007;
+const segmentSpeed = 0.0005;
 let activated = false;
 let arrayMorse = [];
 let lastChar;
