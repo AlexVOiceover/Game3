@@ -293,7 +293,8 @@ function drawDot(x, y) {
 
 
 //ADDED TO PLAY TUNNING AUDIO
-      audio.src ="";
+audio.pause();
+audio.currentTime = 0;
       
 
 
@@ -322,7 +323,8 @@ function drawDot(x, y) {
 
 
 //ADDED TO PLAY TUNNING AUDIO
-audio.src ="";
+audio.pause();
+audio.currentTime = 0;
 
 
 
