@@ -1,5 +1,5 @@
 const maxDegrees = 5;
-const decodTime = 15;
+const decodTime = 150;
 let x = 0;
 let y = 0;
 let roll = 0;
@@ -9,7 +9,8 @@ let pitchdeviation = 0;
 const smoothFactor = 0.8;
 let timer = 0;
 let timerLine = 0;
-const segmentSpeed = 0.0005;
+//const segmentSpeed = 0.0005;
+const segmentSpeed = 0.000005;
 let activated = false;
 let arrayMorse = [];
 let lastChar;
@@ -25,6 +26,7 @@ backgroundMusic.volume = 0.4;
   //ADDED TO PLAY TUNNING AUDIO
   let audio = new Audio('audios/tunning.ogg');
   audio.volume = 0.4;
+  audio.loop = true;
 
 function resetPosition() {
   rolldeviation = roll;
