@@ -35,15 +35,16 @@ function resetPosition() {
 
 document.getElementById("resetPosition").addEventListener("click", resetPosition);
 
-//Will reset gyro when the page is loaded
+/*Will reset gyro when the page is loaded
 document.addEventListener("DOMContentLoaded", function() {
   resetPosition();
-});
+}); */
 
 document.getElementById("startTransmissionButton").addEventListener("change", function () {
   if (this.checked) {
     backgroundMusic.play();
     activated = true;
+    resetPosition()
     } else {
     backgroundMusic.pause();
     activated = false;
