@@ -26,7 +26,7 @@ console.log("Interceptor");}
 imgDiv.addEventListener('touchstart', function(event) {
     handleTouch(event);
 }, false);
-
+ 
 // Define the function to handle touch
 function handleTouch(event) {
     var imgWidth = imgDiv.offsetWidth;
