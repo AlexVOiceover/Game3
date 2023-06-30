@@ -1,5 +1,5 @@
 const maxDegrees = 5;
-const decodTime = 12;
+const decodTime = 15;
 let x = 0;
 let y = 0;
 let roll = 0;
@@ -15,7 +15,7 @@ let arrayMorse = [];
 let lastChar;
 const maxDiameter = 300;
 const numSymbols = 4;
-let focusCircleDiameter = 50;
+let focusCircleDiameter = 20;
 let finishedGame = false;
 let playingBeep = false;
 const frequency = 1200; // 1000Hz
