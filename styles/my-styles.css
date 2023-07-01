@@ -115,10 +115,7 @@
     background-color: rgba(34, 63, 40, 0.8);
     font-size: x-large;
     letter-spacing: 0.4em;
-    user-select: none;
-    -moz-user-select: none; /* Firefox */
-    -webkit-user-select: none; /* Safari and Chrome */
-    -ms-user-select: none; /* IE 10+ */}
+    user-select: none;}
 
 .calibrate-icon {
     cursor: pointer;
