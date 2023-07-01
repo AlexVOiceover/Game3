@@ -244,9 +244,8 @@ h2 {color: rgb(199, 199, 199);
 
 p {color: rgb(145, 145, 145);}
     
-body {padding: 3em;
+body {padding: 0.3em;
     background-image: url("../images/midj0191602Darker.jpg");
-  
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
