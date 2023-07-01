@@ -206,9 +206,6 @@
         hsl(0,0%,90%) 47%, 
         hsl(0,0%,78%) 53%,
         hsl(0,0%,70%)100%);}
-    
-
-
 
 h1 {color: rgb(199, 199, 199);
     color: rgb(139, 49, 3);
@@ -237,6 +234,9 @@ h2 {color: rgb(199, 199, 199);
     -moz-user-select: none; /* Firefox */
     -webkit-user-select: none; /* Safari and Chrome */
     -ms-user-select: none; /* IE 10+ */}
+
+h2.leftAlignment{text-align: left;}
+h2.rightAlignment{text-align: right;}
 
 p {color: rgb(145, 145, 145);}
     
