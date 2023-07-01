@@ -118,8 +118,7 @@
     user-select: none;
     -moz-user-select: none; /* Firefox */
     -webkit-user-select: none; /* Safari and Chrome */
-    -ms-user-select: none; /* IE 10+ */
-    pointer-events: none;}
+    -ms-user-select: none; /* IE 10+ */}
 
 .calibrate-icon {
     cursor: pointer;
