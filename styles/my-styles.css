@@ -11,7 +11,11 @@
     line-height: 1.2;
     margin-top: 0.5em;
     margin-bottom: 1em;
-    flex-wrap: wrap;}
+    flex-wrap: wrap;
+    user-select: none;
+    -moz-user-select: none; /* Firefox */
+    -webkit-user-select: none; /* Safari and Chrome */
+    -ms-user-select: none; /* IE 10+ */}
 
 #canvasContainer {
     width: 100%;
@@ -110,7 +114,11 @@
     font-family: 'Orbitron', sans-serif;
     background-color: rgba(34, 63, 40, 0.8);
     font-size: x-large;
-    letter-spacing: 0.4em;}
+    letter-spacing: 0.4em;
+    user-select: none;
+    -moz-user-select: none; /* Firefox */
+    -webkit-user-select: none; /* Safari and Chrome */
+    -ms-user-select: none; /* IE 10+ */}
 
 .calibrate-icon {
     cursor: pointer;
@@ -246,7 +254,7 @@ h2 {color: rgb(199, 199, 199);
         text-align: right;
         background: linear-gradient(to left, rgba(34, 63, 40, 0.55) 33%, rgba(20, 40, 20, 0.55));
     }
-    
+
 p {color: rgb(145, 145, 145);}
     
 body {padding: 0.3em;
