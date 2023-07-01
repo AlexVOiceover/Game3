@@ -47,6 +47,7 @@ function handleTouch(event) {
     if (touchX < imgWidth / 2) {
       imgDiv.classList.remove("right");
       imgDiv.classList.add("left");
+      selectRolTag.classList.remove("rightAlignment");
       selectRolTag.classList.add("leftAlignment");
       selectRolTag.innerText = "Interceptor";
       instructions.innerText = "Your task is to use your device's gyro to capture enemy signals. Each capture triggers a Morse code. Have your assistant decode this on their device. Once the global scan finishes, input the decoded characters and hit \"Verify Code\".";
@@ -54,6 +55,7 @@ function handleTouch(event) {
     } else {
       imgDiv.classList.remove("left");
       imgDiv.classList.add("right");
+      selectRolTag.classList.remove("leftAlignment");
       selectRolTag.classList.add("rightAlignment");
       selectRolTag.innerText = "Decoder";
       instructions.innerText = "Listen carefully to the Morse code signals and decrypt them by tapping on your device.\n Once the global scan is complete, pass the characters to the interceptor.";

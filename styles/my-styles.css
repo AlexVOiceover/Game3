@@ -350,7 +350,7 @@ body {padding: 3em;
     padding-bottom: 70%;
     background-size: cover;
     background-position: center;
-    margin-bottom: 2em;
+    margin-bottom: 1.5em;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
 }
 #rolSelection.left {
