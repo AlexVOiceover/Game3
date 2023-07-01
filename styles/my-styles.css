@@ -375,8 +375,8 @@ body {padding: 3em;
 }
 
 
-      
-/* For mobile devices*/
+ /*
+/* For mobile devices
 @media all and (pointer:none) , (pointer:coarse) {
 
     h1 {margin-top: 0em;
@@ -419,8 +419,9 @@ body {padding: 3em;
         margin-bottom: 0.2em;
         filter: drop-shadow(6px 6px 5px rgb(53, 53, 53));}
 
-    section {margin-bottom: 1em;}
+    section {margin-bottom: 1em;} 
 
 
                
 } 
+*/
