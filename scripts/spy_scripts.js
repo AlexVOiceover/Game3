@@ -325,8 +325,8 @@ function drawDot(x, y) {
     // Check if the timer reaches decodTime seconds = decoded signal
     if (timer >= decodTime && !playingBeep) {
 
-//ADDED TO PLAY TUNNING AUDIO
-audio.pause();
+    //ADDED TO PLAY TUNNING AUDIO
+    audio.pause();
 
       // Generate a random character and call playMorseCode with that character
       console.log(arrayMorse.length + " NumSymbols " + numSymbols);
@@ -341,16 +341,7 @@ audio.pause();
       //document.getElementById("inputChar").value = randomChar;
       document.getElementById("arrayMorseTextbox").textContent = arrayMorse.join(" ");
 
-      
-    //Pressiong on the version it will show the cheatTextbox  
-    var toggleVisibility = document.getElementById("toggleVisibility");
-    toggleVisibility.addEventListener('click', function() {
-      if (arrayMorseTextbox.style.display !== "none") {
-        arrayMorseTextbox.style.display = "none";
-      } else {
-        arrayMorseTextbox.style.display = "block";
-      }
-    });
+
       
       // Generate new coordinates for the red dot
       signalPosX = Math.random() * canvas.width;
@@ -462,6 +453,23 @@ function playMorseCode(char) {
 const delay = currentTime * 1000;
 setTimeout(setPlayingBeepToFalse, delay);
 }
+
+
+//Pressiong on the version it will show the cheatTextbox
+//Here I wanted to mimic the 5 presses on the build number to unlock
+let buildPresses = 5;
+
+var toggleVisibility = document.getElementById("toggleVisibility");
+var cheatTextbox = document.getElementById("cheatTextbox");
+
+toggleVisibility.addEventListener('click', function() {
+  buildPresses--;
+  if (buildPresses === 0) {
+    cheatTextbox.textContent = "Cheat mode";
+    cheatTextbox.style.display = "inline-block";
+  }
+});
+
 
 
 document.getElementById("playMorseCode").addEventListener("click", () => {
