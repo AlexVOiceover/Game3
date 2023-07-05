@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let audioEnabled = false;
     let isPlaying = false;
     let isStopBeepCalled = false; //Needed to dont call stopBeep twice
-    const timeBetweenCharacters = 800;
+    const timeBetweenCharacters = 1000;
     const minDurationDash = 150;
   
     const morseCode = {

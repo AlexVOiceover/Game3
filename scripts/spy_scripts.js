@@ -35,11 +35,6 @@ function resetPosition() {
 
 document.getElementById("resetPosition").addEventListener("click", resetPosition);
 
-/*Will reset gyro when the page is loaded
-document.addEventListener("DOMContentLoaded", function() {
-  resetPosition();
-}); */
-
 document.getElementById("startTransmissionButton").addEventListener("change", function () {
   resetPosition()
   if (this.checked) {
@@ -490,5 +485,28 @@ document.addEventListener('visibilitychange', function() {
       backgroundMusic.play();
   }
 });
+
+//Added you use the mouse on pc
+// Get the map element
+var map = document.getElementById('map');
+
+// Get the focus circle element
+var focusCircle = document.getElementById('focusCircle');
+
+// Add the mousemove event listener to the map
+map.addEventListener('mousemove', function(e) {
+    // Get the mouse coordinates
+    var x = e.clientX;
+    var y = e.clientY;
+
+    // Update the position of the focus circle
+    focusCircle.style.left = x + 'px';
+    focusCircle.style.top = y + 'px';
+});
+
+
+
+
+
 
 animationLoop();
