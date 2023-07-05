@@ -357,6 +357,33 @@ body {padding: 0.3em;
   }
   
 
+#modalSpy {
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8); /* Dark, semi-transparent background */
+    z-index: 99999;
+    height: 100%;
+    width: 100%;
+    display: none; /* Initially hidden */
+}
+
+.modalSpy-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: lightgrey;
+    font-size: xx-large; 
+    line-height: 2;
+    font-family: 'Orbitron', sans-serif;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+}
+
+
 #rolSelection {
     background-image: url('../images/rolesCenter.jpg');
     border: none;
@@ -367,6 +394,7 @@ body {padding: 0.3em;
     margin-bottom: 1em;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
 }
+
 #rolSelection.left {
     background-image: url('../images/rolesLeft.jpg');
     width: 100%; 

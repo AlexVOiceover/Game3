@@ -27,6 +27,10 @@ backgroundMusic.volume = 0.4;
   audio.volume = 0.1;
   audio.loop = true;
 
+window.onload = function () {
+    document.getElementById('modalSpy').style.display = "block";
+};
+
 function resetPosition() {
   rolldeviation = roll;
   pitchdeviation = pitch;

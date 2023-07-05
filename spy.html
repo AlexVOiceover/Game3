@@ -10,12 +10,10 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet"> 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">  
-          
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">          
     </head>
  
     <body> 
-
         <div class="controls-container">
             <label class="switch">
                 <input type="checkbox" id="startTransmissionButton">
@@ -29,12 +27,9 @@
 
         <audio id="backgroundMusic" src="audios/spy_background.ogg"  loop preload="auto"></audio>
     
-        <div id="canvasContainer">
-            <canvas id="dotCanvas"></canvas>
-        </div>
-        <div>
-            <h2 id="messages">Capture transmission</h2>
-        </div>
+        <div id="canvasContainer"><canvas id="dotCanvas"></canvas></div>
+
+        <div><h2 id="messages">Capture transmission</h2></div>
   
         <div class="characters-container"></div>
 
@@ -47,6 +42,13 @@
        
         <div style="display: flex; justify-content: space-between;">
             <p id="toggleVisibility" style="display: inline-block;">V280</p> <p id="cheatTextbox" readonly style="display: none;  text-align: right;">cheat</p>
+        </div>
+
+        <!--Modal window for instructions-->
+        <div id="modalSpy" onclick="this.style.display='none'">
+            <div class="modalSpy-content">
+                <p>Please use your device in horizontal position for better results</p>
+            </div>
         </div>
 
         <!-- Using the next script I add a timestamp, this way it will reload the JS when I reload the page, otherwise it was keeping the old JS after an update -->
