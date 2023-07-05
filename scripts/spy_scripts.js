@@ -458,10 +458,8 @@ setTimeout(setPlayingBeepToFalse, delay);
 //Pressiong on the version it will show the cheatTextbox
 //Here I wanted to mimic the 5 presses on the build number to unlock
 let buildPresses = 5;
-
 var toggleVisibility = document.getElementById("toggleVisibility");
 var cheatTextbox = document.getElementById("cheatTextbox");
-
 toggleVisibility.addEventListener('click', function() {
   buildPresses--;
   if (buildPresses === 0) {
