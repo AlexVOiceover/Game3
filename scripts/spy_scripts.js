@@ -250,7 +250,7 @@ function drawDot(x, y) {
           ctx.fillStyle  = "rgb(255, 85, 85)";
           ctx.fill();  
 
-
+          // Focus circle
           ctx.beginPath();
           // ctx.arc(x, y, 12, 0, 2 * Math.PI); 
           ctx.arc(x, y, focusCircleDiameter, 0, 2 * Math.PI); 
@@ -484,24 +484,6 @@ document.addEventListener('visibilitychange', function() {
       // Resume the music when the page is visible again
       backgroundMusic.play();
   }
-});
-
-//Added you use the mouse on pc
-// Get the map element
-var map = document.getElementById('map');
-
-// Get the focus circle element
-var focusCircle = document.getElementById('focusCircle');
-
-// Add the mousemove event listener to the map
-map.addEventListener('mousemove', function(e) {
-    // Get the mouse coordinates
-    var x = e.clientX;
-    var y = e.clientY;
-
-    // Update the position of the focus circle
-    focusCircle.style.left = x + 'px';
-    focusCircle.style.top = y + 'px';
 });
 
 
