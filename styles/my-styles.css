@@ -314,6 +314,9 @@ body {padding: 0.3em;
     border-radius: 50%;
     }
 
+#toggleVisibility {
+    pointer-events: auto;}
+
 /* The Modal (background) */
 .modal {
     display: none;

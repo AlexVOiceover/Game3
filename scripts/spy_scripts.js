@@ -155,6 +155,41 @@ let smoothY = 0;
 const canvas = document.getElementById("dotCanvas");
 const ctx = canvas.getContext("2d");
 
+
+
+
+
+
+
+// The event listener for the mousemove event
+canvas.addEventListener('mousemove', (event) => {
+  // The offset of the canvas element
+  const rect = canvas.getBoundingClientRect();
+
+  // Calculate the new position of the white circle
+  x = event.clientX - rect.left;
+  y = event.clientY - rect.top;
+
+  drawDot(x,y);
+/*
+  // Redraw the canvas
+  ctx.clearRect(0, 0, anvas.width, dotCanvas.height);
+  drawFocusCircle();
+});
+
+// Function to draw the white circle at the current position
+function drawFocusCircle() {
+  ctx.beginPath();
+  ctx.arc(focusX, focusY, 10, 0, Math.PI * 2);
+  ctx.fillStyle = 'white';
+  ctx.fill(); */
+})
+
+
+
+
+
+
 let signalPosX = Math.random() * canvas.width;
 let signalPosY = Math.random() * canvas.height;
 
@@ -304,7 +339,18 @@ audio.pause();
       textboxes[arrayMorse.length - 1].value = "*";
       playMorseCode(lastChar);
       //document.getElementById("inputChar").value = randomChar;
-      document.getElementById("arrayMorseTextbox").value = arrayMorse.join(" ");
+      document.getElementById("arrayMorseTextbox").textContent = arrayMorse.join(" ");
+
+      
+    //Pressiong on the version it will show the cheatTextbox  
+    var toggleVisibility = document.getElementById("toggleVisibility");
+    toggleVisibility.addEventListener('click', function() {
+      if (arrayMorseTextbox.style.display !== "none") {
+        arrayMorseTextbox.style.display = "none";
+      } else {
+        arrayMorseTextbox.style.display = "block";
+      }
+    });
       
       // Generate new coordinates for the red dot
       signalPosX = Math.random() * canvas.width;
