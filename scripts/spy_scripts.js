@@ -160,40 +160,6 @@ const canvas = document.getElementById("dotCanvas");
 const ctx = canvas.getContext("2d");
 
 
-
-
-
-
-
-// The event listener for the mousemove event
-canvas.addEventListener('mousemove', (event) => {
-  // The offset of the canvas element
-  const rect = canvas.getBoundingClientRect();
-
-  // Calculate the new position of the white circle
-  x = event.clientX - rect.left;
-  y = event.clientY - rect.top;
-
-  drawDot(x,y);
-/*
-  // Redraw the canvas
-  ctx.clearRect(0, 0, anvas.width, dotCanvas.height);
-  drawFocusCircle();
-});
-
-// Function to draw the white circle at the current position
-function drawFocusCircle() {
-  ctx.beginPath();
-  ctx.arc(focusX, focusY, 10, 0, Math.PI * 2);
-  ctx.fillStyle = 'white';
-  ctx.fill(); */
-})
-
-
-
-
-
-
 let signalPosX = Math.random() * canvas.width;
 let signalPosY = Math.random() * canvas.height;
 
@@ -282,7 +248,7 @@ function drawDot(x, y) {
       // Focus circle
       if (timerLine <= 1) {
 
-         if (!finishedGame){
+         if (!finishedGame & !playingBeep){
           // Signal, Red Dot
           ctx.beginPath();
           ctx.arc(signalPosX, signalPosY, 5, 0, 2 * Math.PI); // Draw a dot with a radius of 5
