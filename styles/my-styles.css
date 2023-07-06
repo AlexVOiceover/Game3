@@ -385,7 +385,8 @@ body {padding: 0.3em;
 
 .modalSpy-content .instructions {
     font-family: 'Orbitron', sans-serif;
-    text-shadow: 3px 3px 2px #000, -3px -3px 2px #000, 3px -3px 2px #000, -3px 3px 2px #000;
+    text-shadow: 0.6vw 0.6vw 0.4vw #000, -0.6vw -0.6vw 0.4vw #000, 0.6vw -0.6vw 0.4vw #000, -0.6vw 0.6vw 0.4vw #000,
+                 1vw 1vw 0.8vw #000, -1vw -1vw 0.8vw #000, 1vw -1vw 0.8vw #000, -1vw 1vw 0.8vw #000;
 }
 
 
