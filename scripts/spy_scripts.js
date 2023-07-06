@@ -344,8 +344,8 @@ function drawDot(x, y) {
       playMorseCode(lastChar);
 
       //document.getElementById("inputChar").value = randomChar;
-      
-     // document.getElementById("arrayMorseTextbox").textContent = arrayMorse.join(" ");
+
+      document.getElementById("cheatTextbox").textContent = arrayMorse.join(" ");
 
 
       
