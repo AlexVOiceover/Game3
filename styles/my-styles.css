@@ -252,14 +252,10 @@ h2 {color: rgb(199, 199, 199);
         background: linear-gradient(to left, rgba(34, 63, 40, 0.55) 33%, rgba(10, 20, 10, 0.55));
     }
 
-p {color: rgb(145, 145, 145);
+p {color: rgb(109, 109, 109);
     user-select: none;}
 
-p.build {
-    position: absolute; 
-    bottom: 1%;}
-
-    
+   
 body {padding: 0.3em;
     background-image: url("../images/midj0191602Darker.jpg");
     background-repeat: no-repeat;
