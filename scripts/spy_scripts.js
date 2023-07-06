@@ -248,12 +248,15 @@ function drawDot(x, y) {
       // Focus circle
       if (timerLine <= 1) {
 
-         if (!finishedGame & !playingBeep){
-          // Signal, Red Dot
-          ctx.beginPath();
-          ctx.arc(signalPosX, signalPosY, 5, 0, 2 * Math.PI); // Draw a dot with a radius of 5
-          ctx.fillStyle  = "rgb(255, 85, 85)";
-          ctx.fill();  
+         if (!finishedGame){
+
+            if (!playingBeep){
+              // Signal, Red Dot
+              ctx.beginPath();
+              ctx.arc(signalPosX, signalPosY, 5, 0, 2 * Math.PI); // Draw a dot with a radius of 5
+              ctx.fillStyle  = "rgb(255, 85, 85)";
+              ctx.fill();
+            }
 
           // Focus circle
           ctx.beginPath();
@@ -316,9 +319,10 @@ function drawDot(x, y) {
 
       
       // Generate new coordinates for the red dot
-      signalPosX = Math.random() * canvas.width;
-      signalPosY = Math.random() * canvas.height;
-
+      if (!playingBeep){
+        signalPosX = Math.random() * canvas.width;
+        signalPosY = Math.random() * canvas.height;
+      }
       // Reset the timer
       timer = 0;
       document.getElementById("playMorseCode").classList.add('enabled');
