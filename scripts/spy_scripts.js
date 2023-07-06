@@ -469,7 +469,7 @@ var cheatTextbox = document.getElementById("cheatTextbox");
 toggleVisibility.addEventListener('click', function() {
   buildPresses--;
   if (buildPresses === 0) {
-    cheatTextbox.textContent = "Cheat mode";
+    cheatTextbox.textContent = "Cheat mode: On";
     cheatTextbox.style.display = "inline-block";
   }
 });
