@@ -9,13 +9,13 @@ let pitchdeviation = 0;
 const smoothFactor = 0.8;
 let timer = 0;
 let timerLine = 0;
-const segmentSpeed = 0.0005;
+const segmentSpeed = 0.0003;
 let activated = false;
 let arrayMorse = [];
 let lastChar;
 const maxDiameter = 300;
 const numSymbols = 4;
-let focusCircleDiameter = 20;
+let focusCircleDiameter = 15;
 let finishedGame = false;
 let playingBeep = false;
 const frequency = 1200; // 1000Hz
@@ -318,11 +318,12 @@ function drawDot(x, y) {
 
 
       
-      // Generate new coordinates for the red dot
+      // Generate new coordinates for the red dot (if not playing previous morse code)
       if (!playingBeep){
         signalPosX = Math.random() * canvas.width;
         signalPosY = Math.random() * canvas.height;
       }
+
       // Reset the timer
       timer = 0;
       document.getElementById("playMorseCode").classList.add('enabled');
