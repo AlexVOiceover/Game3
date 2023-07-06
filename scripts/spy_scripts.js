@@ -342,8 +342,10 @@ function drawDot(x, y) {
       arrayMorse.push(lastChar);
       textboxes[arrayMorse.length - 1].value = "*";
       playMorseCode(lastChar);
+
       //document.getElementById("inputChar").value = randomChar;
-      document.getElementById("arrayMorseTextbox").textContent = arrayMorse.join(" ");
+      
+     // document.getElementById("arrayMorseTextbox").textContent = arrayMorse.join(" ");
 
 
       
