@@ -362,7 +362,7 @@ body {padding: 0.3em;
     font-family: Arial, Helvetica, sans-serif;
     top: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.9); /* Dark, semi-transparent background */
+    background: rgba(0, 0, 0, 0.7); /* Dark, semi-transparent background */
     z-index: 99999;
     height: 100%;
     width: 100%;
@@ -374,9 +374,7 @@ body {padding: 0.3em;
     top: 50%;
     left: 50%;
     font-size: xx-large; 
-    line-height: 2;
-    
-   
+    line-height: 2;   
     transform: translate(-50%, -50%);
     width: 80%;
     padding: 20px;
