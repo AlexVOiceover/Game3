@@ -1,4 +1,5 @@
 const frequency = 1000;
+const volume = 0.5;
 let isMuted = false;
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -51,7 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('instructionModal').style.display = 'block';
     });
   
-
     muteButton.addEventListener("pointerdown", () => {
       isMuted = !isMuted;
       // Toggle the 'muted' subclass based on the isMuted variable
@@ -81,7 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         arrayMorseTextbox.value += "*";
         morseInput = "";
-  
       }
       morseTextbox.value = "";
   };
@@ -95,10 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   
-    device.addEventListener("pointerdown", () => {
-
-
-       
+    device.addEventListener("pointerdown", () => {      
 
         if (device.disabled) return; 
 
@@ -120,6 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             oscillator.type = "sine";
             oscillator.frequency.value = frequency;
+            gainNode.gain.value = volume;
 
             oscillator.connect(gainNode);
             gainNode.connect(audioContext.destination);
