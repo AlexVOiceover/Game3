@@ -23,6 +23,7 @@
                 <span class="slider"></span>
             </label>
             <div class="mute-icon" id="muteButton"></div>
+            <div class="instructions-icon" id="instructionButton" alt="Instructions"></div>
             <input type="image" class="exit-icon" src="images/exit.png" alt="Exit" onclick="location.href='index.html'" />  
         </div>   
 
@@ -42,6 +43,14 @@
             </div>
         </div>
         <p>V221</p>
+
+        <!--Modal window for game instructions-->
+        <div id="instructionModal" onclick="this.style.display='none'" style="display:none;">
+            <div class="image-container">
+                <img src="./images/decoderInstructions.png" style="max-width: 95%; max-height: 95%;"/>
+            </div>
+        </div>
+
     
        <!-- Using the next script I add a timestamp, this way it will reload the JS when I reload the page, otherwise it was keeping the old JS after an update -->
         <script>      

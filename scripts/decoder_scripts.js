@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let isStopBeepCalled = false; //Needed to dont call stopBeep twice
     const timeBetweenCharacters = 1000;
     const minDurationDash = 150;
+    let maxCharacters = 5;
   
     const morseCode = {
       'A': '.-',    'B': '-...',  'C': '-.-.',  'D': '-..',   'E': '.',
@@ -45,6 +46,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    // display instructionModal when instructionButton is clicked
+    document.getElementById('instructionButton').addEventListener('click', function() {
+    document.getElementById('instructionModal').style.display = 'block';
+    });
+  
+
     muteButton.addEventListener("pointerdown", () => {
       isMuted = !isMuted;
       // Toggle the 'muted' subclass based on the isMuted variable
@@ -60,10 +67,16 @@ document.addEventListener("DOMContentLoaded", () => {
   
       //Adding as String, modify to use array
       if (character) {
-       // console.log("Dentro if character antes" +morseInput);
         arrayMorseTextbox.value += character;
         morseInput = "";
-        // console.log("Dentro if character despues" +morseInput);
+        
+         // Check if the number of decoded characters has reached 5
+        if (arrayMorseTextbox.value.length >= maxCharacters) {
+            // Disable the device
+            device.disabled = true;
+            // Uncheck the enableAudioSwitch
+            enableAudioSwitch.checked = false;
+        }
    
       } else {
         arrayMorseTextbox.value += "*";
@@ -83,6 +96,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   
     device.addEventListener("pointerdown", () => {
+
+
+       
+
         if (device.disabled) return; 
 
         device.classList.add("down");
