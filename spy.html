@@ -20,7 +20,8 @@
                 <span class="slider"></span>
             </label>
             <div class="calibrate-icon" id="resetPosition" alt="Calibrate Gyro"></div>
-            <input type="image" class="exit-icon" src="images/exit.png" alt="Exit" onclick="location.href='index.html'" />
+            <div class="instructions-icon" id="instructionButton" alt="Instructions"></div>
+            <div class="exit-icon" onclick="location.href='index.html'"></div>
         </div>
 
         <h1>Interceptor</h1>
@@ -45,12 +46,17 @@
             <p id="cheatTextbox" readonly style="display: none;  text-align: right;">cheat</p>
         </div>
 
-        <!--Modal window for instructions-->
+        <!--Modal window for position instructions-->
         <div id="modalSpy" onclick="this.style.display='none'">
             <div class="modalSpy-content">
                 <img src="./images/animatedphone/phone.gif" style="opacity: 0.5;width: 40%; height: auto;"/>
                 <p class="instructions">For the best experience, hold your device parallel to the ground.</p>
             </div>
+        </div>
+
+        <!--Modal window for game instructions-->
+        <div id="instructionModal" onclick="this.style.display='none'" style="display:none; width: 100vw; height: 100vh; background: rgba(0,0,0,0.8); position: fixed; top: 0; left: 0; z-index: 9999; display: flex; align-items: center; justify-content: center;">
+            <img src="./images/interceptorInstructions.png" style="max-width: 90%; max-height: 90%;" />
         </div>
 
         <!-- Using the next script I add a timestamp, this way it will reload the JS when I reload the page, otherwise it was keeping the old JS after an update -->

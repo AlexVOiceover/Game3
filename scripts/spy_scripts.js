@@ -29,6 +29,7 @@ backgroundMusic.volume = 0.4;
 
 window.onload = function () {
     document.getElementById('modalSpy').style.display = "block";
+    document.getElementById('instructionModal').style.display = "none";
 };
 
 function resetPosition() {
@@ -443,6 +444,15 @@ toggleVisibility.addEventListener('click', function() {
     cheatTextbox.textContent = "Cheat mode: On";
     cheatTextbox.style.display = "inline-block";
   }
+});
+
+
+// display instructionModal only when instructionButton is clicked
+document.getElementById('instructionButton').addEventListener('click', function() {
+  // hide modalSpy when instructionModal is about to be shown
+  document.getElementById('modalSpy').style.display = "none";
+  // now show the instructionModal
+  document.getElementById('instructionModal').style.display = 'block';
 });
 
 
