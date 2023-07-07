@@ -86,7 +86,10 @@ document.addEventListener("DOMContentLoaded", () => {
       morseTextbox.value = "";
       // After translation, reset tapCount and re-enable the device
       tapCount = 0;
-      device.disabled = false;
+      // Only re-enable the device if the maximum number of characters has not been reached
+      if (arrayMorseTextbox.value.length < maxCharacters) {
+        device.disabled = false;
+      }
   };
   
   //This also needs to be modified if change to array
@@ -163,7 +166,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         clearTimeout(translationTimeout);
         translationTimeout = setTimeout(translateMorseCode, timeBetweenCharacters);
-        // console.log("Dentro stopBeep" +morseInput);
         morseTextbox.value = morseInput;
         isStopBeepCalled = true;
     };
