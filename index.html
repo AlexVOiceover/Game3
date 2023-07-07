@@ -33,12 +33,12 @@
             <button class="metallic" id="findHelper">QR</button>
             </div>
            
-            <!-- The Modal -->
-            <div id="myModal" class="modal">
-                <!-- The Close Button -->
-                <span class="close">&times;</span>
-                <!-- Modal Content (The Image) -->
-                <img class="modal-content" id="img01">
+            <!-- The QR Modal -->
+            <div id="qrModal" onclick="this.style.display='none'" style="display:none;">
+                <div class="modalSpy-content">
+                    <img src="./images/url.png" style="opacity: 0.8;width: 100%; height: auto;"/>
+                    <p class="instructions">Looking for wingman</p>
+                </div>
             </div>
 
         <audio id="indexBackgroundMusic" src="audios/index_background.ogg"  loop preload="auto"></audio>
