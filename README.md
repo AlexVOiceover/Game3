@@ -9,7 +9,7 @@ Codebreakers is an immersive, interactive game that underscores the importance o
  * **Interceptor and Decoder Roles:** Codebreakers is an interactive game where players can assume the roles of an "Interceptor" or a "Decoder". However, to fully experience the game, it is best played with a partner.
 
 ## Compatibility
-Codebreakers is primarily designed for Android phones. Due to the distinct security policies of iPhones, adapting the game for iOS would require substantial effort. As this project is primarily an educational endeavor, there are currently no plans to make it iOS compatible. Similarly, it won't work on a PC. I really wanted users to feel as if their phone transforms into a different device, a portable signal interceptor and a Morse decoder. Using a mouse to capture the signal could work, but this deviates completely from the vision I have for this game.
+Codebreakers is exclusively designed to operate on **Android phones**. Due to the distinct security policies of iPhones, adapting the game for iOS would require substantial effort. As this project is primarily an educational endeavor, there are currently no plans to make it iOS compatible. Similarly, it won't work on a PC. I really wanted users to feel as if their phone transforms into a different device, a portable signal interceptor and a Morse decoder. Using a mouse to capture the signal could work, but this deviates completely from the vision I have for this game.
 
 ## Roles
  * **Interceptor:** The player's task is to use their device's gyro to capture enemy signals. Each capture triggers a Morse code. The player must have their assistant decode this on their device. Once the global scan finishes, the player inputs the decoded characters and hits "Verify Code".
