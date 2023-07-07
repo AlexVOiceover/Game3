@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const timeBetweenCharacters = 1000;
     const minDurationDash = 150;
     let maxCharacters = 5;
+    let tapCount = 0;
   
     const morseCode = {
       'A': '.-',    'B': '-...',  'C': '-.-.',  'D': '-..',   'E': '.',
@@ -83,6 +84,9 @@ document.addEventListener("DOMContentLoaded", () => {
         morseInput = "";
       }
       morseTextbox.value = "";
+      // After translation, reset tapCount and re-enable the device
+      tapCount = 0;
+      device.disabled = false;
   };
   
   //This also needs to be modified if change to array
@@ -97,6 +101,14 @@ document.addEventListener("DOMContentLoaded", () => {
     device.addEventListener("pointerdown", () => {      
 
         if (device.disabled) return; 
+
+        tapCount++;
+
+        // If tapCount has reached 5, disable the device and return
+         if (tapCount > 5) {
+        device.disabled = true;
+        return;
+        }
 
         device.classList.add("down");
         isStopBeepCalled = false;
