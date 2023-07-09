@@ -162,6 +162,15 @@
     background-size: cover;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);}
 
+.settings-icon {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-image: url("../images/settings.png");
+    background-size: cover;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);}
+
 .replay-button {
     cursor: pointer;
     width: 30px;
@@ -382,3 +391,18 @@ body {padding: 0.3em;
 #rolSelection.right {
     background-image: url('../images/rolesRight.jpg');
 }
+
+.dropdown {
+    position: relative;
+  }
+
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }

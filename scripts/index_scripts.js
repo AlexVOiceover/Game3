@@ -26,11 +26,15 @@ if (!isAndroidDevice()) {
   modal.style.display = "block";
 }
 
+const value1 = 1;
+const value2 = 2;
+const value3 = 3;
+
 
 proceedButton.addEventListener("click", () => {
-  if (rol === "left"){fadeOutAndRedirect("./spy.html");
+  if (rol === "left"){fadeOutAndRedirect("./spy.html?param1=value1&param2=value2&param3=value3");
 console.log("Interceptor");}
-  else if (rol === "right"){fadeOutAndRedirect("./decoder.html");
+  else if (rol === "right"){fadeOutAndRedirect("./decoder.html?param1=value1&param2=value2&param3=value3");
   console.log("Decoder");}
 });
   
@@ -95,11 +99,20 @@ function fadeOutAndRedirect(targetPage) {
 var modal = document.getElementById("qrModal");
 // Get the button that opens the modal
 var btn = document.getElementById("findHelper");
-
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
   modal.style.display = "block";
  }
+
+// Get the Settings modal
+var modalSettings = document.getElementById("modalSettings");
+// Get the button that opens the modal
+var btnSettings = document.getElementById("settingsButton");
+// When the user clicks the button, open the modal 
+btnSettings.onclick = function() {
+  modalSettings.style.display = "block";
+ }
+
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {

@@ -30,6 +30,7 @@
        
             <div class="controls-container">
                 <button class="metallic disabled" id="proceed" disabled>Proceed</button>
+                <div class="settings-icon" id="settingsButton" alt="Settings"></div>
                 <button class="metallic" id="findHelper">QR</button>
             </div>
            
@@ -46,6 +47,22 @@
                 <div class="modalDevice-content">
                     <img src="./images/android.gif" style="width: 40vw; height: auto;"/>
                     <p class="instructions">This app was designed to work only on Android devices.</p>
+                </div>
+            </div>
+
+             <!--Modal window for game settings-->
+             <div id="modalSettings" class="modalWindow" onclick="this.style.display='none'" style="display:none;">
+                <div class="modalDevice-content">
+                    <div class="dropdown">
+                        <p>Radar Speed</p>
+                        <select class="dropdown-menu">
+                          <option value="option1">Slow</option>
+                          <option value="option2">Medium</option>
+                          <option value="option3">Fast</option>
+                        </select>
+                      </div>
+                    <p>Focus Diameter</p>
+                    <p>Enemy Signals</p>
                 </div>
             </div>
 

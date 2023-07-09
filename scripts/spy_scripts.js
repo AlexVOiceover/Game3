@@ -27,6 +27,35 @@ backgroundMusic.volume = 0.4;
   audio.volume = 0.1;
   audio.loop = true;
 
+
+
+
+
+  // Get the current URL
+  var url = new URL(window.location.href);
+  // Get the search parameters from the URL
+  var params = new URLSearchParams(url.search);
+  // Retrieve a specific parameter by name
+  var paramValue1 = params.get('param1');
+  console.log(paramValue1);
+ // Get the current URL
+ var url = new URL(window.location.href);
+ // Get the search parameters from the URL
+
+ // Retrieve a specific parameter by name
+ var paramValue2 = params.get('param2');
+ console.log(paramValue2); // Get the current URL
+ var url = new URL(window.location.href);
+ // Get the search parameters from the URL
+
+ // Retrieve a specific parameter by name
+ var paramValue3 = params.get('param3');
+ console.log(paramValue3);
+
+
+
+
+
 window.onload = function () {
     document.getElementById('modalSpy').style.display = "block";
     document.getElementById('instructionModal').style.display = "none";
