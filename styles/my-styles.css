@@ -406,18 +406,18 @@ body {padding: 0.3em;
 
 #rolSelection.left {
     background-image: url('../images/rolesLeft.jpg');
-    width: 100%; 
+    /*width: 100%; 
     padding-bottom: 70%;
     background-size: cover;
     background-position: center;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);*/
 }
 
 #rolSelection.right {
     background-image: url('../images/rolesRight.jpg');
-    width: 100%; 
+    /*width: 100%; 
     padding-bottom: 70%;
     background-size: cover;
     background-position: center;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);*/
 }
