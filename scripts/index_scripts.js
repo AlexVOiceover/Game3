@@ -1,7 +1,7 @@
 var rol;
 var imgDiv = document.getElementById("rolSelection");
 
-// Load all the images 
+// Load all the images
 imgDiv.classList.add("left");
 imgDiv.classList.remove("left");
 imgDiv.classList.add("right");
@@ -91,7 +91,7 @@ function fadeOutAndRedirect(targetPage) {
   }, fadeInterval);
 }
 
-// Get the modal
+// Get the QR modal
 var modal = document.getElementById("qrModal");
 // Get the button that opens the modal
 var btn = document.getElementById("findHelper");

@@ -68,7 +68,6 @@ for (let i = 0; i < numSymbols; i++) {
 // Get all the textboxes with the class 'charactersTextboxes'
 const textboxes = upperContainer.querySelectorAll('.charactersTextboxes');
 
-//CHANGE THESE TO USE ID INSTEAD OF CLASS
 // Get the charaters-container element
 const guessedContainer = document.querySelector('.charactersGuessed-container');
 // Loop through the number of symbols and create textboxes
@@ -80,6 +79,7 @@ for (let i = 0; i < numSymbols; i++) {
   // Add the textbox to the container
   guessedContainer.appendChild(textbox);
 }
+
 // Get all the textboxes with the class 'charactersTextboxes'
 const guessedtextboxes = guessedContainer.querySelectorAll('.charactersTextboxes');
 // After inserting each character jumps to the next one
@@ -104,20 +104,20 @@ window.addEventListener("deviceorientation", (event) => {
     roll = event.gamma.toFixed(4); 
     const adjustedRoll = roll - rolldeviation;
 
-    let horTextboxValue = 0;
+    let horValue = 0;
 
     if (adjustedRoll <= (-1*maxDegrees)){
-      horTextboxValue = -1}
+      horValue = -1}
     else if (adjustedRoll >= maxDegrees){
-      horTextboxValue = 1}
+      horValue = 1}
     else {
-      horTextboxValue =  adjustedRoll/maxDegrees }
+      horValue =  adjustedRoll/maxDegrees }
     
-    // Round the textbox value to 4 decimal places
-    horTextboxValue = parseFloat(horTextboxValue.toFixed(4));
+    // Round the vertical value value to 4 decimal places
+    horValue = parseFloat(horValue.toFixed(4));
 
     // Calculate the x coordinate for the dot
-    x = ((horTextboxValue + 1) / 2) * canvas.width;
+    x = ((horValue + 1) / 2) * canvas.width;
   }
 });
 
@@ -132,20 +132,20 @@ window.addEventListener("deviceorientation", (event) => {
     pitch = event.beta.toFixed(4); // Pitch value in degrees
     const adjustedPitch = pitch - pitchdeviation;
 
-    let verTextboxValue = 0;
+    let verValue = 0;
 
     if (adjustedPitch <= (-1*maxDegrees)){
-      verTextboxValue = -1}
+      verValue = -1}
     else if (adjustedPitch >= maxDegrees){
-      verTextboxValue = 1}
+      verValue = 1}
     else {
-      verTextboxValue =  adjustedPitch/maxDegrees}
+      verValue =  adjustedPitch/maxDegrees}
     
-    // Round the textbox value to 4 decimal places
-    verTextboxValue = parseFloat(verTextboxValue.toFixed(4));
+    // Round the vertical value value to 4 decimal places
+    verValue = parseFloat(verValue.toFixed(4));
 
     // Calculate the y coordinate for the dot
-    y = ((verTextboxValue + 1) / 2) * canvas.height;
+    y = ((verValue + 1) / 2) * canvas.height;
   }
 });
 
@@ -242,7 +242,7 @@ function drawDot(x, y) {
    if (activated){
   
       timerLine += segmentSpeed;
-      // draw Radar Segment;
+      // Draw Radar Segment;
       //REFACTOR THESE IFS
       if (!finishedGame){drawSegment(timerLine);}
 

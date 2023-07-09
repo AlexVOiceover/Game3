@@ -53,7 +53,10 @@
         <audio id="indexBackgroundMusic" src="audios/index_background.ogg"  loop preload="auto"></audio>
         </div>
         <p>V61</p>
-  
-        <script src="scripts/index_scripts.js"></script>
+
+        <!-- Using the next script I add a timestamp, this way it will reload the JS when I reload the page, otherwise it was keeping the old JS after an update -->
+        <script>      
+            document.write('<script src="scripts/index_scripts.js?cache_bust=' + new Date().getTime() + '"><\/script>');
+        </script>
     </body>
 </html>
