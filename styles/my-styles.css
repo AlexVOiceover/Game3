@@ -354,7 +354,31 @@ body {padding: 0.3em;
     display: none; /* Initially hidden */
 }
 
+#modalDevice {
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8); /* Dark, semi-transparent background */
+    z-index: 99999;
+    height: 100%;
+    width: 100%;
+    display: none; /* Initially hidden */
+}
+
 .modalSpy-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: xx-large; 
+    line-height: 2;   
+    transform: translate(-50%, -50%);
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+}
+
+.modalDevice-content {
     position: absolute;
     top: 50%;
     left: 50%;
