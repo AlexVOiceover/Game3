@@ -2,8 +2,8 @@ var rol;
 var imgDiv = document.getElementById("rolSelection");
 //This will handle the parameters using for settings
 let value1 =1;
-let value2 =2;
-let value3 =3;
+let value2 =1;
+let value3 =1;
 
 // Load all the images
 imgDiv.classList.add("left");
@@ -118,6 +118,7 @@ btnSettings.onclick = function() {
  var speedDropdown = document.getElementById('speed-dropdown');
  var diameterDropdown = document.getElementById('diameter-dropdown');
  var signalDropdown = document.getElementById('signal-dropdown');
+
  
  speedDropdown.addEventListener('click', function(event) {
    event.stopPropagation();
