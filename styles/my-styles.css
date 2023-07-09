@@ -325,9 +325,10 @@ body {padding: 0.3em;
     pointer-events: auto;}
 
 
-#qrModal,
+/*#qrModal,
 #modalSpy,
-#modalDevice {
+#modalDevice*/
+.modalWindow {
     position: fixed;
     font-family: 'Orbitron', sans-serif;
     top: 0;
@@ -349,21 +350,8 @@ body {padding: 0.3em;
     transform: translate(-50%, -50%);
     width: 80%;
     padding-top: 1vh;
-    /*padding: 20px; */
     text-align: center;
 }
- /*
-.modalDevice-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    font-size: xx-large; 
-    line-height: 2;   
-    transform: translate(-50%, -50%);
-    width: 80%;
-    padding-top: 1vh;
-    text-align: center;
-} */
 
 .modalSpy-content .instructions {
     font-family: 'Orbitron', sans-serif;
@@ -406,18 +394,8 @@ body {padding: 0.3em;
 
 #rolSelection.left {
     background-image: url('../images/rolesLeft.jpg');
-    /*width: 100%; 
-    padding-bottom: 70%;
-    background-size: cover;
-    background-position: center;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);*/
 }
 
 #rolSelection.right {
     background-image: url('../images/rolesRight.jpg');
-    /*width: 100%; 
-    padding-bottom: 70%;
-    background-size: cover;
-    background-position: center;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);*/
 }
