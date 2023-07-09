@@ -393,6 +393,12 @@ body {padding: 0.3em;
 }
 
 .settings-dropdown {
-    width: 100%;
-    margin: 10px 0;
+    width: 70%;
+    border: none;
+    color: rgb(199, 199, 199);
+    font-family: 'Orbitron', sans-serif;
+    background-color: rgba(34, 63, 40, 0.8);
+    font-size: x-large;
+    letter-spacing: 0.4em;
+    margin-bottom: 5vh;
 }

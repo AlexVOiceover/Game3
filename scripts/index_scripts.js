@@ -1,9 +1,9 @@
 var rol;
 var imgDiv = document.getElementById("rolSelection");
 //This will handle the parameters using for settings
-let value1;
-let value2;
-let value3;
+let value1 =1;
+let value2 =2;
+let value3 =3;
 
 // Load all the images
 imgDiv.classList.add("left");
@@ -30,14 +30,14 @@ if (!isAndroidDevice()) {
   modal.style.display = "block";
 }
 
-
-
-
 proceedButton.addEventListener("click", () => {
-  if (rol === "left"){fadeOutAndRedirect("./spy.html?param1=value1&param2=value2&param3=value3");
-console.log("Interceptor");}
-  else if (rol === "right"){fadeOutAndRedirect("./decoder.html?param1=value1&param2=value2&param3=value3");
-  console.log("Decoder");}
+  if (rol === "left"){
+    window.location.href = `./spy.html?param1=${value1}&param2=${value2}&param3=${value3}`;
+    console.log("Interceptor");
+  } else if (rol === "right"){
+    window.location.href = `./decoder.html?param1=${value1}&param2=${value2}&param3=${value3}`;
+    console.log("Decoder");
+  }
 });
   
 // Add event listener for touch start

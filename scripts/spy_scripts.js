@@ -28,32 +28,17 @@ backgroundMusic.volume = 0.4;
   audio.loop = true;
 
 
-
-
-
   // Get the current URL
   var url = new URL(window.location.href);
   // Get the search parameters from the URL
   var params = new URLSearchParams(url.search);
   // Retrieve a specific parameter by name
   var paramValue1 = params.get('param1');
+  var paramValue2 = params.get('param2');
+  var paramValue3 = params.get('param3');
   console.log(paramValue1);
- // Get the current URL
- var url = new URL(window.location.href);
- // Get the search parameters from the URL
-
- // Retrieve a specific parameter by name
- var paramValue2 = params.get('param2');
- console.log(paramValue2); // Get the current URL
- var url = new URL(window.location.href);
- // Get the search parameters from the URL
-
- // Retrieve a specific parameter by name
- var paramValue3 = params.get('param3');
- console.log(paramValue3);
-
-
-
+  console.log(paramValue2); // Get the current URL
+  console.log(paramValue3);
 
 
 window.onload = function () {
