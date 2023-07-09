@@ -1,5 +1,9 @@
 var rol;
 var imgDiv = document.getElementById("rolSelection");
+//This will handle the parameters using for settings
+let value1;
+let value2;
+let value3;
 
 // Load all the images
 imgDiv.classList.add("left");
@@ -26,9 +30,7 @@ if (!isAndroidDevice()) {
   modal.style.display = "block";
 }
 
-const value1 = 1;
-const value2 = 2;
-const value3 = 3;
+
 
 
 proceedButton.addEventListener("click", () => {
@@ -113,6 +115,36 @@ btnSettings.onclick = function() {
   modalSettings.style.display = "block";
  }
 
+ var speedDropdown = document.getElementById('speed-dropdown');
+ var diameterDropdown = document.getElementById('diameter-dropdown');
+ var signalDropdown = document.getElementById('signal-dropdown');
+ 
+ speedDropdown.addEventListener('click', function(event) {
+   event.stopPropagation();
+ });
+ 
+ speedDropdown.addEventListener('change', function(event) {
+   value1 = parseInt(event.target.value);
+   console.log('value1:', value1); // Output for demonstration
+ });
+ 
+ diameterDropdown.addEventListener('click', function(event) {
+   event.stopPropagation();
+ });
+ 
+ diameterDropdown.addEventListener('change', function(event) {
+   value2 = parseInt(event.target.value);
+   console.log('value2:', value2); // Output for demonstration
+ });
+ 
+ signalDropdown.addEventListener('click', function(event) {
+   event.stopPropagation();
+ });
+ 
+ signalDropdown.addEventListener('change', function(event) {
+   value3 = parseInt(event.target.value);
+   console.log('value3:', value3); // Output for demonstration
+ });
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
@@ -122,6 +154,7 @@ window.onclick = function(event) {
   //I also use it to play the music 
   backgroundMusic.play()
 }
+
 
 //Use this to stop the music when user swapps to another app
 document.addEventListener('visibilitychange', function() {
