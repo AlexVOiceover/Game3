@@ -231,9 +231,7 @@ h1 {color: rgb(150,75,37);
     background-color: rgba(34, 63, 40, 0.55);
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
     user-select: none;
-    -moz-user-select: none; /* Firefox */
-    -webkit-user-select: none; /* Safari and Chrome */
-    -ms-user-select: none; /* IE 10+ */}
+    }
 
 h2 {color: rgb(199, 199, 199);
     font-family: 'Orbitron', sans-serif;
@@ -253,12 +251,12 @@ h2 {color: rgb(199, 199, 199);
 
     h2.leftAlignment {
         text-align: left;
-        background: linear-gradient(to right, rgba(34, 63, 40, 0.55) 33%, rgba(10, 20, 10, 0.55));
+        background: linear-gradient(to right, rgba(34, 63, 40, 0.55) 33%, rgba(10, 20, 10, 0.55) 100%);
     }
     
     h2.rightAlignment {
         text-align: right;
-        background: linear-gradient(to left, rgba(34, 63, 40, 0.55) 33%, rgba(10, 20, 10, 0.55));
+        background: linear-gradient(to left, rgba(34, 63, 40, 0.55) 33%, rgba(10, 20, 10, 0.55) 100%);
     }
 
 p {color: rgb(109, 109, 109);
