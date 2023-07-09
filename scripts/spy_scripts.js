@@ -47,13 +47,13 @@ backgroundMusic.volume = 0.4;
   var paramValue2 = params.get('param2');
   switch (paramValue2) {
     case '1':
-      focusCircleDiameter = 8;
+      focusCircleDiameter = 25;
       break;
     case '2':
       focusCircleDiameter = 15;
       break;
     default:
-      focusCircleDiameter = 25;
+      focusCircleDiameter = 8;
   }
 
   var paramValue3 = params.get('param3');
