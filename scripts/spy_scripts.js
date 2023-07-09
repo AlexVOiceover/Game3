@@ -9,12 +9,12 @@ let pitchdeviation = 0;
 const smoothFactor = 0.8;
 let timer = 0;
 let timerLine = 0;
-const segmentSpeed = 0.0004;
+let segmentSpeed = 0.0004;
 let activated = false;
 let arrayMorse = [];
 let lastChar;
 const maxDiameter = 300;
-const numSymbols = 4;
+let numSymbols = 4;
 let focusCircleDiameter = 15;
 let finishedGame = false;
 let playingBeep = false;
@@ -27,17 +27,50 @@ backgroundMusic.volume = 0.4;
   audio.volume = 0.1;
   audio.loop = true;
 
-
   // Get the current URL
   var url = new URL(window.location.href);
   // Get the search parameters from the URL
   var params = new URLSearchParams(url.search);
   // Retrieve a specific parameter by name
   var paramValue1 = params.get('param1');
+  switch (paramValue1) {
+    case '1':
+      segmentSpeed = 0.0002;
+      break;
+    case '2':
+      segmentSpeed = 0.0004;
+      break;
+    default:
+      segmentSpeed = 0.0006;
+  }
+
   var paramValue2 = params.get('param2');
+  switch (paramValue2) {
+    case '1':
+      focusCircleDiameter = 8;
+      break;
+    case '2':
+      focusCircleDiameter = 15;
+      break;
+    default:
+      focusCircleDiameter = 25;
+  }
+
   var paramValue3 = params.get('param3');
+  switch (paramValue3) {
+    case '1':
+      numSymbols = 3;
+      break;
+    case '2':
+      numSymbols = 4;
+      break;
+    default:
+      numSymbols = 5;
+  }
+
+
   console.log(paramValue1);
-  console.log(paramValue2); // Get the current URL
+  console.log(paramValue2); 
   console.log(paramValue3);
 
 
