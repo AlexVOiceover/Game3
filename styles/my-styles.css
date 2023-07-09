@@ -359,7 +359,7 @@ body {padding: 0.3em;
                  1vw 1vw 0.8vw #000, -1vw -1vw 0.8vw #000, 1vw -1vw 0.8vw #000, -1vw 1vw 0.8vw #000;
 }
 
-#instructionModal{
+/*#instructionModal{
     width: 100vw;
     height: 100vh;
     background: rgba(0,0,0,0.8);
@@ -370,7 +370,7 @@ body {padding: 0.3em;
     display: flex;
     align-items: flex-start;
     justify-content: center;
-}
+}*/
 
 .image-container {
     display: flex;
