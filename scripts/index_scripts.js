@@ -15,6 +15,18 @@ const proceedButton = document.getElementById("proceed");
 const selectRolTag = document.getElementById("selectRolTag");
 const instructions = document.getElementById("instructions");
 
+
+function isAndroidDevice() {
+  var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+  return /android/i.test(userAgent);
+}
+
+if (!isAndroidDevice()) {
+  var modal = document.getElementById("modalDevice");
+  modal.style.display = "block";
+}
+
+
 proceedButton.addEventListener("click", () => {
   if (rol === "left"){fadeOutAndRedirect("./spy.html");
 console.log("Interceptor");}
