@@ -309,7 +309,7 @@ function drawDot(x, y) {
 
             // Crosshair lines
             const lineLength = 5;  // Length of crosshair lines
-            const insideCircle = 0.15 * focusCircleDiameter;
+            const insideCircle = 0.30 * focusCircleDiameter;
 
             // Top line
             ctx.beginPath();
