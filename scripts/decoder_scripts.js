@@ -62,7 +62,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let translationTimeout;
 
     const translateMorseCode = () => {
-     // console.log("Dentro translateMorseCode" +morseInput);
       morseInput = morseTextbox.value.trim();
       const character = Object.keys(morseCode).find((key) => morseCode[key] === morseInput);
   
@@ -95,9 +94,13 @@ document.addEventListener("DOMContentLoaded", () => {
   //This also needs to be modified if change to array
   deleteLastSignal.addEventListener("pointerdown", () => {
     // Check if arrayMorseTextbox.value is not empty
+    
     if (arrayMorseTextbox.value.length > 0) {
       // Remove the last character of the string
       arrayMorseTextbox.value = arrayMorseTextbox.value.slice(0, -1);
+      //Activate device and siwtch to carry one after deleting
+      device.disabled = false;
+      enableAudioSwitch.checked = true;
     }
   });
   
