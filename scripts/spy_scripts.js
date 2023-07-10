@@ -68,10 +68,6 @@ backgroundMusic.volume = 0.4;
       numSymbols = 5;
   }
 
-  console.log(paramValue1);
-  console.log(paramValue2); 
-  console.log(paramValue3);
-
 window.onload = function () {
     document.getElementById('modalSpy').style.display = "block";
     document.getElementById('instructionModal').style.display = "none";
@@ -212,7 +208,6 @@ let signalPosY = Math.random() * canvas.height;
 
 //Radar segment. input 0 to 1
 function drawSegment(progress) {
-  //console.log(progress);
   const lineLength = Math.sqrt(Math.pow(canvas.width / 2, 2) + Math.pow(canvas.height / 2, 2));
   const startAngle = -Math.PI / 2; // Start at 12 o'clock
   const endAngle = startAngle + 2 * Math.PI * progress;
@@ -344,9 +339,6 @@ function drawDot(x, y) {
 
     //ADDED TO PLAY TUNNING AUDIO
     audio.pause();
-
-      // Generate a random character and call playMorseCode with that character
-      console.log(arrayMorse.length + " NumSymbols " + numSymbols);
 
       if (arrayMorse.length +1 === numSymbols) {document.getElementById("messages").innerText  = "All signals captured";}
       else {document.getElementById("messages").innerText  = "Signal captured";}
@@ -545,7 +537,7 @@ document.getElementById("playMorseCode").addEventListener("click", () => {
 
   }
   finishedGame = true;
-  // If the game is finished, add '.charactersTextboxes--readonly' to each textbox
+  // Because the game is finished, add '.charactersTextboxes--readonly' to each textbox
   guessedtextboxes.forEach((textbox) => {
     textbox.classList.add('charactersTextboxes--readonly');   
   });

@@ -126,7 +126,6 @@ btnSettings.onclick = function() {
  
  speedDropdown.addEventListener('change', function(event) {
    value1 = parseInt(event.target.value);
-   console.log('value1:', value1); // Output for demonstration
  });
  
  diameterDropdown.addEventListener('click', function(event) {
@@ -135,7 +134,6 @@ btnSettings.onclick = function() {
  
  diameterDropdown.addEventListener('change', function(event) {
    value2 = parseInt(event.target.value);
-   console.log('value2:', value2); // Output for demonstration
  });
  
  signalDropdown.addEventListener('click', function(event) {
@@ -144,7 +142,6 @@ btnSettings.onclick = function() {
  
  signalDropdown.addEventListener('change', function(event) {
    value3 = parseInt(event.target.value);
-   console.log('value3:', value3); // Output for demonstration
  });
 
 // When the user clicks anywhere outside of the modal, close it
