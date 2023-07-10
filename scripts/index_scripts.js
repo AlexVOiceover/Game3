@@ -1,9 +1,9 @@
 var rol;
 var imgDiv = document.getElementById("rolSelection");
 //This will handle the parameters using for settings
-let value1 =1;
-let value2 =1;
-let value3 =1;
+let value1 =2;
+let value2 =2;
+let value3 =2;
 
 // Load all the images
 imgDiv.classList.add("left");
