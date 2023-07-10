@@ -131,13 +131,7 @@ const guessedtextboxes = guessedContainer.querySelectorAll('.charactersTextboxes
 guessedContainer.addEventListener('input', (e) => {
   const target = e.target;
 
-   // If the game has been finished, prevent the user from modifying the textbox and exit the function
-   if (finishedGame) {
-    e.preventDefault();
-    return;
-  }
-
-  if (target.value.length >= target.maxLength) {
+if (target.value.length >= target.maxLength) {
     const next = target.nextElementSibling;
     if (next && next.tagName.toLowerCase() === 'input') {
       next.focus();
@@ -551,6 +545,10 @@ document.getElementById("playMorseCode").addEventListener("click", () => {
 
   }
   finishedGame = true;
+  // If the game is finished, add '.charactersTextboxes--readonly' to each textbox
+  guessedtextboxes.forEach((textbox) => {
+    textbox.classList.add('charactersTextboxes--readonly');   
+  });
   });
 
 // Function to generate a random character
