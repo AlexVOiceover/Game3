@@ -308,27 +308,28 @@ function drawDot(x, y) {
           ctx.stroke();
 
             // Crosshair lines
-            const lineLength = 10;  // Length of crosshair lines
+            const lineLength = 5;  // Length of crosshair lines
+            const insideCircle = 0.15 * focusCircleDiameter;
 
             // Top line
             ctx.beginPath();
             ctx.moveTo(x, y - focusCircleDiameter - lineLength);
-            ctx.lineTo(x, y - focusCircleDiameter);
+            ctx.lineTo(x, y - focusCircleDiameter + insideCircle);
             ctx.stroke();
             // Bottom line
             ctx.beginPath();
             ctx.moveTo(x, y + focusCircleDiameter + lineLength);
-            ctx.lineTo(x, y + focusCircleDiameter);
+            ctx.lineTo(x, y + focusCircleDiameter - insideCircle);
             ctx.stroke();
             // Left line
             ctx.beginPath();
             ctx.moveTo(x - focusCircleDiameter - lineLength, y);
-            ctx.lineTo(x - focusCircleDiameter, y);
+            ctx.lineTo(x - focusCircleDiameter + insideCircle, y);
             ctx.stroke();
             // Right line
             ctx.beginPath();
             ctx.moveTo(x + focusCircleDiameter + lineLength, y);
-            ctx.lineTo(x + focusCircleDiameter, y);
+            ctx.lineTo(x + focusCircleDiameter - insideCircle, y);
             ctx.stroke();
 
           }
