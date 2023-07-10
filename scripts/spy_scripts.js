@@ -2,6 +2,8 @@ const maxDegrees = 5;
 const decodTime = 15;
 let x = 0;
 let y = 0;
+let signalPosX = -100;
+let signalPosY = -100;
 let roll = 0;
 let pitch = 0;
 let rolldeviation = 0;
@@ -204,8 +206,8 @@ const ctx = canvas.getContext("2d");
 
 // Generate enemy signal only if activated
 if (activated) {
-  let signalPosX = Math.random() * canvas.width;
-  let signalPosY = Math.random() * canvas.height;
+  signalPosX = Math.random() * canvas.width;
+  signalPosY = Math.random() * canvas.height;
 }
 
 //Radar segment. input 0 to 1
