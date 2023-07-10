@@ -367,10 +367,14 @@ body {padding: 0.3em;
 .image-container {
     display: flex;
     align-items: flex-start;
+    padding-top: 1vh;
     justify-content: center;
     width: 100%;
     height: 100%;
 }
+
+.imgInstructions {  border: 3px solid;
+    border-color: aqua;}
 
 
 #rolSelection {
