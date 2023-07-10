@@ -302,11 +302,35 @@ function drawDot(x, y) {
 
           // Focus circle
           ctx.beginPath();
-          // ctx.arc(x, y, 12, 0, 2 * Math.PI); 
           ctx.arc(x, y, focusCircleDiameter, 0, 2 * Math.PI); 
           ctx.strokeStyle = "white";
           ctx.lineWidth = 2;
           ctx.stroke();
+
+            // Crosshair lines
+            const lineLength = 10;  // Length of crosshair lines
+
+            // Top line
+            ctx.beginPath();
+            ctx.moveTo(x, y - focusCircleDiameter - lineLength);
+            ctx.lineTo(x, y - focusCircleDiameter);
+            ctx.stroke();
+            // Bottom line
+            ctx.beginPath();
+            ctx.moveTo(x, y + focusCircleDiameter + lineLength);
+            ctx.lineTo(x, y + focusCircleDiameter);
+            ctx.stroke();
+            // Left line
+            ctx.beginPath();
+            ctx.moveTo(x - focusCircleDiameter - lineLength, y);
+            ctx.lineTo(x - focusCircleDiameter, y);
+            ctx.stroke();
+            // Right line
+            ctx.beginPath();
+            ctx.moveTo(x + focusCircleDiameter + lineLength, y);
+            ctx.lineTo(x + focusCircleDiameter, y);
+            ctx.stroke();
+
           }
       } else if (!finishedGame ) { 
         document.getElementById("messages").innerText  = "Time out!";
