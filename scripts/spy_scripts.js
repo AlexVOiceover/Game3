@@ -88,6 +88,8 @@ document.getElementById("startTransmissionButton").addEventListener("change", fu
   if (this.checked) {
     backgroundMusic.play();
     activated = true;
+    signalPosX = Math.random() * canvas.width;
+    signalPosY = Math.random() * canvas.height;
     
     } else {
     backgroundMusic.pause();
@@ -205,10 +207,10 @@ const canvas = document.getElementById("dotCanvas");
 const ctx = canvas.getContext("2d");
 
 // Generate enemy signal only if activated
-if (activated) {
+/*if (activated) {
   signalPosX = Math.random() * canvas.width;
   signalPosY = Math.random() * canvas.height;
-}
+} */
 
 //Radar segment. input 0 to 1
 function drawSegment(progress) {
