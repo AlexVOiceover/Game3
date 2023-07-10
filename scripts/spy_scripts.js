@@ -491,6 +491,8 @@ toggleVisibility.addEventListener('click', function() {
     cheatTextbox.textContent = "Cheat mode: On";
     cheatTextbox.style.display = "inline-block";
   }
+  //After activating cheat mode if press again shows characters
+  else {cheatTextbox.textContent = arrayMorse.join(" ");}
 });
 
 
