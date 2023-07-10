@@ -2,8 +2,8 @@ const maxDegrees = 5;
 const decodTime = 15;
 let x = 0;
 let y = 0;
-let roll = 999;
-let pitch = 999;
+let roll = 0;
+let pitch = 0;
 let rolldeviation = 0;
 let pitchdeviation = 0;
 const smoothFactor = 0.8;
@@ -202,9 +202,11 @@ let smoothY = 0;
 const canvas = document.getElementById("dotCanvas");
 const ctx = canvas.getContext("2d");
 
-
-let signalPosX = Math.random() * canvas.width;
-let signalPosY = Math.random() * canvas.height;
+// Generate enemy signal only if activated
+if (activated) {
+  let signalPosX = Math.random() * canvas.width;
+  let signalPosY = Math.random() * canvas.height;
+}
 
 //Radar segment. input 0 to 1
 function drawSegment(progress) {
