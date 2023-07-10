@@ -167,7 +167,7 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background-image: url("../images/settings.png");
+    background-image: url("../images/settings2.png");
     background-size: cover;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);}
 
@@ -399,6 +399,7 @@ body {padding: 0.3em;
     font-family: 'Orbitron', sans-serif;
     background-color: rgba(34, 63, 40, 0.8);
     font-size: x-large;
+    text-align: center;
     letter-spacing: 0.4em;
-    margin-bottom: 5vh;
+    margin-bottom: 6vh;
 }
