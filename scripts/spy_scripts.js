@@ -68,11 +68,9 @@ backgroundMusic.volume = 0.4;
       numSymbols = 5;
   }
 
-
   console.log(paramValue1);
   console.log(paramValue2); 
   console.log(paramValue3);
-
 
 window.onload = function () {
     document.getElementById('modalSpy').style.display = "block";
@@ -132,6 +130,13 @@ const guessedtextboxes = guessedContainer.querySelectorAll('.charactersTextboxes
 // After inserting each character jumps to the next one
 guessedContainer.addEventListener('input', (e) => {
   const target = e.target;
+
+   // If the game has been finished, prevent the user from modifying the textbox and exit the function
+   if (finishedGame) {
+    e.preventDefault();
+    return;
+  }
+
   if (target.value.length >= target.maxLength) {
     const next = target.nextElementSibling;
     if (next && next.tagName.toLowerCase() === 'input') {
@@ -327,12 +332,10 @@ function drawDot(x, y) {
     timer += 0.1;
     document.getElementById("messages").innerText  = "Capturing";
 
-  
     //ADDED TO PLAY TUNNING AUDIO
     audio.play().catch(function(error) {
       console.log('Failed to play audio:', error);
     });
-
 
      // Calculate the remaining time and normalize it to the range [0, decodTime]
      const remainingTime = decodTime - (timer % decodTime);
@@ -341,7 +344,6 @@ function drawDot(x, y) {
      if (timerLine <= 1) {
       drawDecreasingCircle(ctx, signalPosX, signalPosY, maxDiameter, remainingTime, decodTime);
      }
-
 
     // Check if the timer reaches decodTime seconds = decoded signal
     if (timer >= decodTime && !playingBeep) {
@@ -360,11 +362,7 @@ function drawDot(x, y) {
       textboxes[arrayMorse.length - 1].value = "*";
       playMorseCode(lastChar);
 
-      //document.getElementById("inputChar").value = randomChar;
-
       document.getElementById("cheatTextbox").textContent = arrayMorse.join(" ");
-
-
       
       // Generate new coordinates for the red dot (if not playing previous morse code)
       if (!playingBeep){
@@ -518,7 +516,6 @@ document.getElementById("playMorseCode").addEventListener("click", () => {
     
     if (arrayMorse[i] !== guessedtextboxes[i].value){
       isRight = false;
-      // textboxes[i].style.backgroundColor = "rgba(100, 34, 40, 0.5)";
       guessedtextboxes[i].style.backgroundColor = "rgba(100, 34, 40, 0.5)";
     }
 
