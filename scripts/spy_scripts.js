@@ -287,7 +287,6 @@ function drawDot(x, y) {
       //REFACTOR THESE IFS
       if (!finishedGame){drawSegment(timerLine);}
 
-      // Focus circle
       if (timerLine <= 1) {
 
          if (!finishedGame){
