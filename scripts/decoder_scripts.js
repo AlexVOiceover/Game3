@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const minDurationDash = 150;
     let maxCharacters = 5;
     let tapCount = 0;
+    let arrayCharacters = [];
   
     const morseCode = {
       'A': '.-',    'B': '-...',  'C': '-.-.',  'D': '-..',   'E': '.',
@@ -54,16 +55,19 @@ switch (paramValue3) {
     maxCharacters = 5;
 }
 
-    enableAudioSwitch.addEventListener("change", function () {
-        // Toggle the disabled state of the button based on the switch state
-        device.disabled = !enableAudioSwitch.checked;
-        
-        if (this.checked) {
-            audioEnabled = true;
-        } else {
-            audioEnabled = false;
-        }
-    });
+arrayCharacters(maxCharacters).fill("*");
+arrayMorseTextbox.value = arrayCharacters().join(" ");
+
+enableAudioSwitch.addEventListener("change", function () {
+    // Toggle the disabled state of the button based on the switch state
+    device.disabled = !enableAudioSwitch.checked;
+    
+    if (this.checked) {
+        audioEnabled = true;
+    } else {
+        audioEnabled = false;
+    }
+});
 
     // display instructionModal when instructionButton is clicked
     document.getElementById('instructionButton').addEventListener('click', function() {
