@@ -55,18 +55,19 @@ switch (paramValue3) {
     maxCharacters = 5;
 }
 
-arrayCharacters = new Array(maxCharacters).fill("*");
-console.log(arrayCharacters);
+arrayCharacters = new Array(maxCharacters).fill("-");
 arrayMorseTextbox.value = arrayCharacters.join(" ");
 
 enableAudioSwitch.addEventListener("change", function () {
     // Toggle the disabled state of the button based on the switch state
     device.disabled = !enableAudioSwitch.checked;
     
-    if (this.checked) {
+    if (this.checked && decodedCharacters < maxCharacters) {
         audioEnabled = true;
     } else {
         audioEnabled = false;
+        this.checked = false;
+        device.disabled = true;
     }
 });
 
@@ -81,121 +82,132 @@ enableAudioSwitch.addEventListener("change", function () {
       muteButton.classList.toggle("muted", isMuted);
     });
 
-    let translationTimeout;
+  let translationTimeout;
 
-    const translateMorseCode = () => {
-      morseInput = morseTextbox.value.trim();
-      const character = Object.keys(morseCode).find((key) => morseCode[key] === morseInput);
+  let decodedCharacters = 0;
+
+  const translateMorseCode = () => {
+    morseInput = morseTextbox.value.trim();
+    const character = Object.keys(morseCode).find((key) => morseCode[key] === morseInput);
   
-      //Adding as String, modify to use array
-      if (character) {
-        arrayMorseTextbox.value += character;
-        morseInput = "";
-        
-         // Check if the number of decoded characters has reached 5
-        if (arrayMorseTextbox.value.length >= maxCharacters) {
-            // Disable the device
-            device.disabled = true;
-            // Uncheck the enableAudioSwitch
-            enableAudioSwitch.checked = false;
-        }
-   
-      } else {
-        arrayMorseTextbox.value += "*";
-        morseInput = "";
-      }
-      morseTextbox.value = "";
-      // After translation, reset tapCount and re-enable the device
+    // Find the first '-' in the array
+    const index = arrayCharacters.indexOf("-");
+  
+    if (character && index !== -1) {
+      // Replace the first '-' with the decoded character
+      arrayCharacters[index] = character;
+      
+      
+    } else if (index !== -1) {
+      // If the Morse code is not recognized, replace the first '-' with '*'
+      arrayCharacters[index] = "*";
+    }
+  
+    decodedCharacters++;
+  
+    morseTextbox.value = "";
+    morseInput = ""; // Reset morseInput
+    arrayMorseTextbox.value = arrayCharacters.join(" ");
+  
+    // Check if the number of decoded characters has reached maxCharacters
+    if (arrayCharacters.indexOf("-") === -1) {
+      // Disable the device
+      device.disabled = true;
+      // Uncheck the enableAudioSwitch
+      enableAudioSwitch.checked = false;
+    } else {
+      // Reset tapCount and re-enable the device
       tapCount = 0;
-      // Only re-enable the device if the maximum number of characters has not been reached
-      if (arrayMorseTextbox.value.length < maxCharacters) {
-        device.disabled = false;
-      }
+      device.disabled = false;
+    }
   };
   
-  //This also needs to be modified if change to array
   deleteLastSignal.addEventListener("pointerdown", () => {
-    // Check if arrayMorseTextbox.value is not empty
-    
-    if (arrayMorseTextbox.value.length > 0) {
-      // Remove the last character of the string
-      arrayMorseTextbox.value = arrayMorseTextbox.value.slice(0, -1);
-      //Activate device and siwtch to carry one after deleting
-      device.disabled = false;
-      enableAudioSwitch.checked = true;
+    if (decodedCharacters>0 & arrayCharacters.length > 0 && arrayCharacters[decodedCharacters - 1] !== "-") {
+      arrayCharacters[decodedCharacters - 1] = "-";
+      decodedCharacters--;
+      
+    // Manually trigger the change event on enableAudioSwitch
+    enableAudioSwitch.checked = true;
+    let event = new Event('change');
+    enableAudioSwitch.dispatchEvent(event);
+
     }
+    arrayMorseTextbox.value = arrayCharacters.join(" ");
+    console.log(arrayCharacters);
+    console.log("decoded characters" + decodedCharacters);
   });
-  
-    device.addEventListener("pointerdown", () => {      
 
-        if (device.disabled) return; 
+  device.addEventListener("pointerdown", () => {      
 
-        tapCount++;
+      if (device.disabled) return; 
 
-        // If tapCount has reached 5, disable the device and return
-         if (tapCount > 5) {
-        device.disabled = true;
-        return;
-        }
+      tapCount++;
 
-        device.classList.add("down");
-        isStopBeepCalled = false;
-        pressStartTime = new Date();
+      // If tapCount has reached 5, disable the device and return
+        if (tapCount > 5) {
+      device.disabled = true;
+      return;
+      }
 
-        if (audioEnabled && !isMuted ) {
-            if (!audioContext) {
-                audioContext = new (window.AudioContext || window.webkitAudioContext)();
-            }
+      device.classList.add("down");
+      isStopBeepCalled = false;
+      pressStartTime = new Date();
 
-            if (isPlaying && oscillator) {
-                oscillator.stop();
-            }
+      if (audioEnabled && !isMuted ) {
+          if (!audioContext) {
+              audioContext = new (window.AudioContext || window.webkitAudioContext)();
+          }
 
-            oscillator = audioContext.createOscillator();
-            gainNode = audioContext.createGain();
+          if (isPlaying && oscillator) {
+              oscillator.stop();
+          }
 
-            oscillator.type = "sine";
-            oscillator.frequency.value = frequency;
-            gainNode.gain.value = volume;
+          oscillator = audioContext.createOscillator();
+          gainNode = audioContext.createGain();
 
-            oscillator.connect(gainNode);
-            gainNode.connect(audioContext.destination);
-            oscillator.start();
+          oscillator.type = "sine";
+          oscillator.frequency.value = frequency;
+          gainNode.gain.value = volume;
 
-            isPlaying = true;
-        }
-    });
+          oscillator.connect(gainNode);
+          gainNode.connect(audioContext.destination);
+          oscillator.start();
 
-    const stopBeep = () => {
-        if (device.disabled) return;
-        if (isStopBeepCalled) {
-            return;
-        }
+          isPlaying = true;
+      }
+  });
 
-        if (!device.disabled) {
-            pressDuration = new Date() - pressStartTime;
-            const morseChar = pressDuration < minDurationDash ? "." : "-";
-            morseInput += morseChar;
-            device.classList.remove("down");
-        }
+  const stopBeep = () => {
+      if (device.disabled) return;
+      if (isStopBeepCalled) {
+          return;
+      }
 
-        if (oscillator) {
-            oscillator.stop();
+      if (!device.disabled) {
+          pressDuration = new Date() - pressStartTime;
+          const morseChar = pressDuration < minDurationDash ? "." : "-";
+          morseInput += morseChar;
+          device.classList.remove("down");
+      }
 
-            oscillator.onended = () => {
-                gainNode.disconnect(audioContext.destination);
-                oscillator.disconnect(gainNode);
-                isPlaying = false;
-            };
-        }
+      if (oscillator) {
+          oscillator.stop();
 
-        clearTimeout(translationTimeout);
-        translationTimeout = setTimeout(translateMorseCode, timeBetweenCharacters);
-        morseTextbox.value = morseInput;
-        isStopBeepCalled = true;
-    };
+          oscillator.onended = () => {
+              gainNode.disconnect(audioContext.destination);
+              oscillator.disconnect(gainNode);
+              isPlaying = false;
+          };
+      }
 
-    device.addEventListener("pointerup", stopBeep);
-    device.addEventListener("pointerleave", stopBeep);
-    device.addEventListener("pointercancel", stopBeep);
+      clearTimeout(translationTimeout);
+      translationTimeout = setTimeout(translateMorseCode, timeBetweenCharacters);
+      morseTextbox.value = morseInput;
+      isStopBeepCalled = true;
+  };
+
+  device.addEventListener("pointerup", stopBeep);
+  device.addEventListener("pointerleave", stopBeep);
+  device.addEventListener("pointercancel", stopBeep);
 });
