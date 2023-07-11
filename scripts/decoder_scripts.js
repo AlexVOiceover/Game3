@@ -55,8 +55,9 @@ switch (paramValue3) {
     maxCharacters = 5;
 }
 
-arrayCharacters(maxCharacters).fill("*");
-arrayMorseTextbox.value = arrayCharacters().join(" ");
+arrayCharacters = new Array(maxCharacters).fill("*");
+console.log(arrayCharacters);
+arrayMorseTextbox.value = arrayCharacters.join(" ");
 
 enableAudioSwitch.addEventListener("change", function () {
     // Toggle the disabled state of the button based on the switch state
