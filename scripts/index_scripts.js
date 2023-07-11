@@ -12,7 +12,7 @@ imgDiv.classList.add("right");
 imgDiv.classList.remove("right");
   
 const backgroundMusic = document.getElementById("indexBackgroundMusic");
-backgroundMusic.volume = 0.8; // Adjust the volume as needed 
+backgroundMusic.volume = 0.8; // Adjust the volume
 
 const proceedButton = document.getElementById("proceed");
 
@@ -82,7 +82,7 @@ function handleTouch(event) {
 }
 
 function fadeOutAndRedirect(targetPage) {
-  let fadeOutDuration = 2000; // 2 seconds in milliseconds
+  let fadeOutDuration = 1000; // 2 seconds in milliseconds
   let fadeStep = 0.05;
   let fadeInterval = (fadeOutDuration * fadeStep) / backgroundMusic.volume;
 
@@ -104,7 +104,7 @@ var btn = document.getElementById("findHelper");
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
   modal.style.display = "block";
- }
+}
 
 // Get the Settings modal
 var modalSettings = document.getElementById("modalSettings");
@@ -113,7 +113,19 @@ var btnSettings = document.getElementById("settingsButton");
 // When the user clicks the button, open the modal 
 btnSettings.onclick = function() {
   modalSettings.style.display = "block";
- }
+}
+
+// Get the helpVideo modal
+var modalHelpVideo = document.getElementById("helpVideoModal");
+// Get the button that opens the modal
+var btnHelpVideo = document.getElementById("helpVideoButton");
+// When the user clicks the button, open the modal 
+btnHelpVideo.onclick = function() {
+ 
+  modalHelpVideo.style.display = "block";
+  backgroundMusic.pause();
+}
+
 
  var speedDropdown = document.getElementById('speed-dropdown');
  var diameterDropdown = document.getElementById('diameter-dropdown');
@@ -149,8 +161,10 @@ window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
-  //I also use it to play the music 
-  backgroundMusic.play()
+  //I also use it to play the music. Only will play if not open the modal with the video
+  if (modalHelpVideo.style.display != "block") {
+    backgroundMusic.play(); //THIS LINE HERE
+  }
 }
 
 
