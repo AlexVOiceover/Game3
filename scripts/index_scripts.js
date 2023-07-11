@@ -68,7 +68,7 @@ function handleTouch(event) {
       selectRolTag.classList.remove("rightAlignment");
       selectRolTag.classList.add("leftAlignment");
       selectRolTag.innerText = "Interceptor";
-      instructions.innerText = "Your task is to use your device's gyro to capture enemy signals. Each capture triggers a Morse code. Have your assistant decode this on their device. Once the global scan finishes, input the decoded characters and hit \"Verify Code\".";
+      instructions.innerText = "Use your device's motion sensor to intercept enemy signals, generating Morse codes. Have your assistant decode these. After the global scan, enter decoded characters and press \"Verify Code\".";
       rol = "left";
     } else {
       imgDiv.classList.remove("left");
