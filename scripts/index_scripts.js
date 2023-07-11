@@ -15,10 +15,8 @@ const backgroundMusic = document.getElementById("indexBackgroundMusic");
 backgroundMusic.volume = 0.8; // Adjust the volume
 
 const proceedButton = document.getElementById("proceed");
-
 const selectRolTag = document.getElementById("selectRolTag");
 const instructions = document.getElementById("instructions");
-
 
 function isAndroidDevice() {
   var userAgent = navigator.userAgent || navigator.vendor || window.opera;
@@ -121,7 +119,6 @@ var modalHelpVideo = document.getElementById("helpVideoModal");
 var btnHelpVideo = document.getElementById("helpVideoButton");
 // When the user clicks the button, open the modal 
 btnHelpVideo.onclick = function() {
- 
   modalHelpVideo.style.display = "block";
   backgroundMusic.pause();
 }
@@ -163,10 +160,9 @@ window.onclick = function(event) {
   }
   //I also use it to play the music. Only will play if not open the modal with the video
   if (modalHelpVideo.style.display != "block") {
-    backgroundMusic.play(); //THIS LINE HERE
+    backgroundMusic.play();
   }
 }
-
 
 //Use this to stop the music when user swapps to another app
 document.addEventListener('visibilitychange', function() {
