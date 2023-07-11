@@ -206,12 +206,6 @@ let smoothY = 0;
 const canvas = document.getElementById("dotCanvas");
 const ctx = canvas.getContext("2d");
 
-// Generate enemy signal only if activated
-/*if (activated) {
-  signalPosX = Math.random() * canvas.width;
-  signalPosY = Math.random() * canvas.height;
-} */
-
 //Radar segment. input 0 to 1
 function drawSegment(progress) {
   const lineLength = Math.sqrt(Math.pow(canvas.width / 2, 2) + Math.pow(canvas.height / 2, 2));
@@ -347,7 +341,7 @@ function drawDot(x, y) {
   // Check if the red dot is inside the white circle
   const isInside = isRedDotInsideBlueCircle(signalPosX, signalPosY, x, y, focusCircleDiameter);
 
-  if (isInside) {
+  if (isInside & !playingBeep) {
     timer += 0.1;
     document.getElementById("messages").innerText  = "Capturing";
 
