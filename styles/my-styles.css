@@ -174,7 +174,7 @@
 .helpVideo-icon {
     cursor: pointer;
     height: 30px;
-    width: auto;
+    width: 40px;
     border-radius: 1%;
     background-image: url("../images/helpVideo.png");
     background-size: cover;
