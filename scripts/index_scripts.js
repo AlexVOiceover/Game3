@@ -33,7 +33,7 @@ proceedButton.addEventListener("click", () => {
     window.location.href = `./spy.html?param1=${value1}&param2=${value2}&param3=${value3}`;
     console.log("Interceptor");
   } else if (rol === "right"){
-    window.location.href = `./decoder.html`;
+    window.location.href = `./decoder.html?param3=${value3}`;
     console.log("Decoder");
   }
 });

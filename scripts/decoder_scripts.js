@@ -37,6 +37,23 @@ document.addEventListener("DOMContentLoaded", () => {
     //morseButton.disabled = true;
     device.disabled = true;
 
+// Get the current URL
+var url = new URL(window.location.href);
+// Get the search parameters from the URL
+var params = new URLSearchParams(url.search);
+// Retrieve a specific parameter by name
+var paramValue3 = params.get('param3');
+switch (paramValue3) {
+  case '1':
+    maxCharacters = 3;
+    break;
+  case '2':
+    maxCharacters = 4;
+    break;
+  default:
+    maxCharacters = 5;
+}
+
     enableAudioSwitch.addEventListener("change", function () {
         // Toggle the disabled state of the button based on the switch state
         device.disabled = !enableAudioSwitch.checked;
