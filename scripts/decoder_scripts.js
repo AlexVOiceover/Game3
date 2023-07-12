@@ -142,19 +142,19 @@ enableAudioSwitch.addEventListener("change", function () {
 
       if (device.disabled) return; 
 
-      tapCount++;
-
       //Added to have haptic response
       if (navigator.vibrate) { // Check if the browser supports the Vibration API
-        navigator.vibrate(50); // Vibrate for 200ms
+        navigator.vibrate(75); // Vibrate for 200ms
       } else {
-        console.warn("Your browser does not support the Vibration API.");
+        console.log("Your browser does not support the Vibration API.");
       }
 
+      tapCount++;
+
       // If tapCount has reached 5, disable the device and return
-        if (tapCount > 5) {
-      device.disabled = true;
-      return;
+      if (tapCount > 5) {
+        device.disabled = true;
+        return;
       }
 
       device.classList.add("down");
