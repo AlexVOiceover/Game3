@@ -101,6 +101,21 @@ var modal = document.getElementById("qrModal");
 var btn = document.getElementById("findHelper");
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
+  // Check the value of value3 and update the image source accordingly
+  switch(value3) {
+    case 1:
+      qrImage.src = "./images/qr3.png";
+      break;
+    case 2:
+      qrImage.src = "./images/qr4.png";
+      break;
+    case 3:
+      qrImage.src = "./images/qr5.png";
+      break;
+    default:
+      console.log("An unexpected value of value3: ", value3);
+  }
+  // Show the modal
   modal.style.display = "block";
 }
 
