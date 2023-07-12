@@ -521,7 +521,15 @@ document.getElementById("playMorseCode").addEventListener("click", () => {
 }); 
 
   document.getElementById("verifyCode").addEventListener("click", () => {
-  let isRight = true;  
+  let isRight = true; 
+  
+  //Added to have haptic response
+  if (navigator.vibrate) { // Check if the browser supports the Vibration API
+    navigator.vibrate(75); // Vibrate for 200ms
+  } else {
+    console.log("Your browser does not support the Vibration API.");
+  }
+  
   for (let i = 0; i < arrayMorse.length; i++) {
     
     if (arrayMorse[i] !== guessedtextboxes[i].value){
@@ -585,9 +593,28 @@ document.addEventListener('visibilitychange', function() {
   }
 });
 
-
-
-
-
+// Get the QR modal
+var modal = document.getElementById("qrModal");
+// Get the button that opens the modal
+var btn = document.getElementById("findHelper");
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  // Check the value of value3 and update the image source accordingly
+  switch(value3) {
+    case 1:
+      qrImage.src = "./images/qr3.png";
+      break;
+    case 2:
+      qrImage.src = "./images/qr4.png";
+      break;
+    case 3:
+      qrImage.src = "./images/qr5.png";
+      break;
+    default:
+      console.log("An unexpected value of value3: ", value3);
+  }
+  // Show the modal
+  modal.style.display = "block";
+}
 
 animationLoop();

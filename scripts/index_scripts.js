@@ -95,6 +95,7 @@ function fadeOutAndRedirect(targetPage) {
   }, fadeInterval);
 }
 
+/*
 // Get the QR modal
 var modal = document.getElementById("qrModal");
 // Get the button that opens the modal
@@ -117,7 +118,7 @@ btn.onclick = function() {
   }
   // Show the modal
   modal.style.display = "block";
-}
+} */
 
 // Get the Settings modal
 var modalSettings = document.getElementById("modalSettings");

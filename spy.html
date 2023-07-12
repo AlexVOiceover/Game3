@@ -21,6 +21,7 @@
             </label>
             <div class="calibrate-icon" id="resetPosition" alt="Calibrate Gyro"></div>
             <div class="instructions-icon" id="instructionButton" alt="Instructions"></div>
+            <button class="metallic" id="findHelper">QR</button>
             <div class="exit-icon" onclick="location.href='index.html'"></div>
         </div>
 
@@ -58,6 +59,14 @@
         <div id="instructionModal" class="modalWindow" onclick="this.style.display='none'" style="display:none;">
             <div class="image-container">
                 <img src="./images/interceptorInstructions.png" class="imgInstructions" style="max-width: 95%; max-height: 95%;"/>
+            </div>
+        </div>
+
+        <!-- The QR Modal -->
+        <div id="qrModal" class="modalWindow" onclick="this.style.display='none'" style="display:none;">
+            <div class="modalSpy-content">
+                <img id="qrImage" src="./images/qr4.png" style="opacity: 0.8;width: 100%; height: auto;"/>
+                <p class="instructions">Looking for wingman</p>
             </div>
         </div>
 
