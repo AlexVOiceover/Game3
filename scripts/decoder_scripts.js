@@ -146,7 +146,7 @@ enableAudioSwitch.addEventListener("change", function () {
 
       //Added to have haptic response
       if (navigator.vibrate) { // Check if the browser supports the Vibration API
-        navigator.vibrate(200); // Vibrate for 200ms
+        navigator.vibrate(50); // Vibrate for 200ms
       } else {
         console.warn("Your browser does not support the Vibration API.");
       }
