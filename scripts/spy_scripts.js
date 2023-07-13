@@ -611,7 +611,7 @@ btn.onclick = function() {
       qrImage.src = "./images/qr5.png";
       break;
     default:
-      console.log("An unexpected value of value3: ", value3);
+      console.log("An unexpected value of value3: ", paramValue3);
   }
   // Show the modal
   modal.style.display = "block";
