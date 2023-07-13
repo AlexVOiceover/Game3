@@ -600,7 +600,7 @@ var btn = document.getElementById("findHelper");
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
   // Check the value of value3 and update the image source accordingly
-  switch(value3) {
+  switch(paramValue3) {
     case 1:
       qrImage.src = "./images/qr3.png";
       break;
