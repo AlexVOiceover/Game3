@@ -153,6 +153,9 @@ enableAudioSwitch.addEventListener("change", function () {
 
       // If tapCount has reached 5, disable the device and return
       if (tapCount > 5) {
+        
+        // Stop the beep sound before returning
+        stopBeep();
         device.disabled = true;
         return;
       }
