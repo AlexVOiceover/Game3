@@ -124,9 +124,10 @@ enableAudioSwitch.addEventListener("change", function () {
           enableAudioSwitch.checked = false;
         } else {
           // Reset tapCount and re-enable the device
-          tapCount = 0;
+          
           device.disabled = false;
         }
+        tapCount = 0;
       }
   };
   
