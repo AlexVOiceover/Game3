@@ -87,6 +87,9 @@ enableAudioSwitch.addEventListener("change", function () {
   let decodedCharacters = 0;
 
   const translateMorseCode = () => {
+    
+    // Stop last beep
+    stopBeep();
     morseInput = morseTextbox.value.trim();
     const character = Object.keys(morseCode).find((key) => morseCode[key] === morseInput);
   
@@ -153,9 +156,6 @@ enableAudioSwitch.addEventListener("change", function () {
 
       // If tapCount has reached 5, disable the device and return
       if (tapCount > 5) {
-        
-        // Stop the beep sound before returning
-        stopBeep();
         device.disabled = true;
         return;
       }
