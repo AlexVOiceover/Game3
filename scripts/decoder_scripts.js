@@ -65,8 +65,10 @@ enableAudioSwitch.addEventListener("change", function () {
     if (this.checked && decodedCharacters < maxCharacters) {
         audioEnabled = true;
     } else {
+      console.log("dentro switch if " + decodedCharacters + " Max char " + maxCharacters );
         audioEnabled = false;
         this.checked = false;
+        console.log("deviced disable for switch");
         device.disabled = true;
     }
 });
@@ -114,8 +116,9 @@ enableAudioSwitch.addEventListener("change", function () {
         arrayMorseTextbox.value = arrayCharacters.join(" ");
       
         // Check if the number of decoded characters has reached maxCharacters
-        if (arrayCharacters.indexOf("-") === -1) {
+        if (decodedCharacters === maxCharacters) {
           // Disable the device
+          console.log("disable device for maxCharacters");
           device.disabled = true;
           // Uncheck the enableAudioSwitch
           enableAudioSwitch.checked = false;
@@ -149,7 +152,10 @@ enableAudioSwitch.addEventListener("change", function () {
     //console.log("decoded characters" + decodedCharacters);
   });
 
-  device.addEventListener("pointerdown", () => {      
+  device.addEventListener("pointerdown", () => {    
+
+    console.log("Boton decoded characters " + decodedCharacters);
+    console.log("Boton Array characters " + arrayCharacters);
 
       if (device.disabled) return; 
 
@@ -165,6 +171,7 @@ enableAudioSwitch.addEventListener("change", function () {
       // If tapCount has reached 5, disable the device and return
       if (tapCount > 5) {
         device.disabled = true;
+        console.log("deviced disable for 5 taps");
         return;
       }
 
