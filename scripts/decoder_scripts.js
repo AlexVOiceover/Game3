@@ -87,48 +87,56 @@ enableAudioSwitch.addEventListener("change", function () {
   let decodedCharacters = 0;
 
   const translateMorseCode = () => {
-    
-    // Stop last beep
-    stopBeep();
-    morseInput = morseTextbox.value.trim();
-    const character = Object.keys(morseCode).find((key) => morseCode[key] === morseInput);
-  
-    // Find the first '-' in the array
-    const index = arrayCharacters.indexOf("-");
-  
-    if (character && index !== -1) {
-      // Replace the first '-' with the decoded character
-      arrayCharacters[index] = character;
+
+      if (decodedCharacters < maxCharacters) {
+        // Stop last beep
+        stopBeep();
+        morseInput = morseTextbox.value.trim();
+        const character = Object.keys(morseCode).find((key) => morseCode[key] === morseInput);
       
+        // Find the first '-' in the array
+        const index = arrayCharacters.indexOf("-");
       
-    } else if (index !== -1) {
-      // If the Morse code is not recognized, replace the first '-' with '*'
-      arrayCharacters[index] = "*";
-    }
-  
-    decodedCharacters++;
-  
-    morseTextbox.value = "";
-    morseInput = ""; // Reset morseInput
-    arrayMorseTextbox.value = arrayCharacters.join(" ");
-  
-    // Check if the number of decoded characters has reached maxCharacters
-    if (arrayCharacters.indexOf("-") === -1) {
-      // Disable the device
-      device.disabled = true;
-      // Uncheck the enableAudioSwitch
-      enableAudioSwitch.checked = false;
-    } else {
-      // Reset tapCount and re-enable the device
-      tapCount = 0;
-      device.disabled = false;
-    }
+        if (character && index !== -1) {
+          // Replace the first '-' with the decoded character
+          arrayCharacters[index] = character;
+          
+          
+        } else if (index !== -1) {
+          // If the Morse code is not recognized, replace the first '-' with '*'
+          arrayCharacters[index] = "*";
+        }
+      
+        decodedCharacters++;
+      
+        morseTextbox.value = "";
+        morseInput = ""; // Reset morseInput
+        arrayMorseTextbox.value = arrayCharacters.join(" ");
+      
+        // Check if the number of decoded characters has reached maxCharacters
+        if (arrayCharacters.indexOf("-") === -1) {
+          // Disable the device
+          device.disabled = true;
+          // Uncheck the enableAudioSwitch
+          enableAudioSwitch.checked = false;
+        } else {
+          // Reset tapCount and re-enable the device
+          tapCount = 0;
+          device.disabled = false;
+        }
+      }
   };
   
   deleteLastSignal.addEventListener("pointerdown", () => {
+    console.log("pressed delete");
     if (decodedCharacters>0 & arrayCharacters.length > 0 && arrayCharacters[decodedCharacters - 1] !== "-") {
+      console.log("Antes decoded characters " + decodedCharacters);
+      console.log("Antes Array characters " + arrayCharacters);
       arrayCharacters[decodedCharacters - 1] = "-";
       decodedCharacters--;
+
+      console.log("Despues decoded characters " + decodedCharacters);
+      console.log("Despues Array characters " + arrayCharacters);
       
     // Manually trigger the change event on enableAudioSwitch
     enableAudioSwitch.checked = true;
@@ -137,8 +145,8 @@ enableAudioSwitch.addEventListener("change", function () {
 
     }
     arrayMorseTextbox.value = arrayCharacters.join(" ");
-    console.log(arrayCharacters);
-    console.log("decoded characters" + decodedCharacters);
+    //console.log(arrayCharacters);
+    //console.log("decoded characters" + decodedCharacters);
   });
 
   device.addEventListener("pointerdown", () => {      
