@@ -127,8 +127,9 @@ enableAudioSwitch.addEventListener("change", function () {
           
           device.disabled = false;
         }
-        tapCount = 0;
+      tapCount = 0;
       }
+      
   };
   
   deleteLastSignal.addEventListener("pointerdown", () => {
